@@ -1,0 +1,105 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (1).webp",
+  "weak_label": "full_outfit",
+  "weak_label_source": "silhouette_full",
+  "silhouette": {
+    "fg_ratio": 0.615429992199688,
+    "top_margin": 0.0,
+    "bottom_extent": 1.0,
+    "height_frac": 1.0,
+    "top_fill": 0.2991381933576769,
+    "mid_fill": 0.8425110850286907,
+    "bottom_fill": 0.6939771344114067,
+    "bottom_components": 1.0,
+    "bottom_mid_ratio": 0.8237008945559147
+  },
+  "detections": [
+    {
+      "label": "upper",
+      "confidence": 0.8372,
+      "bbox_xyxy": [
+        2,
+        299,
+        792,
+        1191
+      ]
+    },
+    {
+      "label": "upper",
+      "confidence": 0.4513,
+      "bbox_xyxy": [
+        159,
+        949,
+        688,
+        1200
+      ]
+    }
+  ],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        2,
+        299,
+        792,
+        1191
+      ],
+      "yolo_confidence": 0.8372,
+      "mask_path": "vision\\masks\\shopping__1__upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.5904,
+        "edge_touch_ratio": 0.1259,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9377,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "dusty rose",
+        "lab_palette": [
+          "dusty rose",
+          "baby pink"
+        ],
+        "lab_confidence": 0.5278,
+        "lab_centroid": [
+          68.3502,
+          29.9595,
+          -0.0917
+        ],
+        "hsv_primary": "red",
+        "hsv_centroid": [
+          69.7877,
+          29.0515,
+          0.2856
+        ],
+        "mean_lab_drift": 4.2257,
+        "mean_hsv_drift": 4.2023,
+        "cluster_centroid_variance": 0.1569,
+        "color_stability_score": 58.08,
+        "hsv_vs_lab_improvement_pct": -0.56,
+        "lab_label_variants": [
+          "baby pink",
+          "dusty rose"
+        ],
+        "hsv_label_variants": [
+          "red"
+        ],
+        "background_leakage": {
+          "interior_var": 30.8392,
+          "edge_var": 71.6211,
+          "edge_delta_e": 3.7568,
+          "leakage_score": 0.6745
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification",
+    "missed_detection"
+  ],
+  "overall_score": 0.4742
+}

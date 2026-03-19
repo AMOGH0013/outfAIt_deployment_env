@@ -1,0 +1,41 @@
+{
+  "dataset_size": 90,
+  "weak_label_distribution": {
+    "full_outfit": 57,
+    "unknown": 33
+  },
+  "detection_accuracy_proxy": 0.3889,
+  "segmentation_success_rate": 1.0,
+  "color_success_rate": 0.5055,
+  "pipeline_success_rate": 0.2111,
+  "failure_counts": {
+    "missed_detection": 55,
+    "color_misclassification": 45
+  },
+  "mean_mask_quality_score": 0.95,
+  "mean_color_stability_score": 59.99,
+  "mean_lab_drift": 4.0863,
+  "mean_hsv_improvement_pct": -9.84,
+  "top_20_worst_images": [
+    "C:\\Users\\amogh\\Desktop\\new clothes\\1ab8de40-39ef-4528-8186-cdb9bfaab2bc.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\a85064d6-0f5d-4fce-9e3a-d1b5902c6098.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\5a1bcd89-5b3d-41a1-80a7-0665c2ce7f86.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\d8c20701-80af-4d6c-b8fb-9c4535860b4b.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\ff0535f7-c9f4-47f7-8aae-373aa3e09f04.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\3ea9b190-582d-474b-9ba1-1fbabb2a2435.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\2d88dcfb-2418-49fa-82b2-b5d4500ed542.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\7c546852-22a8-468c-8c46-c1f4a13dec6b.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\6d08108f-89b2-4b59-afba-8f85892bffa7.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\53c2539d-a472-4a71-88d8-6c0aaf0fe1eb.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\82cc97d5-b719-4a00-b6d6-e7dfead3dd75.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\e43c414a-f5fc-456b-b11b-60dea7c6b2ec.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\6a2fef2d-6a7d-4293-8d03-e412d57090a5.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\297b1d2d-70d6-42d9-a6eb-5d28c59f1061.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\553b90b8-adf2-4467-8b3b-fe300bc0cf94.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\122f0c94-4f37-4010-8c43-06d79bdf4433.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\9f0338d5-37b9-4837-964d-d68fa08cec3b.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\ceebb69d-fc80-4bb8-a061-db135ecc4e89.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\ad3e3526-f578-4644-96df-9262ce8ed5e5.jpg",
+    "C:\\Users\\amogh\\Desktop\\new clothes\\c1110144-06d3-4d8a-844a-de4557fc7058.jpg"
+  ]
+}

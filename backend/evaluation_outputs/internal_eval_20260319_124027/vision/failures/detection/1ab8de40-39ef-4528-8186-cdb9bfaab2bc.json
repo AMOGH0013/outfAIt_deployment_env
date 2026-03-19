@@ -1,0 +1,24 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\new clothes\\1ab8de40-39ef-4528-8186-cdb9bfaab2bc.jpg",
+  "weak_label": "unknown",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.8550328330206379,
+    "top_margin": 0.0,
+    "bottom_extent": 1.0,
+    "height_frac": 1.0,
+    "top_fill": 0.9870440251572327,
+    "mid_fill": 0.960875,
+    "bottom_fill": 0.5881406250000001,
+    "bottom_components": 20.0,
+    "bottom_mid_ratio": 0.6120885911278783
+  },
+  "detections": [],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [],
+  "failures": [
+    "missed_detection"
+  ],
+  "overall_score": 0.0
+}

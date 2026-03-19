@@ -1,0 +1,94 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\new clothes\\9914e7ca-9b82-4a05-aeab-26098f937d7f.jpg",
+  "weak_label": "lower_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.8923405253283302,
+    "top_margin": 0.0,
+    "bottom_extent": 1.0,
+    "height_frac": 1.0,
+    "top_fill": 0.7775314465408806,
+    "mid_fill": 0.951953125,
+    "bottom_fill": 0.9248281250000001,
+    "bottom_components": 1.0,
+    "bottom_mid_ratio": 0.9715059499384491
+  },
+  "detections": [
+    {
+      "label": "lower",
+      "confidence": 0.9577,
+      "bbox_xyxy": [
+        3,
+        11,
+        398,
+        531
+      ]
+    }
+  ],
+  "detection_ok": true,
+  "detection_status": "ok",
+  "segments": [
+    {
+      "label": "lower",
+      "bbox_xyxy": [
+        3,
+        11,
+        398,
+        531
+      ],
+      "yolo_confidence": 0.9577,
+      "mask_path": "vision\\masks\\9914e7ca-9b82-4a05-aeab-26098f937d7f_lower_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.5634,
+        "edge_touch_ratio": 0.0675,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.0,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "slate",
+        "lab_palette": [
+          "slate",
+          "charcoal"
+        ],
+        "lab_confidence": 0.7636,
+        "lab_centroid": [
+          30.3224,
+          -1.0667,
+          -10.7574
+        ],
+        "hsv_primary": "blue",
+        "hsv_centroid": [
+          29.6151,
+          -0.8884,
+          -11.9001
+        ],
+        "mean_lab_drift": 2.5094,
+        "mean_hsv_drift": 2.6334,
+        "cluster_centroid_variance": 0.0758,
+        "color_stability_score": 54.68,
+        "hsv_vs_lab_improvement_pct": 4.71,
+        "lab_label_variants": [
+          "charcoal",
+          "slate"
+        ],
+        "hsv_label_variants": [
+          "blue"
+        ],
+        "background_leakage": {
+          "interior_var": 6.1889,
+          "edge_var": 36.2323,
+          "edge_delta_e": 4.3897,
+          "leakage_score": 1.0
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification"
+  ],
+  "overall_score": 0.864
+}

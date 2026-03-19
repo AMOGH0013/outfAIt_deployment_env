@@ -1,0 +1,165 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (18).webp",
+  "weak_label": "full_outfit",
+  "weak_label_source": "silhouette_full",
+  "silhouette": {
+    "fg_ratio": 0.32134657118055554,
+    "top_margin": 0.0,
+    "bottom_extent": 1.0,
+    "height_frac": 1.0,
+    "top_fill": 0.43764908433364114,
+    "mid_fill": 0.34147526161895964,
+    "bottom_fill": 0.5266235764850724,
+    "bottom_components": 3.0,
+    "bottom_mid_ratio": 1.5422012534328573
+  },
+  "detections": [
+    {
+      "label": "lower",
+      "confidence": 0.8965,
+      "bbox_xyxy": [
+        411,
+        196,
+        826,
+        1073
+      ]
+    },
+    {
+      "label": "upper",
+      "confidence": 0.3454,
+      "bbox_xyxy": [
+        413,
+        1,
+        838,
+        251
+      ]
+    }
+  ],
+  "detection_ok": true,
+  "detection_status": "ok",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        413,
+        1,
+        838,
+        251
+      ],
+      "yolo_confidence": 0.3454,
+      "mask_path": "vision\\masks\\shopping__18__upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.7407,
+        "edge_touch_ratio": 0.462,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.8906,
+        "quality_score": 0.8
+      },
+      "color": {
+        "lab_primary": "denim blue",
+        "lab_palette": [
+          "gray",
+          "denim blue",
+          "slate"
+        ],
+        "lab_confidence": 0.228,
+        "lab_centroid": [
+          52.5361,
+          -1.6934,
+          -16.8362
+        ],
+        "hsv_primary": "blue",
+        "hsv_centroid": [
+          49.1699,
+          -1.5254,
+          -17.9924
+        ],
+        "mean_lab_drift": 7.2197,
+        "mean_hsv_drift": 4.1086,
+        "cluster_centroid_variance": 0.0313,
+        "color_stability_score": 35.06,
+        "hsv_vs_lab_improvement_pct": -75.72,
+        "lab_label_variants": [
+          "denim blue",
+          "gray",
+          "sky blue",
+          "slate"
+        ],
+        "hsv_label_variants": [
+          "blue"
+        ],
+        "background_leakage": {
+          "interior_var": 39.0072,
+          "edge_var": 70.3002,
+          "edge_delta_e": 11.748,
+          "leakage_score": 0.7443
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    },
+    {
+      "label": "lower",
+      "bbox_xyxy": [
+        411,
+        196,
+        826,
+        1073
+      ],
+      "yolo_confidence": 0.8965,
+      "mask_path": "vision\\masks\\shopping__18__lower_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.5923,
+        "edge_touch_ratio": 0.1506,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9913,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "denim blue",
+        "lab_palette": [
+          "denim blue",
+          "gray"
+        ],
+        "lab_confidence": 0.7842,
+        "lab_centroid": [
+          70.0692,
+          -2.3986,
+          -14.034
+        ],
+        "hsv_primary": "blue",
+        "hsv_centroid": [
+          62.702,
+          -2.0401,
+          -16.1652
+        ],
+        "mean_lab_drift": 5.0577,
+        "mean_hsv_drift": 5.1741,
+        "cluster_centroid_variance": 2.1353,
+        "color_stability_score": 51.02,
+        "hsv_vs_lab_improvement_pct": 2.25,
+        "lab_label_variants": [
+          "denim blue",
+          "gray"
+        ],
+        "hsv_label_variants": [
+          "blue"
+        ],
+        "background_leakage": {
+          "interior_var": 19.508,
+          "edge_var": 38.9345,
+          "edge_delta_e": 2.4452,
+          "leakage_score": 0.5601
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification"
+  ],
+  "overall_score": 0.7991
+}

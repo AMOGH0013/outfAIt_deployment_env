@@ -1,0 +1,94 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\new clothes\\86d27363-bc32-4e4d-9f4f-7581866e9b8a.jpg",
+  "weak_label": "lower_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.0,
+    "top_margin": 1.0,
+    "bottom_extent": 0.0,
+    "height_frac": 0.0,
+    "top_fill": 0.0,
+    "mid_fill": 0.0,
+    "bottom_fill": 0.0,
+    "bottom_components": 0.0,
+    "bottom_mid_ratio": 0.0
+  },
+  "detections": [
+    {
+      "label": "lower",
+      "confidence": 0.8316,
+      "bbox_xyxy": [
+        37,
+        43,
+        376,
+        642
+      ]
+    }
+  ],
+  "detection_ok": true,
+  "detection_status": "ok",
+  "segments": [
+    {
+      "label": "lower",
+      "bbox_xyxy": [
+        37,
+        43,
+        376,
+        642
+      ],
+      "yolo_confidence": 0.8316,
+      "mask_path": "vision\\masks\\86d27363-bc32-4e4d-9f4f-7581866e9b8a_lower_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.6916,
+        "edge_touch_ratio": 0.0301,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9893,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "charcoal",
+        "lab_palette": [
+          "charcoal",
+          "black"
+        ],
+        "lab_confidence": 0.6602,
+        "lab_centroid": [
+          18.2613,
+          -0.462,
+          -9.5522
+        ],
+        "hsv_primary": "blue",
+        "hsv_centroid": [
+          18.9464,
+          -0.7645,
+          -9.7407
+        ],
+        "mean_lab_drift": 2.5595,
+        "mean_hsv_drift": 2.8159,
+        "cluster_centroid_variance": 0.1028,
+        "color_stability_score": 54.47,
+        "hsv_vs_lab_improvement_pct": 9.1,
+        "lab_label_variants": [
+          "black",
+          "charcoal"
+        ],
+        "hsv_label_variants": [
+          "blue"
+        ],
+        "background_leakage": {
+          "interior_var": 13.0726,
+          "edge_var": 58.8146,
+          "edge_delta_e": 5.9158,
+          "leakage_score": 1.0
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification"
+  ],
+  "overall_score": 0.8634
+}

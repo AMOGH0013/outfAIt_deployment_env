@@ -1,0 +1,26 @@
+I have a FastAPI wardrobe/outfit recommender. Fix these 3 problems completely 
+in one session. Do NOT touch any frontend files or auth/database logic.
+
+PROBLEM 1 — Outfit engine recommends the same shirt 3-4 days in a row
+The recommendation engine keeps cycling the same top while only rotating 
+bottoms, even when multiple tops exist in the wardrobe. A user with 5 shirts 
+and 3 pants should see different shirts each day across a 7-day plan.
+Relevant files: app/services/outfit_engine.py, app/api/outfits.py
+
+PROBLEM 2 — Background separation is broken for real-world photos  
+SAM IS installed and running (checkpoint at sam_models/sam_vit_b.pth).
+The segmentation fails on: complex outdoor backgrounds, person-worn photos 
+where the whole person gets masked instead of just the garment, and studio 
+gray backgrounds where the mask inverts and captures background instead of 
+clothing. The resulting bad masks also corrupt color extraction.
+Relevant file: app/services/sam_segmentation.py
+
+PROBLEM 3 — Colors are badly misclassified
+Dark green shirts are being classified as navy or black. The LAB 
+nearest-neighbor system is already in place but is missing anchors for 
+common dark fashion colors and the clustering is being skewed by background 
+and skin pixel bleed through imperfect masks.
+Relevant file: app/services/color_extraction.py
+
+Read all three files fully before making any changes. Run py_compile on 
+every modified file when done.

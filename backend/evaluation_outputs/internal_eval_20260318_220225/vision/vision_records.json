@@ -1,0 +1,197 @@
+[
+  {
+    "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\-1117Wx1400H-467293008-brown-MODEL.avif",
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "silhouette": {
+      "fg_ratio": 0.7853228350739774,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6965114592399188,
+      "mid_fill": 0.8946547722657383,
+      "bottom_fill": 0.7405080504786771,
+      "bottom_components": 15.0,
+      "bottom_mid_ratio": 0.8277025657654736
+    },
+    "detections": [
+      {
+        "label": "upper",
+        "confidence": 0.7133,
+        "bbox_xyxy": [
+          466,
+          1027,
+          977,
+          1399
+        ]
+      },
+      {
+        "label": "upper",
+        "confidence": 0.6012,
+        "bbox_xyxy": [
+          35,
+          264,
+          1100,
+          1225
+        ]
+      }
+    ],
+    "detection_ok": false,
+    "detection_status": "missed_detection",
+    "segments": [
+      {
+        "label": "upper",
+        "bbox_xyxy": [
+          466,
+          1027,
+          977,
+          1399
+        ],
+        "yolo_confidence": 0.7133,
+        "mask_path": "vision\\masks\\-1117Wx1400H-467293008-brown-MODEL_upper_sam2.png",
+        "mask_quality": {
+          "area_ratio": 0.6358,
+          "edge_touch_ratio": 0.3102,
+          "component_count": 1.0,
+          "largest_component_ratio": 1.0,
+          "sam2_sam1_iou": 0.8618,
+          "quality_score": 1.0
+        },
+        "color": {
+          "lab_primary": "black",
+          "lab_palette": [
+            "black",
+            "brown"
+          ],
+          "lab_confidence": 0.9019,
+          "lab_centroid": [
+            6.1399,
+            0.0093,
+            1.8337
+          ],
+          "hsv_primary": "black",
+          "hsv_centroid": [
+            4.6864,
+            -0.1648,
+            1.571
+          ],
+          "mean_lab_drift": 1.2016,
+          "mean_hsv_drift": 1.1041,
+          "cluster_centroid_variance": 0.0,
+          "color_stability_score": 75.6,
+          "hsv_vs_lab_improvement_pct": -8.83,
+          "lab_label_variants": [
+            "black"
+          ],
+          "hsv_label_variants": [
+            "black"
+          ],
+          "background_leakage": {
+            "interior_var": 60.6861,
+            "edge_var": 186.6924,
+            "edge_delta_e": 14.6059,
+            "leakage_score": 1.0
+          },
+          "color_ok": true,
+          "suspected_color_failure": false
+        }
+      }
+    ],
+    "failures": [
+      "missed_detection"
+    ],
+    "overall_score": 0.5268
+  },
+  {
+    "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\1.jpg",
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_empty",
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    },
+    "detections": [
+      {
+        "label": "lower",
+        "confidence": 0.601,
+        "bbox_xyxy": [
+          27,
+          228,
+          153,
+          275
+        ]
+      }
+    ],
+    "detection_ok": true,
+    "detection_status": "ok",
+    "segments": [
+      {
+        "label": "lower",
+        "bbox_xyxy": [
+          27,
+          228,
+          153,
+          275
+        ],
+        "yolo_confidence": 0.601,
+        "mask_path": "vision\\masks\\1_lower_sam2.png",
+        "mask_quality": {
+          "area_ratio": 0.7595,
+          "edge_touch_ratio": 0.3905,
+          "component_count": 1.0,
+          "largest_component_ratio": 1.0,
+          "sam2_sam1_iou": 0.9281,
+          "quality_score": 1.0
+        },
+        "color": {
+          "lab_primary": "black",
+          "lab_palette": [
+            "black",
+            "charcoal",
+            "dark gray"
+          ],
+          "lab_confidence": 0.6531,
+          "lab_centroid": [
+            7.4531,
+            0.617,
+            -7.3562
+          ],
+          "hsv_primary": "blue",
+          "hsv_centroid": [
+            12.0509,
+            0.2786,
+            -8.3798
+          ],
+          "mean_lab_drift": 0.7195,
+          "mean_hsv_drift": 2.8434,
+          "cluster_centroid_variance": 0.0041,
+          "color_stability_score": 75.1,
+          "hsv_vs_lab_improvement_pct": 74.7,
+          "lab_label_variants": [
+            "black"
+          ],
+          "hsv_label_variants": [
+            "blue"
+          ],
+          "background_leakage": {
+            "interior_var": 47.7228,
+            "edge_var": 84.4614,
+            "edge_delta_e": 6.7436,
+            "leakage_score": 0.611
+          },
+          "color_ok": true,
+          "suspected_color_failure": false
+        }
+      }
+    ],
+    "failures": [],
+    "overall_score": 0.9253
+  }
+]

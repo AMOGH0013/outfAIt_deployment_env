@@ -1,0 +1,648 @@
+[
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\-1117Wx1400H-467293008-brown-MODEL.avif",
+    "width": 766,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.7853228350739774,
+    "silhouette": {
+      "fg_ratio": 0.7853228350739774,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6965114592399188,
+      "mid_fill": 0.8946547722657383,
+      "bottom_fill": 0.7405080504786771,
+      "bottom_components": 15.0,
+      "bottom_mid_ratio": 0.8277025657654736
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\1.jpg",
+    "width": 183,
+    "height": 275,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_empty",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\111.jpg",
+    "width": 225,
+    "height": 225,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.34315061728395063,
+    "silhouette": {
+      "fg_ratio": 0.34315061728395063,
+      "top_margin": 0.03111111111111111,
+      "bottom_extent": 0.9911111111111112,
+      "height_frac": 0.96,
+      "top_fill": 0.34833333333333333,
+      "mid_fill": 0.39781196581196576,
+      "bottom_fill": 0.2763760683760683,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.6947404606393949
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\2.jpg",
+    "width": 192,
+    "height": 262,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_unknown",
+    "foreground_ratio": 0.5051089376590331,
+    "silhouette": {
+      "fg_ratio": 0.5051089376590331,
+      "top_margin": 0.007633587786259542,
+      "bottom_extent": 1.0,
+      "height_frac": 0.9923664122137404,
+      "top_fill": 0.29333694474539534,
+      "mid_fill": 0.8159082701336221,
+      "bottom_fill": 0.9279523293607799,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 1.137324333296448
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\222.jpg",
+    "width": 201,
+    "height": 251,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_unknown",
+    "foreground_ratio": 0.3300628332441379,
+    "silhouette": {
+      "fg_ratio": 0.3300628332441379,
+      "top_margin": 0.0,
+      "bottom_extent": 0.9601593625498008,
+      "height_frac": 0.9601593625498008,
+      "top_fill": 0.6125175808720112,
+      "mid_fill": 0.3720991561181434,
+      "bottom_fill": 0.3302410265302584,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.887508130831141
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\368681-3640432.avif",
+    "width": 960,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.4409375,
+    "silhouette": {
+      "fg_ratio": 0.4409375,
+      "top_margin": 0.0625,
+      "bottom_extent": 0.940625,
+      "height_frac": 0.878125,
+      "top_fill": 0.6077707864004765,
+      "mid_fill": 0.9233343690929335,
+      "bottom_fill": 0.7892629393445055,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.8547964483547414
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\5.jpg",
+    "width": 183,
+    "height": 275,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.8842722305017386,
+    "silhouette": {
+      "fg_ratio": 0.8842722305017386,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8987071837931495,
+      "mid_fill": 0.9818739170998269,
+      "bottom_fill": 0.7396141944828494,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.7532679925620765
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\do2wnload.jpg",
+    "width": 194,
+    "height": 259,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.3677108625562234,
+    "silhouette": {
+      "fg_ratio": 0.3677108625562234,
+      "top_margin": 0.0888030888030888,
+      "bottom_extent": 0.9073359073359073,
+      "height_frac": 0.8185328185328186,
+      "top_fill": 0.7547144213810878,
+      "mid_fill": 0.7829331162664495,
+      "bottom_fill": 0.6810897435897436,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.8699207243112114
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\imag2es.jpg",
+    "width": 194,
+    "height": 259,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.39485730207379693,
+    "silhouette": {
+      "fg_ratio": 0.39485730207379693,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.573716056670602,
+      "mid_fill": 0.34375000000000006,
+      "bottom_fill": 0.4023164335664335,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 1.1703750794659882
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\images.jpg",
+    "width": 201,
+    "height": 251,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.3478622822144259,
+    "silhouette": {
+      "fg_ratio": 0.3478622822144259,
+      "top_margin": 0.0,
+      "bottom_extent": 0.9840637450199203,
+      "height_frac": 0.9840637450199203,
+      "top_fill": 0.9099459459459459,
+      "mid_fill": 0.48410810810810806,
+      "bottom_fill": 0.33536,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.6927378293881198
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (1).webp",
+    "width": 641,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.615429992199688,
+    "silhouette": {
+      "fg_ratio": 0.615429992199688,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.2991381933576769,
+      "mid_fill": 0.8425110850286907,
+      "bottom_fill": 0.6939771344114067,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.8237008945559147
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (10).webp",
+    "width": 960,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.6747981770833333,
+    "silhouette": {
+      "fg_ratio": 0.6747981770833333,
+      "top_margin": 0.013541666666666667,
+      "bottom_extent": 0.9875,
+      "height_frac": 0.9739583333333334,
+      "top_fill": 0.5961821311218901,
+      "mid_fill": 0.8672586449694885,
+      "bottom_fill": 0.6795476957977494,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.783558284185979
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (11).webp",
+    "width": 960,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.6755132378472222,
+    "silhouette": {
+      "fg_ratio": 0.6755132378472222,
+      "top_margin": 0.0125,
+      "bottom_extent": 0.9864583333333333,
+      "height_frac": 0.9739583333333334,
+      "top_fill": 0.5955191256830601,
+      "mid_fill": 0.8656440281030445,
+      "bottom_fill": 0.6795519514614083,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.7850247092336157
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (12).webp",
+    "width": 724,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.6106439917127072,
+    "silhouette": {
+      "fg_ratio": 0.6106439917127072,
+      "top_margin": 0.0020833333333333333,
+      "bottom_extent": 1.0,
+      "height_frac": 0.9979166666666667,
+      "top_fill": 0.3382094218772206,
+      "mid_fill": 0.7600131335852238,
+      "bottom_fill": 0.7372929363963119,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 0.9701055203062958
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (13).webp",
+    "width": 451,
+    "height": 960,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_empty",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (14).webp",
+    "width": 795,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.46913784067085956,
+    "silhouette": {
+      "fg_ratio": 0.46913784067085956,
+      "top_margin": 0.0,
+      "bottom_extent": 0.9302083333333333,
+      "height_frac": 0.9302083333333333,
+      "top_fill": 0.6750968286229244,
+      "mid_fill": 0.816622943303958,
+      "bottom_fill": 0.5095002801691202,
+      "bottom_components": 9.0,
+      "bottom_mid_ratio": 0.6239112975539769
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (15).webp",
+    "width": 766,
+    "height": 960,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_empty",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (16).webp",
+    "width": 690,
+    "height": 722,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.3327391705809145,
+    "silhouette": {
+      "fg_ratio": 0.3327391705809145,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6776084010840109,
+      "mid_fill": 0.545925592896482,
+      "bottom_fill": 0.4678318534337417,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.8569516789854027
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (17).webp",
+    "width": 640,
+    "height": 960,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_unknown",
+    "foreground_ratio": 0.3666634114583333,
+    "silhouette": {
+      "fg_ratio": 0.3666634114583333,
+      "top_margin": 0.0,
+      "bottom_extent": 0.9895833333333334,
+      "height_frac": 0.9895833333333334,
+      "top_fill": 0.47522111062780925,
+      "mid_fill": 0.5053356531825431,
+      "bottom_fill": 0.4723212991155576,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.9346684646945745
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (18).webp",
+    "width": 960,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.32134657118055554,
+    "silhouette": {
+      "fg_ratio": 0.32134657118055554,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.43764908433364114,
+      "mid_fill": 0.34147526161895964,
+      "bottom_fill": 0.5266235764850724,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 1.5422012534328573
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (19).webp",
+    "width": 885,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.4277966101694915,
+    "silhouette": {
+      "fg_ratio": 0.4277966101694915,
+      "top_margin": 0.0020833333333333333,
+      "bottom_extent": 0.9979166666666667,
+      "height_frac": 0.9958333333333333,
+      "top_fill": 0.9730164695117968,
+      "mid_fill": 0.8968624833110814,
+      "bottom_fill": 0.7884822039141619,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.8791561901476849
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (2).webp",
+    "width": 622,
+    "height": 800,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.5878758038585209,
+    "silhouette": {
+      "fg_ratio": 0.5878758038585209,
+      "top_margin": 0.08625,
+      "bottom_extent": 0.92125,
+      "height_frac": 0.835,
+      "top_fill": 0.6090924956369983,
+      "mid_fill": 0.8913113316489107,
+      "bottom_fill": 0.7529629340209945,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.8447810627831085
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (20).webp",
+    "width": 720,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.370552662037037,
+    "silhouette": {
+      "fg_ratio": 0.370552662037037,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.3510127314814815,
+      "mid_fill": 0.4481626157407408,
+      "bottom_fill": 0.3130256558641975,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 0.6984644521203902
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (21).webp",
+    "width": 600,
+    "height": 705,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_unknown",
+    "foreground_ratio": 0.5918676122931442,
+    "silhouette": {
+      "fg_ratio": 0.5918676122931442,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7070805687203793,
+      "mid_fill": 0.7168490566037736,
+      "bottom_fill": 0.7042641509433961,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.9824441344458188
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (22).webp",
+    "width": 755,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.3615480132450331,
+    "silhouette": {
+      "fg_ratio": 0.3615480132450331,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6751643158702745,
+      "mid_fill": 0.41293057954327383,
+      "bottom_fill": 0.3379149875263865,
+      "bottom_components": 4.0,
+      "bottom_mid_ratio": 0.8183336479951203
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (23).webp",
+    "width": 405,
+    "height": 797,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_empty",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (3).webp",
+    "width": 770,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.44430871212121215,
+    "silhouette": {
+      "fg_ratio": 0.44430871212121215,
+      "top_margin": 0.003125,
+      "bottom_extent": 1.0,
+      "height_frac": 0.996875,
+      "top_fill": 0.266752966804861,
+      "mid_fill": 0.7392935079105292,
+      "bottom_fill": 0.6605462356792144,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.8934830735172032
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (4).webp",
+    "width": 622,
+    "height": 800,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.386907154340836,
+    "silhouette": {
+      "fg_ratio": 0.386907154340836,
+      "top_margin": 0.025,
+      "bottom_extent": 1.0,
+      "height_frac": 0.975,
+      "top_fill": 0.30867246922292796,
+      "mid_fill": 0.7742884027287698,
+      "bottom_fill": 0.6007704069630674,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.7759000455719275
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (5).webp",
+    "width": 533,
+    "height": 796,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_unknown",
+    "foreground_ratio": 0.49162793328745036,
+    "silhouette": {
+      "fg_ratio": 0.49162793328745036,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.27725118483412325,
+      "mid_fill": 0.832209641277836,
+      "bottom_fill": 0.7195859525273156,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.8646690891761484
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (6).webp",
+    "width": 693,
+    "height": 832,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_empty",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (7).webp",
+    "width": 780,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.6456103098290599,
+    "silhouette": {
+      "fg_ratio": 0.6456103098290599,
+      "top_margin": 0.0020833333333333333,
+      "bottom_extent": 1.0,
+      "height_frac": 0.9979166666666667,
+      "top_fill": 0.26131510765657107,
+      "mid_fill": 0.7998213168944875,
+      "bottom_fill": 0.8326032763532762,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 1.040986603840559
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (8).webp",
+    "width": 720,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.6045920138888888,
+    "silhouette": {
+      "fg_ratio": 0.6045920138888888,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.23943194249101424,
+      "mid_fill": 0.6908403656821379,
+      "bottom_fill": 0.892346460384435,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 1.2916825719981335
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (9).webp",
+    "width": 756,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.720665233686067,
+    "silhouette": {
+      "fg_ratio": 0.720665233686067,
+      "top_margin": 0.020833333333333332,
+      "bottom_extent": 0.9791666666666666,
+      "height_frac": 0.9583333333333334,
+      "top_fill": 0.6251974012993503,
+      "mid_fill": 0.9505497251374312,
+      "bottom_fill": 0.7368065967016492,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.775137351804632
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping.webp",
+    "width": 640,
+    "height": 960,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_unknown",
+    "foreground_ratio": 0.5276236979166666,
+    "silhouette": {
+      "fg_ratio": 0.5276236979166666,
+      "top_margin": 0.011458333333333333,
+      "bottom_extent": 1.0,
+      "height_frac": 0.9885416666666667,
+      "top_fill": 0.27329310435101317,
+      "mid_fill": 0.7997342792816376,
+      "bottom_fill": 0.8003065284027914,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 1.0007155490717088
+    }
+  }
+]

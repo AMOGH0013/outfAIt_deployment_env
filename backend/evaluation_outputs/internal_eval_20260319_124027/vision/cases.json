@@ -1,0 +1,1712 @@
+[
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\0285f2a0-ff21-43de-9762-6454faa5eef8.jpg",
+    "width": 533,
+    "height": 400,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8062054409005629,
+    "silhouette": {
+      "fg_ratio": 0.8062054409005629,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9754846779237024,
+      "mid_fill": 0.7581769856160101,
+      "bottom_fill": 0.6794871794871795,
+      "bottom_components": 8.0,
+      "bottom_mid_ratio": 0.8962118243870248
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\03103065-f445-44a5-b707-53b73534f57d.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\07928474-c6fe-415f-9cb0-6418e497ce56.jpg",
+    "width": 642,
+    "height": 400,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6875233644859813,
+    "silhouette": {
+      "fg_ratio": 0.6875233644859813,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7584501557632398,
+      "mid_fill": 0.669457424714434,
+      "bottom_fill": 0.6386682242990654,
+      "bottom_components": 5.0,
+      "bottom_mid_ratio": 0.9540087251575377
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\0a77dbed-06fb-4ba7-b1e3-24f3a41498bc.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6036726078799249,
+    "silhouette": {
+      "fg_ratio": 0.6036726078799249,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.46369496855345915,
+      "mid_fill": 0.8544531249999998,
+      "bottom_fill": 0.4432499999999999,
+      "bottom_components": 12.0,
+      "bottom_mid_ratio": 0.5187528572734754
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\0dfec862-c49f-430b-a6ef-c7ceb187225e.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.861811797752809,
+    "silhouette": {
+      "fg_ratio": 0.861811797752809,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.734,
+      "mid_fill": 0.9807608695652175,
+      "bottom_fill": 0.850916149068323,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.86760817593135
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\0e27351a-13d0-41a6-b731-4090b368d656.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9329737335834897,
+    "silhouette": {
+      "fg_ratio": 0.9329737335834897,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.823977987421384,
+      "mid_fill": 0.99521875,
+      "bottom_fill": 0.9621875,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.9668100606022545
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\1042a9df-2411-4f6c-b156-1d0d94e2f6ed.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.4074484052532833,
+    "silhouette": {
+      "fg_ratio": 0.4074484052532833,
+      "top_margin": 0.1294559099437148,
+      "bottom_extent": 1.0,
+      "height_frac": 0.8705440900562852,
+      "top_fill": 0.4400899280575539,
+      "mid_fill": 0.4814028776978417,
+      "bottom_fill": 0.48987500000000006,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 1.0175988193977437
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\119518b0-abfc-49a1-88dc-016f2dbd17ff.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\122f0c94-4f37-4010-8c43-06d79bdf4433.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9468352059925094,
+    "silhouette": {
+      "fg_ratio": 0.9468352059925094,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.940625,
+      "mid_fill": 1.0,
+      "bottom_fill": 0.8826708074534162,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.8826708074534162
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\129287b2-e3ab-45f8-b0aa-cd0fa1e6864c.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8311116322701688,
+    "silhouette": {
+      "fg_ratio": 0.8311116322701688,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9996540880503144,
+      "mid_fill": 0.91959375,
+      "bottom_fill": 0.56103125,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.6100859754647092
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\145789f9-6d4e-4e63-a4da-6ea78302d739.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7754307116104869,
+    "silhouette": {
+      "fg_ratio": 0.7754307116104869,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.626015625,
+      "mid_fill": 0.9798602484472049,
+      "bottom_fill": 0.6706366459627329,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 0.6844207089995722
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\14bc842c-60e9-468c-ab35-5089143945f5.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\171437da-73a2-484d-90b5-9a0ce4b36140.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8571106941838649,
+    "silhouette": {
+      "fg_ratio": 0.8571106941838649,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7871540880503146,
+      "mid_fill": 0.9731093749999999,
+      "bottom_fill": 0.7759375,
+      "bottom_components": 7.0,
+      "bottom_mid_ratio": 0.7973795340323383
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\1a08f33a-2ff4-4fb8-920b-8ff514bcdda8.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6534410112359551,
+    "silhouette": {
+      "fg_ratio": 0.6534410112359551,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7965156250000001,
+      "mid_fill": 0.6523757763975155,
+      "bottom_fill": 0.5096273291925466,
+      "bottom_components": 5.0,
+      "bottom_mid_ratio": 0.7811867755218623
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\1ab8de40-39ef-4528-8186-cdb9bfaab2bc.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "unknown",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8550328330206379,
+    "silhouette": {
+      "fg_ratio": 0.8550328330206379,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9870440251572327,
+      "mid_fill": 0.960875,
+      "bottom_fill": 0.5881406250000001,
+      "bottom_components": 20.0,
+      "bottom_mid_ratio": 0.6120885911278783
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\1bb71a5d-a665-4d72-9e06-b7892a8a7e92.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.762059925093633,
+    "silhouette": {
+      "fg_ratio": 0.762059925093633,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.78384375,
+      "mid_fill": 0.8189130434782609,
+      "bottom_fill": 0.6647515527950311,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.811748644241344
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\205092bd-f565-421f-a9fc-d59b6c960b84.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\22c849e7-8f21-466d-a96a-aef65cded863.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7156988742964353,
+    "silhouette": {
+      "fg_ratio": 0.7156988742964353,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8133490566037735,
+      "mid_fill": 0.7093906249999999,
+      "bottom_fill": 0.614,
+      "bottom_components": 15.0,
+      "bottom_mid_ratio": 0.8655315962203476
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\2701fe7b-49f6-4fba-8ac5-ab7f836b8681.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\2750f652-6531-4c82-8677-9017f0421101.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.735844277673546,
+    "silhouette": {
+      "fg_ratio": 0.735844277673546,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7024056603773586,
+      "mid_fill": 0.83775,
+      "bottom_fill": 0.6408437499999999,
+      "bottom_components": 5.0,
+      "bottom_mid_ratio": 0.7649582214264398
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\27d89ad3-f25b-4bec-a824-8e2d881c2d4f.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\297b1d2d-70d6-42d9-a6eb-5d28c59f1061.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.4456425891181989,
+    "silhouette": {
+      "fg_ratio": 0.4456425891181989,
+      "top_margin": 0.09568480300187618,
+      "bottom_extent": 1.0,
+      "height_frac": 0.9043151969981238,
+      "top_fill": 0.4713020833333333,
+      "mid_fill": 0.4583620689655173,
+      "bottom_fill": 0.5542758620689655,
+      "bottom_components": 9.0,
+      "bottom_mid_ratio": 1.2092533383486928
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\2d88dcfb-2418-49fa-82b2-b5d4500ed542.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9325234521575985,
+    "silhouette": {
+      "fg_ratio": 0.9325234521575985,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9201415094339623,
+      "mid_fill": 0.979671875,
+      "bottom_fill": 0.8805,
+      "bottom_components": 4.0,
+      "bottom_mid_ratio": 0.8987703153160337
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\2e6adbec-b34f-4c40-b59a-cafc84658797.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6533333333333333,
+    "silhouette": {
+      "fg_ratio": 0.6533333333333333,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6530312500000001,
+      "mid_fill": 0.6818788819875776,
+      "bottom_fill": 0.621164596273292,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 0.9109603078814931
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\300963e8-f469-471c-a7dd-9eed99ddad4f.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\3306907c-309c-4227-b151-59c734cde663.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\3872c0d9-f77d-47e5-a2cf-6457b2652126.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.715248127340824,
+    "silhouette": {
+      "fg_ratio": 0.715248127340824,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.789828125,
+      "mid_fill": 0.7775621118012422,
+      "bottom_fill": 0.5803571428571429,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 0.7463804293559662
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\3c25129a-c68b-4401-b4e4-4b1c089452ac.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6989305816135084,
+    "silhouette": {
+      "fg_ratio": 0.6989305816135084,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.5449056603773584,
+      "mid_fill": 0.81665625,
+      "bottom_fill": 0.6794374999999999,
+      "bottom_components": 11.0,
+      "bottom_mid_ratio": 0.8319748976390005
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\3ea9b190-582d-474b-9ba1-1fbabb2a2435.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8391228893058161,
+    "silhouette": {
+      "fg_ratio": 0.8391228893058161,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6420911949685534,
+      "mid_fill": 0.974625,
+      "bottom_fill": 0.8563124999999999,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.8786071565986917
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\41d590b6-165e-4166-952d-fee979d8c25c.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9330112570356472,
+    "silhouette": {
+      "fg_ratio": 0.9330112570356472,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8122641509433962,
+      "mid_fill": 1.0,
+      "bottom_fill": 0.9634062499999999,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.9634062499999999
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\45039ee5-2d40-4a5e-a92f-7912e520575b.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\4d591b2d-59aa-4977-9f27-db69929cb9d8.jpg",
+    "width": 400,
+    "height": 467,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8529603854389721,
+    "silhouette": {
+      "fg_ratio": 0.8529603854389721,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.894875,
+      "mid_fill": 0.9930714285714286,
+      "bottom_fill": 0.626595744680851,
+      "bottom_components": 13.0,
+      "bottom_mid_ratio": 0.630967447711423
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\4e6276b7-564c-4a32-9218-13cfc9148263.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6751172607879925,
+    "silhouette": {
+      "fg_ratio": 0.6751172607879925,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6140880503144653,
+      "mid_fill": 0.7009531250000001,
+      "bottom_fill": 0.70196875,
+      "bottom_components": 12.0,
+      "bottom_mid_ratio": 1.001448919997325
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\4f240f86-4530-44ad-aae1-4e2d781ad6be.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6739915572232645,
+    "silhouette": {
+      "fg_ratio": 0.6739915572232645,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8551886792452832,
+      "mid_fill": 0.717125,
+      "bottom_fill": 0.42978125,
+      "bottom_components": 23.0,
+      "bottom_mid_ratio": 0.5993114868398117
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\51b5e26f-be7c-476f-a3dc-98b7dff6f3a7.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\53c2539d-a472-4a71-88d8-6c0aaf0fe1eb.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7736491557223265,
+    "silhouette": {
+      "fg_ratio": 0.7736491557223265,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8211163522012579,
+      "mid_fill": 0.7430312499999999,
+      "bottom_fill": 0.771390625,
+      "bottom_components": 4.0,
+      "bottom_mid_ratio": 1.038167136308197
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\53e1ebfe-5216-4c95-b166-bee422a056f6.jpg",
+    "width": 400,
+    "height": 435,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\553b90b8-adf2-4467-8b3b-fe300bc0cf94.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6968105065666041,
+    "silhouette": {
+      "fg_ratio": 0.6968105065666041,
+      "top_margin": 0.013133208255159476,
+      "bottom_extent": 1.0,
+      "height_frac": 0.9868667917448405,
+      "top_fill": 0.4806687898089172,
+      "mid_fill": 0.8626273885350318,
+      "bottom_fill": 0.7064556962025317,
+      "bottom_components": 9.0,
+      "bottom_mid_ratio": 0.8189581105258891
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\5795a645-45b8-423a-887a-f8af020fa08d.jpg",
+    "width": 400,
+    "height": 712,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\58e81b94-b56b-4cab-85aa-c5990a81c249.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9177621722846442,
+    "silhouette": {
+      "fg_ratio": 0.9177621722846442,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.788453125,
+      "mid_fill": 0.9972360248447205,
+      "bottom_fill": 0.9478105590062111,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.9504375447665908
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\59225f02-287d-4f5a-8b0a-a9749ddd9d9d.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7447983114446529,
+    "silhouette": {
+      "fg_ratio": 0.7447983114446529,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9173113207547171,
+      "mid_fill": 0.7015781249999999,
+      "bottom_fill": 0.625625,
+      "bottom_components": 13.0,
+      "bottom_mid_ratio": 0.8917396049085767
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\5927c07b-c5cb-4167-9fda-9e6dd22fc872.jpg",
+    "width": 400,
+    "height": 710,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\5a1bcd89-5b3d-41a1-80a7-0665c2ce7f86.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8036985018726591,
+    "silhouette": {
+      "fg_ratio": 0.8036985018726591,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.5056093749999999,
+      "mid_fill": 0.9255434782608695,
+      "bottom_fill": 0.9401552795031056,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 1.0157872661689458
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\5d772eec-4af3-4f6b-9615-6b1c75b1adb2.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\5f569a69-0cee-47d8-b969-5e6678ca635a.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9286585365853659,
+    "silhouette": {
+      "fg_ratio": 0.9286585365853659,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9068553459119497,
+      "mid_fill": 0.998109375,
+      "bottom_fill": 0.858984375,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 0.8606114685577421
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\62609da4-6986-40f3-b88f-f3a6e55f6e6a.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\645d58e5-b817-46de-9f9d-53880eeeba92.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8255290262172285,
+    "silhouette": {
+      "fg_ratio": 0.8255290262172285,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.681265625,
+      "mid_fill": 0.9595341614906833,
+      "bottom_fill": 0.8043167701863354,
+      "bottom_components": 7.0,
+      "bottom_mid_ratio": 0.8382367220118457
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\661fff77-f427-4963-8d3a-2783343c547c.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8226500938086304,
+    "silhouette": {
+      "fg_ratio": 0.8226500938086304,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.837578616352201,
+      "mid_fill": 0.85375,
+      "bottom_fill": 0.7637968749999999,
+      "bottom_components": 7.0,
+      "bottom_mid_ratio": 0.8946376281112737
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6728b4d4-1f7d-4875-8a72-3899f61468cd.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\68228a47-2453-4cf3-bdf6-72bfdd39c58b.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\68f2a5c0-bd17-4181-9e09-108811ab4744.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8117354596622889,
+    "silhouette": {
+      "fg_ratio": 0.8117354596622889,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8564308176100628,
+      "mid_fill": 0.8924218749999999,
+      "bottom_fill": 0.6639531249999999,
+      "bottom_components": 10.0,
+      "bottom_mid_ratio": 0.7439901952201698
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6a2fef2d-6a7d-4293-8d03-e412d57090a5.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7227579737335835,
+    "silhouette": {
+      "fg_ratio": 0.7227579737335835,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.5713522012578617,
+      "mid_fill": 0.9032031249999999,
+      "bottom_fill": 0.620859375,
+      "bottom_components": 11.0,
+      "bottom_mid_ratio": 0.6873972839719749
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6b2a4812-5f04-40ca-aba3-f66607934a7e.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.4168011257035647,
+    "silhouette": {
+      "fg_ratio": 0.4168011257035647,
+      "top_margin": 0.009380863039399626,
+      "bottom_extent": 0.9549718574108818,
+      "height_frac": 0.9455909943714822,
+      "top_fill": 0.11181470608315701,
+      "mid_fill": 0.6535980064176965,
+      "bottom_fill": 0.5571758003255561,
+      "bottom_components": 4.0,
+      "bottom_mid_ratio": 0.8524747549022975
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6b5007a3-1ea0-4870-9325-cfd312065f78.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8445926966292134,
+    "silhouette": {
+      "fg_ratio": 0.8445926966292134,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.99734375,
+      "mid_fill": 0.9979658385093169,
+      "bottom_fill": 0.4907142857142856,
+      "bottom_components": 6.0,
+      "bottom_mid_ratio": 0.4917145124399009
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6d08108f-89b2-4b59-afba-8f85892bffa7.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9133630393996248,
+    "silhouette": {
+      "fg_ratio": 0.9133630393996248,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9240094339622641,
+      "mid_fill": 0.969890625,
+      "bottom_fill": 0.8172968749999999,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.842669115396388
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6d4f66c9-6739-4f2b-abe8-20f32fcff587.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6e70492a-b2c9-4fcd-8bd4-5395af5a9e26.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\6f620707-3a67-4a98-99c5-694763f3404f.jpg",
+    "width": 400,
+    "height": 494,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\738f5342-3cd6-4565-b6c9-be12d2bf311f.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\7447eb77-7509-4d30-ab41-0087749e05bd.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7705758426966293,
+    "silhouette": {
+      "fg_ratio": 0.7705758426966293,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.967984375,
+      "mid_fill": 0.8490217391304348,
+      "bottom_fill": 0.4843944099378883,
+      "bottom_components": 8.0,
+      "bottom_mid_ratio": 0.5705323993635351
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\79f4f25d-000c-4440-9ac8-2094a90a0fed.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\7c546852-22a8-468c-8c46-c1f4a13dec6b.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.5711866791744841,
+    "silhouette": {
+      "fg_ratio": 0.5711866791744841,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.17773584905660378,
+      "mid_fill": 0.9076562499999999,
+      "bottom_fill": 0.5431874999999999,
+      "bottom_components": 15.0,
+      "bottom_mid_ratio": 0.5984506799793423
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\7fa97b45-380a-4c9c-8de4-522976cb4972.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\81c0df9d-d061-4cb2-9376-c18ec9bba92c.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\82387448-c860-4b92-b055-a9ae4d060ef9.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\82942b72-fef2-4c9a-bf64-70525f95a654.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.9070919324577861,
+    "silhouette": {
+      "fg_ratio": 0.9070919324577861,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.893632075471698,
+      "mid_fill": 0.9545312500000002,
+      "bottom_fill": 0.8760468749999999,
+      "bottom_components": 8.0,
+      "bottom_mid_ratio": 0.9177770502537237
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\82cc97d5-b719-4a00-b6d6-e7dfead3dd75.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8102908067542214,
+    "silhouette": {
+      "fg_ratio": 0.8102908067542214,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7393396226415094,
+      "mid_fill": 0.7964843750000001,
+      "bottom_fill": 0.9064062500000001,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 1.1380088278567924
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\83cab907-b103-4c0f-92bb-dbe5b28bd7c5.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8547097378277153,
+    "silhouette": {
+      "fg_ratio": 0.8547097378277153,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6766875,
+      "mid_fill": 0.946972049689441,
+      "bottom_fill": 0.9072981366459627,
+      "bottom_components": 5.0,
+      "bottom_mid_ratio": 0.9581044519144051
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\84d794c2-532b-425e-aea0-6454d02ee5c1.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\86d27363-bc32-4e4d-9f4f-7581866e9b8a.jpg",
+    "width": 400,
+    "height": 711,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\876c8eb7-3f0a-4a47-a040-83ceb14b97c9.jpg",
+    "width": 534,
+    "height": 400,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7155898876404494,
+    "silhouette": {
+      "fg_ratio": 0.7155898876404494,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.3802902621722846,
+      "mid_fill": 0.7808520599250937,
+      "bottom_fill": 0.9400280898876405,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 1.2038491516277956
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\8acbe013-6f78-400b-a9e6-66144cf8574d.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\8ec70fdb-7ae0-400d-bfc6-ef2ce57f05fa.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.4770590994371482,
+    "silhouette": {
+      "fg_ratio": 0.4770590994371482,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.46734276729559754,
+      "mid_fill": 0.572984375,
+      "bottom_fill": 0.35671875000000003,
+      "bottom_components": 62.0,
+      "bottom_mid_ratio": 0.6225627880341414
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\9455eea0-e445-4382-ae2e-323acaaee464.jpg",
+    "width": 711,
+    "height": 400,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\9914e7ca-9b82-4a05-aeab-26098f937d7f.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8923405253283302,
+    "silhouette": {
+      "fg_ratio": 0.8923405253283302,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7775314465408806,
+      "mid_fill": 0.951953125,
+      "bottom_fill": 0.9248281250000001,
+      "bottom_components": 1.0,
+      "bottom_mid_ratio": 0.9715059499384491
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\9f0338d5-37b9-4837-964d-d68fa08cec3b.jpg",
+    "width": 400,
+    "height": 711,
+    "weak_label": "lower_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7454289732770746,
+    "silhouette": {
+      "fg_ratio": 0.7454289732770746,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.5642370892018779,
+      "mid_fill": 0.8789602803738319,
+      "bottom_fill": 0.7502686915887851,
+      "bottom_components": 10.0,
+      "bottom_mid_ratio": 0.8535865707944017
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\a85064d6-0f5d-4fce-9e3a-d1b5902c6098.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7842041198501872,
+    "silhouette": {
+      "fg_ratio": 0.7842041198501872,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8584687500000001,
+      "mid_fill": 0.9202173913043479,
+      "bottom_fill": 0.5303105590062112,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.5762883466639668
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\a8886e1f-5940-495a-a684-7355545fece8.jpg",
+    "width": 400,
+    "height": 454,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.775352422907489,
+    "silhouette": {
+      "fg_ratio": 0.775352422907489,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.8995772058823529,
+      "mid_fill": 0.9200364963503651,
+      "bottom_fill": 0.46220802919708026,
+      "bottom_components": 5.0,
+      "bottom_mid_ratio": 0.5023801023444007
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\ad3e3526-f578-4644-96df-9262ce8ed5e5.jpg",
+    "width": 400,
+    "height": 466,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7994527896995708,
+    "silhouette": {
+      "fg_ratio": 0.7994527896995708,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.473705035971223,
+      "mid_fill": 0.9442985611510791,
+      "bottom_fill": 0.9223392857142857,
+      "bottom_components": 2.0,
+      "bottom_mid_ratio": 0.9767454104663407
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\c1110144-06d3-4d8a-844a-de4557fc7058.jpg",
+    "width": 400,
+    "height": 432,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8743171296296296,
+    "silhouette": {
+      "fg_ratio": 0.8743171296296296,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6608720930232558,
+      "mid_fill": 0.9831201550387597,
+      "bottom_fill": 0.9466730769230768,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.9629271377167057
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\cd1c4b81-c1d7-4bf3-a30d-4adef98dc458.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.4596669793621013,
+    "silhouette": {
+      "fg_ratio": 0.4596669793621013,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.43800314465408813,
+      "mid_fill": 0.6051093750000001,
+      "bottom_fill": 0.22134375000000003,
+      "bottom_components": 31.0,
+      "bottom_mid_ratio": 0.3657913083894957
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\ceebb69d-fc80-4bb8-a061-db135ecc4e89.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.8093245778611632,
+    "silhouette": {
+      "fg_ratio": 0.8093245778611632,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.7561635220125785,
+      "mid_fill": 0.8714999999999999,
+      "bottom_fill": 0.7652343749999999,
+      "bottom_components": 9.0,
+      "bottom_mid_ratio": 0.878065834767642
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\d0a93d9e-6dc3-4f5a-9b3d-4f741c537d18.jpg",
+    "width": 400,
+    "height": 456,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7182620614035088,
+    "silhouette": {
+      "fg_ratio": 0.7182620614035088,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.9562132352941177,
+      "mid_fill": 0.7893978102189781,
+      "bottom_fill": 0.38596715328467157,
+      "bottom_components": 10.0,
+      "bottom_mid_ratio": 0.4889387179546453
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\d8c20701-80af-4d6c-b8fb-9c4535860b4b.jpg",
+    "width": 400,
+    "height": 476,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.6588235294117647,
+    "silhouette": {
+      "fg_ratio": 0.6588235294117647,
+      "top_margin": 0.09453781512605042,
+      "bottom_extent": 1.0,
+      "height_frac": 0.9054621848739496,
+      "top_fill": 0.6418023255813954,
+      "mid_fill": 0.8289615384615385,
+      "bottom_fill": 0.6546923076923077,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.7897740453765136
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\e102d2b6-60a1-427c-94d2-8ab6876cce30.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.420422138836773,
+    "silhouette": {
+      "fg_ratio": 0.420422138836773,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.07809748427672956,
+      "mid_fill": 0.673640625,
+      "bottom_fill": 0.414875,
+      "bottom_components": 66.0,
+      "bottom_mid_ratio": 0.6158699232250133
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\e43c414a-f5fc-456b-b11b-60dea7c6b2ec.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.5360694183864916,
+    "silhouette": {
+      "fg_ratio": 0.5360694183864916,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.42279874213836494,
+      "mid_fill": 0.7194062499999999,
+      "bottom_fill": 0.38721875000000006,
+      "bottom_components": 104.0,
+      "bottom_mid_ratio": 0.5382476868945747
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\e9db1ad3-67ef-46c3-923a-a33d279271ca.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.5719324577861163,
+    "silhouette": {
+      "fg_ratio": 0.5719324577861163,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.3644025157232704,
+      "mid_fill": 0.8027968750000001,
+      "bottom_fill": 0.4645625,
+      "bottom_components": 86.0,
+      "bottom_mid_ratio": 0.5786800054496973
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\ed9eb056-2f6b-4793-a045-33993416f4dd.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\ef2140de-3312-4c7a-85e8-a84ad24c1aee.jpg",
+    "width": 400,
+    "height": 533,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.5499249530956848,
+    "silhouette": {
+      "fg_ratio": 0.5499249530956848,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.4152358490566038,
+      "mid_fill": 0.7418125,
+      "bottom_fill": 0.40840624999999997,
+      "bottom_components": 10.0,
+      "bottom_mid_ratio": 0.5505518577807734
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\new clothes\\ff0535f7-c9f4-47f7-8aae-373aa3e09f04.jpg",
+    "width": 400,
+    "height": 534,
+    "weak_label": "upper_only",
+    "weak_label_source": "manifest",
+    "foreground_ratio": 0.7578089887640449,
+    "silhouette": {
+      "fg_ratio": 0.7578089887640449,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.853125,
+      "mid_fill": 0.8546273291925466,
+      "bottom_fill": 0.5437422360248447,
+      "bottom_components": 3.0,
+      "bottom_mid_ratio": 0.6362331480068316
+    }
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\368681-3640432.avif",
+  "weak_label": "upper_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.4409375,
+    "top_margin": 0.0625,
+    "bottom_extent": 0.940625,
+    "height_frac": 0.878125,
+    "top_fill": 0.6077707864004765,
+    "mid_fill": 0.9233343690929335,
+    "bottom_fill": 0.7892629393445055,
+    "bottom_components": 3.0,
+    "bottom_mid_ratio": 0.8547964483547414
+  },
+  "detections": [],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [],
+  "failures": [
+    "missed_detection"
+  ],
+  "overall_score": 0.0
+}

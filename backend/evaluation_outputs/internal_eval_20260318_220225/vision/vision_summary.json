@@ -1,0 +1,22 @@
+{
+  "dataset_size": 2,
+  "weak_label_distribution": {
+    "full_outfit": 1,
+    "unknown": 1
+  },
+  "detection_accuracy_proxy": 0.5,
+  "segmentation_success_rate": 1.0,
+  "color_success_rate": 1.0,
+  "pipeline_success_rate": 0.5,
+  "failure_counts": {
+    "missed_detection": 1
+  },
+  "mean_mask_quality_score": 1.0,
+  "mean_color_stability_score": 75.35,
+  "mean_lab_drift": 0.9606,
+  "mean_hsv_improvement_pct": 32.94,
+  "top_20_worst_images": [
+    "C:\\Users\\amogh\\Desktop\\clothes\\-1117Wx1400H-467293008-brown-MODEL.avif",
+    "C:\\Users\\amogh\\Desktop\\clothes\\1.jpg"
+  ]
+}

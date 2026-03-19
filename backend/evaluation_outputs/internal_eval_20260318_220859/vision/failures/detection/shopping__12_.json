@@ -1,0 +1,105 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (12).webp",
+  "weak_label": "full_outfit",
+  "weak_label_source": "silhouette_full",
+  "silhouette": {
+    "fg_ratio": 0.6106439917127072,
+    "top_margin": 0.0020833333333333333,
+    "bottom_extent": 1.0,
+    "height_frac": 0.9979166666666667,
+    "top_fill": 0.3382094218772206,
+    "mid_fill": 0.7600131335852238,
+    "bottom_fill": 0.7372929363963119,
+    "bottom_components": 6.0,
+    "bottom_mid_ratio": 0.9701055203062958
+  },
+  "detections": [
+    {
+      "label": "upper",
+      "confidence": 0.9053,
+      "bbox_xyxy": [
+        142,
+        242,
+        755,
+        1111
+      ]
+    },
+    {
+      "label": "upper",
+      "confidence": 0.5257,
+      "bbox_xyxy": [
+        348,
+        787,
+        812,
+        1200
+      ]
+    }
+  ],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        142,
+        242,
+        755,
+        1111
+      ],
+      "yolo_confidence": 0.9053,
+      "mask_path": "vision\\masks\\shopping__12__upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.6726,
+        "edge_touch_ratio": 0.1664,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9937,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "black",
+        "lab_palette": [
+          "black"
+        ],
+        "lab_confidence": 0.9348,
+        "lab_centroid": [
+          17.3376,
+          0.1531,
+          -2.8713
+        ],
+        "hsv_primary": "dark gray",
+        "hsv_centroid": [
+          16.0617,
+          0.1318,
+          -2.9269
+        ],
+        "mean_lab_drift": 3.7303,
+        "mean_hsv_drift": 2.4786,
+        "cluster_centroid_variance": 1.1646,
+        "color_stability_score": 62.06,
+        "hsv_vs_lab_improvement_pct": -50.5,
+        "lab_label_variants": [
+          "black",
+          "charcoal"
+        ],
+        "hsv_label_variants": [
+          "black",
+          "charcoal",
+          "dark gray"
+        ],
+        "background_leakage": {
+          "interior_var": 123.4424,
+          "edge_var": 114.2074,
+          "edge_delta_e": 4.9633,
+          "leakage_score": 0.3554
+        },
+        "color_ok": true,
+        "suspected_color_failure": false
+      }
+    }
+  ],
+  "failures": [
+    "missed_detection"
+  ],
+  "overall_score": 0.4862
+}

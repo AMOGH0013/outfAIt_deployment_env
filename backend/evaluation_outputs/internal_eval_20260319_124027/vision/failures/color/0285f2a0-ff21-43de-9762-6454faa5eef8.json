@@ -1,0 +1,95 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\new clothes\\0285f2a0-ff21-43de-9762-6454faa5eef8.jpg",
+  "weak_label": "upper_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.8062054409005629,
+    "top_margin": 0.0,
+    "bottom_extent": 1.0,
+    "height_frac": 1.0,
+    "top_fill": 0.9754846779237024,
+    "mid_fill": 0.7581769856160101,
+    "bottom_fill": 0.6794871794871795,
+    "bottom_components": 8.0,
+    "bottom_mid_ratio": 0.8962118243870248
+  },
+  "detections": [
+    {
+      "label": "upper",
+      "confidence": 0.9035,
+      "bbox_xyxy": [
+        94,
+        36,
+        435,
+        366
+      ]
+    }
+  ],
+  "detection_ok": true,
+  "detection_status": "ok",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        94,
+        36,
+        435,
+        366
+      ],
+      "yolo_confidence": 0.9035,
+      "mask_path": "vision\\masks\\0285f2a0-ff21-43de-9762-6454faa5eef8_upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.733,
+        "edge_touch_ratio": 0.2103,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9943,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "dark gray",
+        "lab_palette": [
+          "dark denim",
+          "indigo",
+          "sky blue"
+        ],
+        "lab_confidence": 0.4862,
+        "lab_centroid": [
+          29.4564,
+          5.1312,
+          -30.9133
+        ],
+        "hsv_primary": "blue",
+        "hsv_centroid": [
+          24.5646,
+          5.7061,
+          -28.939
+        ],
+        "mean_lab_drift": 5.7564,
+        "mean_hsv_drift": 7.6063,
+        "cluster_centroid_variance": 0.1311,
+        "color_stability_score": 51.72,
+        "hsv_vs_lab_improvement_pct": 24.32,
+        "lab_label_variants": [
+          "dark denim",
+          "indigo"
+        ],
+        "hsv_label_variants": [
+          "blue"
+        ],
+        "background_leakage": {
+          "interior_var": 36.4447,
+          "edge_var": 87.4887,
+          "edge_delta_e": 9.1585,
+          "leakage_score": 0.8291
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification"
+  ],
+  "overall_score": 0.8552
+}

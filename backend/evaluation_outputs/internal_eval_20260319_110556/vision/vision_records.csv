@@ -1,0 +1,35 @@
+image_path,weak_label,detection_status,failures,overall_score
+"C:\Users\amogh\Desktop\clothes\1.jpg",upper_only,missed_detection,"missed_detection",0.0
+"C:\Users\amogh\Desktop\clothes\2.jpg",upper_only,missed_detection,"missed_detection",0.0
+"C:\Users\amogh\Desktop\clothes\368681-3640432.avif",upper_only,missed_detection,"missed_detection",0.0
+"C:\Users\amogh\Desktop\clothes\shopping (10).webp",upper_only,missed_detection,"missed_detection",0.0
+"C:\Users\amogh\Desktop\clothes\shopping (20).webp",upper_only,wrong_class,"color_misclassification|wrong_class",0.4639
+"C:\Users\amogh\Desktop\clothes\shopping (11).webp",upper_only,wrong_class,"color_misclassification|wrong_class",0.4807
+"C:\Users\amogh\Desktop\clothes\shopping (16).webp",lower_only,wrong_class,"wrong_class",0.49
+"C:\Users\amogh\Desktop\clothes\shopping (15).webp",lower_only,wrong_class,"wrong_class",0.5059
+"C:\Users\amogh\Desktop\clothes\shopping (21).webp",lower_only,ok,"color_misclassification",0.8069
+"C:\Users\amogh\Desktop\clothes\shopping (19).webp",lower_only,ok,"color_misclassification",0.8218
+"C:\Users\amogh\Desktop\clothes\do2wnload.jpg",lower_only,ok,"color_misclassification",0.8276
+"C:\Users\amogh\Desktop\clothes\shopping (14).webp",full_outfit,ok,"color_misclassification",0.8483
+"C:\Users\amogh\Desktop\clothes\shopping (12).webp",upper_only,ok,"color_misclassification",0.8517
+"C:\Users\amogh\Desktop\clothes\shopping (17).webp",lower_only,ok,"color_misclassification",0.855
+"C:\Users\amogh\Desktop\clothes\shopping (23).webp",lower_only,ok,"color_misclassification",0.8562
+"C:\Users\amogh\Desktop\clothes\111.jpg",lower_only,ok,"color_misclassification",0.8576
+"C:\Users\amogh\Desktop\clothes\shopping (4).webp",upper_only,ok,"color_misclassification",0.8677
+"C:\Users\amogh\Desktop\clothes\shopping (8).webp",upper_only,ok,"color_misclassification",0.8736
+"C:\Users\amogh\Desktop\clothes\shopping (1).webp",upper_only,ok,"color_misclassification",0.8791
+"C:\Users\amogh\Desktop\clothes\shopping (18).webp",lower_only,ok,"color_misclassification",0.8853
+"C:\Users\amogh\Desktop\clothes\shopping (9).webp",upper_only,ok,"",0.8933
+"C:\Users\amogh\Desktop\clothes\shopping.webp",upper_only,ok,"",0.8967
+"C:\Users\amogh\Desktop\clothes\shopping (5).webp",upper_only,ok,"",0.8998
+"C:\Users\amogh\Desktop\clothes\222.jpg",lower_only,ok,"",0.9029
+"C:\Users\amogh\Desktop\clothes\shopping (3).webp",upper_only,ok,"",0.9031
+"C:\Users\amogh\Desktop\clothes\imag2es.jpg",lower_only,ok,"",0.9044
+"C:\Users\amogh\Desktop\clothes\shopping (6).webp",upper_only,ok,"",0.9148
+"C:\Users\amogh\Desktop\clothes\5.jpg",upper_only,ok,"",0.9239
+"C:\Users\amogh\Desktop\clothes\shopping (7).webp",upper_only,ok,"",0.9254
+"C:\Users\amogh\Desktop\clothes\-1117Wx1400H-467293008-brown-MODEL.avif",upper_only,ok,"",0.9258
+"C:\Users\amogh\Desktop\clothes\shopping (22).webp",lower_only,ok,"",0.9264
+"C:\Users\amogh\Desktop\clothes\shopping (2).webp",upper_only,ok,"",0.9324
+"C:\Users\amogh\Desktop\clothes\shopping (13).webp",lower_only,ok,"",0.9343
+"C:\Users\amogh\Desktop\clothes\images.jpg",lower_only,ok,"",0.9544

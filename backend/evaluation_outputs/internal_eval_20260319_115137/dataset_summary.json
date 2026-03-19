@@ -1,0 +1,9 @@
+{
+  "dataset_dir": "C:\\Users\\amogh\\Desktop\\new clothes",
+  "label_manifest": "D:\\MSc. Data Science\\SEM - 4\\Recommender Systems\\ISA4 - Outfit AI\\backend\\evaluation\\manifests\\new_clothes_manifest.json",
+  "image_count": 90,
+  "weak_label_distribution": {
+    "full_outfit": 57,
+    "unknown": 33
+  }
+}

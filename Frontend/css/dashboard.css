@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Higuen Serif';
+    src: url('Higuen Serif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    background-color: #f5f0e8;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #d9d2c4;
+    padding: 20px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-logo {
+    width: 50px;
+    height: 34px;
+}
+
+.nav-brand-name {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    font-family: 'Higuen Serif', 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+}
+
+.brand-light {
+    color: #a89b82;
+    font-weight: 300;
+}
+
+.brand-dark {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.logout-button {
+    padding: 12px 28px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.welcome-title {
+    font-size: 48px;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    font-family: 'Higuen Serif', 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+}
+
+.welcome-title span {
+    color: #6b6250;
+    font-weight: 400;
+}
+
+.welcome-subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: #8c8470;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.dashboard-card {
+    background-color: #d9d2c4;
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    font-family: 'Higuen Serif', 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+}
+
+.card-description {
+    font-size: 16px;
+    font-weight: 300;
+    color: #6b6250;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.card-button {
+    padding: 12px 32px;
+    background-color: #8c8470;
+    color: #f5f0e8;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    transition: all 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #1a1a1a;
+    transform: scale(1.05);
+}
+
+.card-button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+    }
+
+    .nav-logo {
+        width: 40px;
+        height: 27px;
+    }
+
+    .nav-brand-name {
+        font-size: 24px;
+    }
+
+    .logout-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+
+    .welcome-title {
+        font-size: 36px;
+    }
+
+    .welcome-subtitle {
+        font-size: 18px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand {
+        gap: 8px;
+    }
+
+    .nav-brand-name {
+        font-size: 20px;
+    }
+
+    .welcome-title {
+        font-size: 28px;
+    }
+
+    .welcome-subtitle {
+        font-size: 16px;
+    }
+
+    .dashboard-card {
+        padding: 30px 20px;
+    }
+
+    .card-icon {
+        font-size: 48px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+}

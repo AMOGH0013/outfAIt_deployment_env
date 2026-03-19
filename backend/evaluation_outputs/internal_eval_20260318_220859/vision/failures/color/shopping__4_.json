@@ -1,0 +1,175 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (4).webp",
+  "weak_label": "full_outfit",
+  "weak_label_source": "silhouette_full",
+  "silhouette": {
+    "fg_ratio": 0.386907154340836,
+    "top_margin": 0.025,
+    "bottom_extent": 1.0,
+    "height_frac": 0.975,
+    "top_fill": 0.30867246922292796,
+    "mid_fill": 0.7742884027287698,
+    "bottom_fill": 0.6007704069630674,
+    "bottom_components": 1.0,
+    "bottom_mid_ratio": 0.7759000455719275
+  },
+  "detections": [
+    {
+      "label": "upper",
+      "confidence": 0.7427,
+      "bbox_xyxy": [
+        192,
+        189,
+        514,
+        715
+      ]
+    },
+    {
+      "label": "upper",
+      "confidence": 0.4581,
+      "bbox_xyxy": [
+        211,
+        553,
+        507,
+        799
+      ]
+    },
+    {
+      "label": "lower",
+      "confidence": 0.2996,
+      "bbox_xyxy": [
+        212,
+        574,
+        508,
+        799
+      ]
+    }
+  ],
+  "detection_ok": true,
+  "detection_status": "ok",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        192,
+        189,
+        514,
+        715
+      ],
+      "yolo_confidence": 0.7427,
+      "mask_path": "vision\\masks\\shopping__4__upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.6966,
+        "edge_touch_ratio": 0.1681,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9853,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "light gray",
+        "lab_palette": [
+          "light gray"
+        ],
+        "lab_confidence": 0.8427,
+        "lab_centroid": [
+          72.2257,
+          -13.9899,
+          9.117
+        ],
+        "hsv_primary": "gray",
+        "hsv_centroid": [
+          74.5908,
+          -12.5059,
+          5.5167
+        ],
+        "mean_lab_drift": 4.5622,
+        "mean_hsv_drift": 3.9954,
+        "cluster_centroid_variance": 0.0209,
+        "color_stability_score": 55.58,
+        "hsv_vs_lab_improvement_pct": -14.19,
+        "lab_label_variants": [
+          "gray",
+          "light gray",
+          "off white"
+        ],
+        "hsv_label_variants": [
+          "gray",
+          "light gray",
+          "off white"
+        ],
+        "background_leakage": {
+          "interior_var": 60.6639,
+          "edge_var": 71.7556,
+          "edge_delta_e": 4.9127,
+          "leakage_score": 0.4185
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    },
+    {
+      "label": "lower",
+      "bbox_xyxy": [
+        212,
+        574,
+        508,
+        799
+      ],
+      "yolo_confidence": 0.2996,
+      "mask_path": "vision\\masks\\shopping__4__lower_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.975,
+        "edge_touch_ratio": 0.8491,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.8749,
+        "quality_score": 0.55
+      },
+      "color": {
+        "lab_primary": "light gray",
+        "lab_palette": [
+          "light gray",
+          "khaki"
+        ],
+        "lab_confidence": 0.7252,
+        "lab_centroid": [
+          75.0876,
+          -14.4762,
+          8.014
+        ],
+        "hsv_primary": "gray",
+        "hsv_centroid": [
+          73.6276,
+          -13.9732,
+          7.3569
+        ],
+        "mean_lab_drift": 4.2815,
+        "mean_hsv_drift": 3.8956,
+        "cluster_centroid_variance": 0.0773,
+        "color_stability_score": 59.56,
+        "hsv_vs_lab_improvement_pct": -9.91,
+        "lab_label_variants": [
+          "light gray",
+          "off white"
+        ],
+        "hsv_label_variants": [
+          "gray",
+          "light gray"
+        ],
+        "background_leakage": {
+          "interior_var": 63.1196,
+          "edge_var": 122.6715,
+          "edge_delta_e": 5.2429,
+          "leakage_score": 0.6169
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification"
+  ],
+  "overall_score": 0.8052
+}

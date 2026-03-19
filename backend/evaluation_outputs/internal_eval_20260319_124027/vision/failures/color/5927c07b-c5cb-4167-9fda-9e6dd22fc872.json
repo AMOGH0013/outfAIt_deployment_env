@@ -1,0 +1,109 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\new clothes\\5927c07b-c5cb-4167-9fda-9e6dd22fc872.jpg",
+  "weak_label": "upper_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.0,
+    "top_margin": 1.0,
+    "bottom_extent": 0.0,
+    "height_frac": 0.0,
+    "top_fill": 0.0,
+    "mid_fill": 0.0,
+    "bottom_fill": 0.0,
+    "bottom_components": 0.0,
+    "bottom_mid_ratio": 0.0
+  },
+  "detections": [
+    {
+      "label": "upper",
+      "confidence": 0.9044,
+      "bbox_xyxy": [
+        16,
+        179,
+        390,
+        551
+      ]
+    },
+    {
+      "label": "upper",
+      "confidence": 0.2451,
+      "bbox_xyxy": [
+        0,
+        0,
+        395,
+        293
+      ]
+    }
+  ],
+  "detection_ok": true,
+  "detection_status": "ok",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        16,
+        179,
+        390,
+        551
+      ],
+      "yolo_confidence": 0.9044,
+      "mask_path": "vision\\masks\\5927c07b-c5cb-4167-9fda-9e6dd22fc872_upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.744,
+        "edge_touch_ratio": 0.1915,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9927,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "multicolor",
+        "lab_palette": [
+          "dark denim",
+          "black",
+          "dark navy",
+          "slate"
+        ],
+        "lab_confidence": 1.0,
+        "lab_centroid": [
+          14.6778,
+          0.8783,
+          -16.2127
+        ],
+        "hsv_primary": "blue",
+        "hsv_centroid": [
+          21.5837,
+          0.3883,
+          -19.2208
+        ],
+        "mean_lab_drift": 5.1147,
+        "mean_hsv_drift": 6.7043,
+        "cluster_centroid_variance": 4.2108,
+        "color_stability_score": 19.95,
+        "hsv_vs_lab_improvement_pct": 23.71,
+        "lab_label_variants": [
+          "black",
+          "charcoal",
+          "dark denim",
+          "dark navy"
+        ],
+        "hsv_label_variants": [
+          "black",
+          "blue"
+        ],
+        "background_leakage": {
+          "interior_var": 32.0676,
+          "edge_var": 83.5189,
+          "edge_delta_e": 8.4509,
+          "leakage_score": 0.8624
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification"
+  ],
+  "overall_score": 0.7598
+}

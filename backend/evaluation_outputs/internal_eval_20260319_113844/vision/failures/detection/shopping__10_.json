@@ -1,0 +1,35 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (10).webp",
+  "weak_label": "upper_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.6747981770833333,
+    "top_margin": 0.013541666666666667,
+    "bottom_extent": 0.9875,
+    "height_frac": 0.9739583333333334,
+    "top_fill": 0.5961821311218901,
+    "mid_fill": 0.8672586449694885,
+    "bottom_fill": 0.6795476957977494,
+    "bottom_components": 2.0,
+    "bottom_mid_ratio": 0.783558284185979
+  },
+  "detections": [
+    {
+      "label": "lower",
+      "confidence": 0.757,
+      "bbox_xyxy": [
+        18,
+        15,
+        984,
+        991
+      ]
+    }
+  ],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [],
+  "failures": [
+    "missed_detection"
+  ],
+  "overall_score": 0.0
+}

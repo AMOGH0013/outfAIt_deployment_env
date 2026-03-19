@@ -1,0 +1,40 @@
+[
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\-1117Wx1400H-467293008-brown-MODEL.avif",
+    "width": 766,
+    "height": 960,
+    "weak_label": "full_outfit",
+    "weak_label_source": "silhouette_full",
+    "foreground_ratio": 0.7853228350739774,
+    "silhouette": {
+      "fg_ratio": 0.7853228350739774,
+      "top_margin": 0.0,
+      "bottom_extent": 1.0,
+      "height_frac": 1.0,
+      "top_fill": 0.6965114592399188,
+      "mid_fill": 0.8946547722657383,
+      "bottom_fill": 0.7405080504786771,
+      "bottom_components": 15.0,
+      "bottom_mid_ratio": 0.8277025657654736
+    }
+  },
+  {
+    "path": "C:\\Users\\amogh\\Desktop\\clothes\\1.jpg",
+    "width": 183,
+    "height": 275,
+    "weak_label": "unknown",
+    "weak_label_source": "silhouette_empty",
+    "foreground_ratio": 0.0,
+    "silhouette": {
+      "fg_ratio": 0.0,
+      "top_margin": 1.0,
+      "bottom_extent": 0.0,
+      "height_frac": 0.0,
+      "top_fill": 0.0,
+      "mid_fill": 0.0,
+      "bottom_fill": 0.0,
+      "bottom_components": 0.0,
+      "bottom_mid_ratio": 0.0
+    }
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "dataset_size": 5,
+  "weak_label_distribution": {
+    "full_outfit": 2,
+    "unknown": 3
+  },
+  "detection_accuracy_proxy": 0.6,
+  "segmentation_success_rate": 1.0,
+  "color_success_rate": 0.8,
+  "pipeline_success_rate": 0.6,
+  "failure_counts": {
+    "missed_detection": 2,
+    "color_misclassification": 1
+  },
+  "mean_mask_quality_score": 0.91,
+  "mean_color_stability_score": 67.01,
+  "mean_lab_drift": 2.9712,
+  "mean_hsv_improvement_pct": 4.0,
+  "top_20_worst_images": [
+    "C:\\Users\\amogh\\Desktop\\clothes\\111.jpg",
+    "C:\\Users\\amogh\\Desktop\\clothes\\-1117Wx1400H-467293008-brown-MODEL.avif",
+    "C:\\Users\\amogh\\Desktop\\clothes\\2.jpg",
+    "C:\\Users\\amogh\\Desktop\\clothes\\222.jpg",
+    "C:\\Users\\amogh\\Desktop\\clothes\\1.jpg"
+  ]
+}

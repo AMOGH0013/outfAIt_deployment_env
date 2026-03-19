@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>outfAIt - Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="outfAIt Logo" class="logo-icon">
+            </a>
+
+            <h1 class="brand-name">
+                <span class="brand-light">outf</span><span class="brand-dark">AI</span><span
+                    class="brand-light">t</span>
+            </h1>
+        </div>
+
+        <div class="signup-card">
+            <h2 class="signup-title">signUp</h2>
+
+            <form class="signup-form" id="signupForm">
+                <input type="text" class="input-field" id="name" placeholder="Full Name" required />
+                <input type="email" class="input-field" id="email" placeholder="Email Address" required />
+                <input type="password" class="input-field" id="password" placeholder="Password" required />
+                <input type="password" class="input-field" id="confirmPassword" placeholder="Confirm Password"
+                    required />
+
+                <div class="error-message" id="errorMessage"></div>
+
+                <button type="submit" class="signup-button">Sign Up</button>
+                <a href="signin.html" class="signin-link">Already a member? Log In</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Validation
+            if (!name || !email || !password || !confirmPassword) {
+                errorMessage.textContent = 'All fields are required';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            if (password.length < 6) {
+                errorMessage.textContent = 'Password must be at least 6 characters';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Register user
+            const result = registerUser(name, email, password);
+
+            if (result.success) {
+                // Redirect to dashboard
+                window.location.href = 'dashboard.html';
+            } else {
+                errorMessage.textContent = result.message;
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

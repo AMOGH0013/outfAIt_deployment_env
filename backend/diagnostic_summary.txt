@@ -1,0 +1,272 @@
+WARDROBE RECOMMENDER — DEEP DIAGNOSTIC EVALUATION
+Started: 2026-03-16 15:31:52
+Project: D:\MSc. Data Science\SEM - 4\Recommender Systems\ISA4 - Outfit AI\backend
+Uploads: 217 files
+
+======================================================================
+  SECTION 1 — Outfit Engine: Top-Repetition & Diversity
+======================================================================
+
+-- 1.1  Top-repetition rate vs wardrobe size --
+  2T 2B (tiny)         | days=7 | unique_tops=2/2 | max_streak=3 | most_used_top=5x | colors=['blue', 'red', 'blue', 'red', 'blue', 'blue', 'blue']
+      [!] PROBLEM DETECTED: streak=3, only 2 of 2 tops used in 7 days
+  3T 2B (small)        | days=7 | unique_tops=3/3 | max_streak=1 | most_used_top=3x | colors=['blue', 'red', 'green', 'blue', 'red', 'green', 'blue']
+  5T 3B (medium)       | days=7 | unique_tops=5/5 | max_streak=2 | most_used_top=3x | colors=['blue', 'red', 'green', 'navy', 'white', 'blue', 'blue']
+  8T 4B (realistic)    | days=7 | unique_tops=7/8 | max_streak=1 | most_used_top=1x | colors=['blue', 'red', 'green', 'orange', 'purple', 'navy', 'white']
+  12T 5B (large)       | days=7 | unique_tops=7/12 | max_streak=1 | most_used_top=1x | colors=['blue', 'red', 'green', 'orange', 'purple', 'yellow', 'navy']
+
+-- 1.2  Score decomposition — why does one top dominate? --
+  Day-by-day score breakdown (tops only):
+  Day 1: top=blue     bottom=black  rule=1.000 novelty_top=1.00 harmony=1.00 final=1.000
+  Day 2: top=navy     bottom=black  rule=0.940 novelty_top=1.00 harmony=0.80 final=0.940
+  Day 3: top=white    bottom=black  rule=0.940 novelty_top=1.00 harmony=0.80 final=0.940
+  Day 4: top=green    bottom=black  rule=0.914 novelty_top=0.43 harmony=1.00 final=0.910
+  Day 5: top=red      bottom=black  rule=0.871 novelty_top=0.14 harmony=1.00 final=0.750
+  Day 6: top=blue     bottom=gray   rule=1.000 novelty_top=1.00 harmony=1.00 final=0.750
+  Day 7: top=blue     bottom=navy   rule=1.000 novelty_top=1.00 harmony=1.00 final=0.750
+
+  Never-worn tops used: 4/7 days (57%) — high % means novelty dominates selection
+
+-- 1.3  Cooldown penalty effectiveness --
+  ITEM_COOLDOWN_DAYS = 2
+  ITEM_COOLDOWN_PENALTY = -0.12
+  [OK] worn 0 days ago      → penalty=-0.120 (fires=True, expected=True)
+  [OK] worn 1 day ago       → penalty=-0.120 (fires=True, expected=True)
+  [OK] worn 2 days ago      → penalty=0.000 (fires=False, expected=False)
+  [OK] worn 3 days ago      → penalty=0.000 (fires=False, expected=False)
+  [OK] never worn           → penalty=0.000 (fires=False, expected=False)
+
+-- 1.4  Pair deduplication across planning session --
+  2T 2B wardrobe, 7-day plan: 7 days, 4 unique pairs
+  Pair sequence: [('blue', 'black'), ('red', 'black'), ('blue', 'gray'), ('red', 'gray'), ('blue', 'black'), ('blue', 'black'), ('blue', 'black')]
+  [!] Pairs repeated: 3 duplicate pair(s) in plan
+
+-- 1.5  Determinism check (same inputs → same plan?) --
+  Same seed → same plan: [OK] YES
+
+-- ROOT-CAUSE ANALYSIS: Outfit Engine --
+  [!] Wardrobe 2T 2B (tiny): max streak=3, only 2/2 tops used
+
+  WHERE TO LOOK:
+  • outfit_engine.py → generate_weekly_plan(): used_pairs only blocks exact
+    top+bottom combos, not individual tops. A top can appear every day paired
+    with a different bottom. Fix: track used_top_ids separately from used_pairs.
+  • outfit_engine.py → rule_score(): novelty weight is 0.30 total (0.15 top +
+    0.15 bottom). Items never worn get novelty=1.0, giving them a +0.30 bonus
+    that persists every day since last_worn_at isn't updated within the session.
+  • outfit_engine.py → _cooldown_penalty(): only fires for items worn in the
+    DB (last_worn_at). Items used earlier in the SAME planning session don't
+    get a cooldown — so day 1's top is equally attractive on day 3.
+
+======================================================================
+  SECTION 2 — Color Extraction: Accuracy & Anchor Gap Analysis
+======================================================================
+
+-- 2.1  Known problem colors: LAB distance to nearest anchors --
+  Label                          RGB                  Got             Expected     Gap      Status
+  ------------------------------------------------------------------------------------------
+  dark green shirt               RGB(30, 90, 40)         green           green            0.84 [OK]
+  forest green                   RGB(20, 80, 45)         green           green            7.80 [OK]
+  dark teal green                RGB(20, 85, 75)         teal            teal            10.33 [OK]
+  olive/khaki                    RGB(110, 120, 50)       olive           olive           27.17 [OK]
+  very dark green                RGB(10, 50, 20)         green           green            0.91 [OK]
+  teal-blue dark                 RGB(15, 80, 90)         teal-gray       teal             4.82 [OK]
+  charcoal gray                  RGB(55, 60, 65)         gray            gray             3.84 [OK]
+  dark navy                      RGB(8, 12, 50)          navy            navy            16.62 [OK]
+  pure black fabric              RGB(15, 15, 15)         black           black           16.88 [OK]
+  dark denim                     RGB(30, 50, 90)         navy-gray       blue             6.58 [FAIL] MISS
+  light wash denim               RGB(160, 195, 220)      blue            blue             2.96 [OK]
+  mustard yellow                 RGB(200, 165, 30)       yellow          yellow          23.87 [OK]
+  burnt orange                   RGB(200, 80, 20)        orange-red      orange           8.82 [OK]
+  dusty pink                     RGB(210, 145, 140)      pink            pink             4.12 [OK]
+  wine/burgundy                  RGB(100, 20, 30)        red-brown       red              5.93 [OK]
+  bright purple shirt            RGB(120, 0, 130)        purple          purple          16.59 [OK]
+  shadow purple                  RGB(55, 10, 70)         purple-navy     purple           0.89 [OK]
+  beige/cream                    RGB(220, 205, 175)      beige-gray      beige            9.92 [OK]
+  sand/tan                       RGB(195, 170, 130)      beige           beige           17.67 [OK]
+  rust red                       RGB(180, 55, 25)        red             red              8.37 [OK]
+
+  Total misclassifications: 1/20
+
+-- 2.2  Anchor coverage — color-space holes --
+  Colors >20 LAB units from any anchor: 49
+  Underrepresented hue regions:
+    Hue   0- 30°: 4 holes, avg_dist=22.3, nearest={'dark_gray', 'pink', 'brown'}
+    Hue  30- 60°: 3 holes, avg_dist=25.6, nearest={'beige', 'olive', 'brown'}
+    Hue  60- 90°: 4 holes, avg_dist=25.7, nearest={'beige', 'olive', 'yellow'}
+    Hue  90-120°: 3 holes, avg_dist=24.4, nearest={'green'}
+    Hue 120-150°: 1 holes, avg_dist=24.6, nearest={'green'}
+    Hue 150-180°: 1 holes, avg_dist=23.5, nearest={'teal'}
+    Hue 180-210°: 2 holes, avg_dist=21.6, nearest={'light_blue'}
+    Hue 210-240°: 4 holes, avg_dist=22.6, nearest={'light_blue', 'navy', 'slate'}
+    Hue 240-270°: 3 holes, avg_dist=23.0, nearest={'dark_purple', 'navy'}
+    Hue 270-300°: 5 holes, avg_dist=23.7, nearest={'dark_purple', 'purple', 'blue'}
+    Hue 300-330°: 8 holes, avg_dist=25.1, nearest={'purple', 'lavender', 'charcoal', 'dark_navy', 'dark_purple'}
+    Hue 330-360°: 11 holes, avg_dist=27.0, nearest={'dark_red', 'brown', 'charcoal', 'dark_navy', 'pink', 'black', 'dark_purple', 'dark_gray'}
+
+-- 2.3  Skin filter effectiveness --
+  Test                                Filtered   Skin left  % removed
+  Dark green + light skin                    800          0    100.0%
+  Navy + medium skin                         700          0    100.0%
+  Black + dark skin                         1000        250      0.0%
+  White shirt + light skin                  1000        150      0.0%
+  Red + tanned skin                          800          0    100.0%
+
+  [!] Poor skin filtering (< 70% removed): ['Black + dark skin', 'White shirt + light skin']
+  WHERE TO LOOK: _filter_garment_pixels_bgr() in color_extraction.py
+  The not_skin condition uses HSV hue <= 25, S 20-85, V 90-240.
+  Dark skin (V < 90) and very pale skin (S < 20) slip through.
+
+-- 2.4  Real image extraction on uploads/ --
+  Testing 30 images from uploads/
+
+  Confidence stats across 30 images:
+    Mean:   0.764
+    Median: 0.748
+    Min:    0.414
+    Max:    1.000
+    < 0.40: 0 images (0%)
+    compound labels: 12 images
+
+  Color distribution: {'pink': 6, 'gray': 4, 'multicolor': 4, 'purple-blue': 3, 'beige-gray': 3, 'white': 3, 'brown-gray': 3, 'black-gray': 2, 'gray-blue': 1, 'beige': 1}
+
+-- ROOT-CAUSE ANALYSIS: Color Extraction --
+  Misclassified known colors: 1
+    RGB(30, 50, 90) 'dark denim' → got 'navy-gray', expected 'blue', gap=6.58
+      FIX: Add anchor near RGB(30, 50, 90) named 'blue_variant' in _COLOR_ANCHORS_RGB
+
+  WHERE TO LOOK:
+  • color_extraction.py → _COLOR_ANCHORS_RGB: Missing anchors for dark greens.
+    Dark green (10,70,25) and navy (5,10,70) are only 22 LAB units apart.
+    Any dark green pixel with slight blue cast lands closer to navy.
+    Add forest_green(20,80,45), dark_teal(15,80,75), teal_green(25,100,70).
+  • color_extraction.py → extract_dominant_colors(): KMeans runs on BGR,
+    not LAB. Cluster centers in BGR space don't correspond to perceptual
+    color centers. A dark green cluster center can drift toward dark blue.
+    Fix: convert pixels to LAB before KMeans, use LAB centers directly.
+  • color_extraction.py → _filter_garment_pixels_bgr(): skin filter misses
+    dark skin (V<90). This bleeds dark-toned pixels into the sample,
+    pulling green cluster centers toward darker, bluer values → navy/black.
+
+======================================================================
+  SECTION 3 — SAM Mask Quality Audit
+======================================================================
+  Auditing 107 mask files
+
+  Mask coverage stats (107 masks):
+    Mean white%:      0.384
+    Median white%:    0.379
+    > 85% white (inversion suspect): 10
+    Center is masked: 97.2% of masks
+    Mean components:  13.8
+    > 5 components (fragmented): 47
+    BG bleed > 20%:   29
+
+  [!] Probable inversion artifacts (mask captured background):
+    08a76660-ad74-477c-9e90-107adb550256_shopping (4)_mask.png   white=1.00 center=True
+    16072103-4ca0-4640-8424-8c9e3ecb41ed_shopping (7)_mask.png   white=0.98 center=True
+    5ff81162-22a6-439c-aa15-d1d6ac5cb833_shopping (21)_mask.png  white=1.00 center=True
+    6e6b9cda-eb93-4221-9f04-213ed85a5ee3_smoketest_purple_mask.p white=1.00 center=True
+    875013c7-f923-4564-a6d3-0bce570c7843_shopping (1)_mask.png   white=1.00 center=True
+
+  [!] Highly fragmented masks (SAM split garment into pieces):
+    03cc4b11-c99d-49ff-a51c-31ae2fd14089_images_mask.png         components=23
+    0cda0300-0412-47f4-ab3b-db43d8f72633_shopping (9)_mask.png   components=182
+    1920fd51-fc41-4a67-80e1-1ddc9434d8c0_shopping (20)_mask.png  components=13
+    1fb3e82d-2125-4828-a0ce-9e661f2bde61_shopping_mask.png       components=12
+    2d98fea7-4121-456e-a297-2264de309295_1_mask.png              components=6
+
+  [!] Background bleed detected:
+    08a76660-ad74-477c-9e90-107adb550256_shopping (4)_mask.png   bleed_score=0.741
+    10a8f779-c0bb-4f7a-b0f4-41eb5c162f4c_111_mask.png            bleed_score=0.935
+    1400b643-739f-479a-b70b-ea848a4c3c19_4_mask.png              bleed_score=0.959
+    17e6dfd3-f4a1-480a-b148-33848cda5fec_images_mask.png         bleed_score=0.981
+    284e7048-a39d-47bb-b33a-1c870c3d57d6_4_mask.png              bleed_score=0.959
+
+-- ROOT-CAUSE ANALYSIS: SAM Segmentation --
+  WHERE TO LOOK:
+  • sam_segmentation.py → segment_clothing(): The 3x3 grid spans
+    25%-75% of width/height. For person-worn photos, arms extend to
+    edges, so outer grid points land on skin/background.
+    Fix: cluster grid tighter (35%-65% width, 40%-60% height).
+  • sam_segmentation.py → The center-pixel inversion check is a heuristic.
+    It fails when the garment is lighter than background (e.g. white shirt
+    on a cream wall) because the center IS bright, masking passes, but
+    the background also passes the brightness test.
+  • sam_segmentation.py → No explicit background rejection points (label=0).
+    SAM is being told 9 'is foreground' points but no 'is background' hints.
+    Adding corner rejection points dramatically improves accuracy.
+  • _fallback_threshold_mask(): threshold 245 is too loose for gray bgs.
+    Gray background (mean ~190) passes easily. GrabCut would handle this.
+
+======================================================================
+  SECTION 4 — Integration: Scoring Pipeline Consistency
+======================================================================
+
+-- 4.1  NEUTRAL_COLORS set vs color_extraction anchor outputs --
+  Colors extractor can output: ['beige', 'black', 'blue', 'brown', 'gray', 'green', 'navy', 'olive', 'orange', 'pink', 'purple', 'red', 'teal', 'violet', 'white', 'yellow']
+  NEUTRAL_COLORS set:          ['beige', 'black', 'brown', 'gray', 'navy', 'olive', 'teal', 'white']
+  In extractor but not neutral: ['blue', 'green', 'orange', 'pink', 'purple', 'red', 'violet', 'yellow']
+  In neutral but extractor never outputs: []
+
+-- 4.2  Compound label handling in scoring --
+  'purple-navy         ' → primary='purple' in_neutral=False
+  'blue-purple         ' → primary='blue' in_neutral=False
+  'gray-black          ' → primary='gray' in_neutral=True
+  'beige-gray          ' → primary='beige' in_neutral=True
+  'yellow-orange       ' → primary='yellow' in_neutral=False
+  'teal-green          ' → primary='teal' in_neutral=True
+  'red-orange          ' → primary='red' in_neutral=False
+
+-- 4.3  Score component sensitivity analysis --
+  Base rule_score: 1.0000
+    = 0.40 * body_shape (0.400)
+    + 0.30 * color_harmony (0.300)
+    + 0.15 * novelty_top (0.150)
+    + 0.15 * novelty_bottom (0.150)
+
+  If top worn TODAY: rule_score=0.8500 (delta=-0.1500)
+  This -0.15 change IS enough to change outfit ranking
+
+======================================================================
+  SECTION 5 — Pattern Summary & Codex Fix Guidance
+======================================================================
+PROBLEM 1 — OUTFIT REPETITION
+  Confirmed: YES — found in configs: ['2T 2B (tiny)']
+  Root cause: novelty_score() dominates (57% of days go to never-worn tops)
+  Mechanism: used_pairs blocks top+bottom combos but NOT individual tops.
+    Top A + Pants 1 = blocked. Top A + Pants 2 = allowed. Top A wins again.
+  Fix location: generate_weekly_plan() in outfit_engine.py
+  Fix: track used_top_ids set separately. After each day, add top.id to
+    used_top_ids. In _score_candidates, apply -0.25 penalty to any top
+    whose id is in used_top_ids from the current session.
+
+PROBLEM 2 — BACKGROUND SEPARATION
+  Inversion artifacts: 10 masks
+  Fragmented masks: 47 masks
+  Background bleed: 29 masks
+  Fix locations: sam_segmentation.py → segment_clothing()
+  Fix: add background rejection points at image corners (label=0),
+    tighten grid to center 35-65% of image,
+    replace fallback threshold with GrabCut for gray backgrounds.
+
+PROBLEM 3 — COLOR MISCLASSIFICATION
+  Known color misclassifications: 1/20 test colors
+  Color-space holes (>20 LAB units from any anchor): 49
+  Low-confidence extractions on real images: 0
+  Fix location: color_extraction.py → _COLOR_ANCHORS_RGB
+  Fix: add forest_green(20,80,45), dark_teal(15,80,75), teal_green(25,100,70),
+    charcoal(50,55,60), slate(70,80,90), dark_navy(8,12,50).
+  Additional fix: run KMeans in LAB space, not BGR — BGR centroids drift
+    toward perceptually-wrong midpoints on dark complex garments.
+
+======================================================================
+  PRIORITY ORDER FOR CODEX
+======================================================================
+  1. outfit_engine.py: add per-session used_top_ids tracking  (30 min fix)
+  2. color_extraction.py: add 6 missing dark/teal anchors      (15 min fix)
+  3. color_extraction.py: KMeans in LAB space                  (30 min fix)
+  4. sam_segmentation.py: add corner rejection points + GrabCut (1 hr fix)
+
+Total runtime: 8.6s
+Finished: 2026-03-16 15:32:00

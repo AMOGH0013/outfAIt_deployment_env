@@ -1,0 +1,99 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\new clothes\\2d88dcfb-2418-49fa-82b2-b5d4500ed542.jpg",
+  "weak_label": "full_outfit",
+  "weak_label_source": "silhouette_full",
+  "silhouette": {
+    "fg_ratio": 0.9325234521575985,
+    "top_margin": 0.0,
+    "bottom_extent": 1.0,
+    "height_frac": 1.0,
+    "top_fill": 0.9201415094339623,
+    "mid_fill": 0.979671875,
+    "bottom_fill": 0.8805,
+    "bottom_components": 4.0,
+    "bottom_mid_ratio": 0.8987703153160337
+  },
+  "detections": [
+    {
+      "label": "lower",
+      "confidence": 0.8653,
+      "bbox_xyxy": [
+        50,
+        24,
+        352,
+        496
+      ]
+    }
+  ],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [
+    {
+      "label": "lower",
+      "bbox_xyxy": [
+        50,
+        24,
+        352,
+        496
+      ],
+      "yolo_confidence": 0.8653,
+      "mask_path": "vision\\masks\\2d88dcfb-2418-49fa-82b2-b5d4500ed542_lower_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.6739,
+        "edge_touch_ratio": 0.01,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.7508,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "dark gray",
+        "lab_palette": [
+          "dark gray",
+          "black",
+          "charcoal",
+          "gray"
+        ],
+        "lab_confidence": 0.4496,
+        "lab_centroid": [
+          30.5289,
+          2.2049,
+          -5.8798
+        ],
+        "hsv_primary": "charcoal",
+        "hsv_centroid": [
+          27.935,
+          2.5178,
+          -5.2865
+        ],
+        "mean_lab_drift": 6.5431,
+        "mean_hsv_drift": 1.9206,
+        "cluster_centroid_variance": 8.5256,
+        "color_stability_score": 30.29,
+        "hsv_vs_lab_improvement_pct": -240.69,
+        "lab_label_variants": [
+          "black",
+          "charcoal",
+          "dark gray"
+        ],
+        "hsv_label_variants": [
+          "charcoal",
+          "dark gray"
+        ],
+        "background_leakage": {
+          "interior_var": 210.0714,
+          "edge_var": 160.3858,
+          "edge_delta_e": 4.2249,
+          "leakage_score": 0.2965
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification",
+    "missed_detection"
+  ],
+  "overall_score": 0.3909
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>outfAIt - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <img src="logo.png" alt="outfAIt Logo" class="nav-logo">
+                <span class="nav-brand-name">
+                    <span class="brand-light">outf</span><span class="brand-dark">AI</span><span
+                        class="brand-light">t</span>
+                </span>
+            </div>
+            <button class="logout-button" id="logoutBtn">Log Out</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="welcome-section">
+            <h1 class="welcome-title">Welcome, <span id="userName">User</span>!</h1>
+            <p class="welcome-subtitle">Your AI-Powered Fashion Journey Starts Here</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="card-icon">👔</div>
+                <h3 class="card-title">My Wardrobe</h3>
+                <p class="card-description">Manage your clothing collection</p>
+                <button class="card-button">View Wardrobe</button>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">✨</div>
+                <h3 class="card-title">Get Outfit Ideas</h3>
+                <p class="card-description">AI-powered recommendations</p>
+                <button class="card-button">Generate Outfits</button>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">📸</div>
+                <h3 class="card-title">Upload Items</h3>
+                <p class="card-description">Add new clothes to your collection</p>
+                <button class="card-button">Upload Now</button>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">🎨</div>
+                <h3 class="card-title">Style Profile</h3>
+                <p class="card-description">Customize your preferences</p>
+                <button class="card-button">Edit Profile</button>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Style Analytics</h3>
+                <p class="card-description">Track your fashion trends</p>
+                <button class="card-button">View Stats</button>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">💡</div>
+                <h3 class="card-title">Fashion Tips</h3>
+                <p class="card-description">Personalized style advice</p>
+                <button class="card-button">Get Tips</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // Check if user is logged in
+        const currentUser = getCurrentUser();
+
+        if (!currentUser) {
+            // Redirect to signin if not logged in
+            window.location.href = 'signin.html';
+        } else {
+            // Display user's name
+            document.getElementById('userName').textContent = currentUser.name;
+        }
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function () {
+            logout();
+            window.location.href = 'index.html';
+        });
+
+        // Add click handlers for dashboard cards (placeholder functionality)
+        const cardButtons = document.querySelectorAll('.card-button');
+        cardButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const cardTitle = this.parentElement.querySelector('.card-title').textContent;
+                alert(`${cardTitle} feature coming soon!`);
+            });
+        });
+    </script>
+</body>
+
+</html>

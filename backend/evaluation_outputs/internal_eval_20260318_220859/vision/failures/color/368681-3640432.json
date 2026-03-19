@@ -1,0 +1,93 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\368681-3640432.avif",
+  "weak_label": "full_outfit",
+  "weak_label_source": "silhouette_full",
+  "silhouette": {
+    "fg_ratio": 0.4409375,
+    "top_margin": 0.0625,
+    "bottom_extent": 0.940625,
+    "height_frac": 0.878125,
+    "top_fill": 0.6077707864004765,
+    "mid_fill": 0.9233343690929335,
+    "bottom_fill": 0.7892629393445055,
+    "bottom_components": 3.0,
+    "bottom_mid_ratio": 0.8547964483547414
+  },
+  "detections": [
+    {
+      "label": "lower",
+      "confidence": 0.4099,
+      "bbox_xyxy": [
+        287,
+        94,
+        1331,
+        1506
+      ]
+    }
+  ],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [
+    {
+      "label": "lower",
+      "bbox_xyxy": [
+        287,
+        94,
+        1331,
+        1506
+      ],
+      "yolo_confidence": 0.4099,
+      "mask_path": "vision\\masks\\368681-3640432_lower_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.7477,
+        "edge_touch_ratio": 0.2178,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.997,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "sky blue",
+        "lab_palette": [
+          "sky blue"
+        ],
+        "lab_confidence": 0.9206,
+        "lab_centroid": [
+          68.7532,
+          1.9051,
+          -29.658
+        ],
+        "hsv_primary": "blue",
+        "hsv_centroid": [
+          65.84,
+          2.565,
+          -29.7827
+        ],
+        "mean_lab_drift": 4.239,
+        "mean_hsv_drift": 4.526,
+        "cluster_centroid_variance": 1.0288,
+        "color_stability_score": 60.29,
+        "hsv_vs_lab_improvement_pct": 6.34,
+        "lab_label_variants": [
+          "sky blue"
+        ],
+        "hsv_label_variants": [
+          "blue"
+        ],
+        "background_leakage": {
+          "interior_var": 13.3467,
+          "edge_var": 33.4234,
+          "edge_delta_e": 6.0766,
+          "leakage_score": 0.778
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification",
+    "missed_detection"
+  ],
+  "overall_score": 0.4809
+}

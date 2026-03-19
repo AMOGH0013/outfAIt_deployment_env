@@ -1,0 +1,9 @@
+user_id,score_lift,diversity_lift,repetition_rate_lift,coverage_lift,forgotten_item_rate_lift,exact_outfit_repeat_lift
+synthetic_u1_minimalist,0.173,0.0084,0.0,0.0,0.0,0.0167
+synthetic_u2_bright,0.0421,-0.0034,0.0166,-0.0834,0.0,0.0166
+synthetic_u3_earthy,0.0808,0.0163,-0.0083,0.0417,-0.2,0.0
+synthetic_u4_formal,0.1514,0.0028,-0.0167,0.0833,0.0,-0.0167
+synthetic_u5_sporty,0.1688,0.0212,-0.025,0.125,-0.0714,-0.05
+synthetic_u6_monochrome,0.1273,0.0015,-0.0167,0.0833,-0.1667,-0.0167
+synthetic_u7_warm,0.1499,0.0014,-0.0167,0.0833,0.0,-0.0167
+synthetic_u8_cool,0.1506,-0.0092,0.0,0.0,-0.3333,0.0

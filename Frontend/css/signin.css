@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'Higuen Serif';
+    src: url('Higuen Serif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    background-color: #f5f0e8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 140px;
+    height: 95px;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease;
+}
+
+.logo-icon:hover {
+    transform: scale(1.05);
+}
+
+.brand-name {
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1;
+    font-family: 'Higuen Serif', 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+}
+
+.brand-light {
+    color: #a89b82;
+    font-weight: 300;
+}
+
+.brand-dark {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Login Card */
+.login-card {
+    background-color: #d9d2c4;
+    border-radius: 32px;
+    padding: 60px 40px 48px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 48px;
+    font-weight: 300;
+    color: #6b6250;
+    margin-bottom: 68px;
+    letter-spacing: -0.5px;
+    font-family: 'Higuen Serif', 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+}
+
+/* Form */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.input-field {
+    width: 100%;
+    max-width: 330px;
+    padding: 20px 32px;
+    background-color: #8c8470;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #f5f0e8;
+    text-align: center;
+    outline: none;
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    background-color: #7a7260;
+    transform: scale(1.02);
+}
+
+.input-field::placeholder {
+    color: #f5f0e8;
+    opacity: 1;
+    font-weight: 300;
+}
+
+.error-message {
+    display: none;
+    color: #8b3a3a;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #f5d5d5;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 330px;
+}
+
+.login-button {
+    width: 100%;
+    max-width: 245px;
+    padding: 18px 32px;
+    background-color: #000000;
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 12px;
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #1a1a1a;
+}
+
+.signup-link {
+    font-size: 22px;
+    font-weight: 300;
+    color: #6b6250;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+    color: #4a4238;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .login-card {
+        padding: 50px 30px 40px;
+    }
+
+    .input-field {
+        font-size: 18px;
+        padding: 18px 28px;
+    }
+
+    .login-button {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "dataset_dir": "C:\\Users\\amogh\\Desktop\\clothes",
+  "image_count": 3,
+  "weak_label_distribution": {
+    "full_outfit": 2,
+    "unknown": 1
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (8).webp",
+  "weak_label": "upper_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.6045920138888888,
+    "top_margin": 0.0,
+    "bottom_extent": 1.0,
+    "height_frac": 1.0,
+    "top_fill": 0.23943194249101424,
+    "mid_fill": 0.6908403656821379,
+    "bottom_fill": 0.892346460384435,
+    "bottom_components": 2.0,
+    "bottom_mid_ratio": 1.2916825719981335
+  },
+  "detections": [
+    {
+      "label": "upper",
+      "confidence": 0.6618,
+      "bbox_xyxy": [
+        232,
+        327,
+        881,
+        1190
+      ]
+    },
+    {
+      "label": "upper",
+      "confidence": 0.2846,
+      "bbox_xyxy": [
+        326,
+        955,
+        785,
+        1200
+      ]
+    }
+  ],
+  "detection_ok": true,
+  "detection_status": "ok",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        232,
+        327,
+        881,
+        1190
+      ],
+      "yolo_confidence": 0.6618,
+      "mask_path": "vision\\masks\\shopping__8__upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.7944,
+        "edge_touch_ratio": 0.3028,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.8649,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "slate",
+        "lab_palette": [
+          "denim blue",
+          "light gray",
+          "beige"
+        ],
+        "lab_confidence": 0.3758,
+        "lab_centroid": [
+          76.6249,
+          -17.7606,
+          -12.2568
+        ],
+        "hsv_primary": "teal",
+        "hsv_centroid": [
+          75.5452,
+          -18.6502,
+          -12.2928
+        ],
+        "mean_lab_drift": 4.0798,
+        "mean_hsv_drift": 4.043,
+        "cluster_centroid_variance": 0.1265,
+        "color_stability_score": 57.87,
+        "hsv_vs_lab_improvement_pct": -0.91,
+        "lab_label_variants": [
+          "denim blue",
+          "powder blue"
+        ],
+        "hsv_label_variants": [
+          "teal"
+        ],
+        "background_leakage": {
+          "interior_var": 222.1259,
+          "edge_var": 274.1094,
+          "edge_delta_e": 15.773,
+          "leakage_score": 0.7028
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification"
+  ],
+  "overall_score": 0.8736
+}

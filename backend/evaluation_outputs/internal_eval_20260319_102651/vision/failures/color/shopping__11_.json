@@ -1,0 +1,105 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\shopping (11).webp",
+  "weak_label": "upper_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.6755132378472222,
+    "top_margin": 0.0125,
+    "bottom_extent": 0.9864583333333333,
+    "height_frac": 0.9739583333333334,
+    "top_fill": 0.5955191256830601,
+    "mid_fill": 0.8656440281030445,
+    "bottom_fill": 0.6795519514614083,
+    "bottom_components": 2.0,
+    "bottom_mid_ratio": 0.7850247092336157
+  },
+  "detections": [
+    {
+      "label": "upper",
+      "confidence": 0.5551,
+      "bbox_xyxy": [
+        24,
+        17,
+        983,
+        985
+      ]
+    },
+    {
+      "label": "lower",
+      "confidence": 0.3249,
+      "bbox_xyxy": [
+        17,
+        13,
+        987,
+        989
+      ]
+    }
+  ],
+  "detection_ok": false,
+  "detection_status": "wrong_class",
+  "segments": [
+    {
+      "label": "upper",
+      "bbox_xyxy": [
+        24,
+        17,
+        983,
+        985
+      ],
+      "yolo_confidence": 0.5551,
+      "mask_path": "vision\\masks\\shopping__11__upper_sam2.png",
+      "mask_quality": {
+        "area_ratio": 0.7139,
+        "edge_touch_ratio": 0.1477,
+        "component_count": 1.0,
+        "largest_component_ratio": 1.0,
+        "sam2_sam1_iou": 0.9962,
+        "quality_score": 1.0
+      },
+      "color": {
+        "lab_primary": "baby pink",
+        "lab_palette": [
+          "baby pink"
+        ],
+        "lab_confidence": 0.9678,
+        "lab_centroid": [
+          83.9129,
+          22.6387,
+          0.5657
+        ],
+        "hsv_primary": "red",
+        "hsv_centroid": [
+          84.3711,
+          21.8763,
+          1.2218
+        ],
+        "mean_lab_drift": 4.9485,
+        "mean_hsv_drift": 4.4366,
+        "cluster_centroid_variance": 0.04,
+        "color_stability_score": 60.23,
+        "hsv_vs_lab_improvement_pct": -11.54,
+        "lab_label_variants": [
+          "baby pink",
+          "white"
+        ],
+        "hsv_label_variants": [
+          "off white",
+          "red"
+        ],
+        "background_leakage": {
+          "interior_var": 8.108,
+          "edge_var": 15.2156,
+          "edge_delta_e": 2.5214,
+          "leakage_score": 0.5322
+        },
+        "color_ok": false,
+        "suspected_color_failure": true
+      }
+    }
+  ],
+  "failures": [
+    "color_misclassification",
+    "wrong_class"
+  ],
+  "overall_score": 0.4807
+}

@@ -1,0 +1,35 @@
+{
+  "image_path": "C:\\Users\\amogh\\Desktop\\clothes\\2.jpg",
+  "weak_label": "upper_only",
+  "weak_label_source": "manifest",
+  "silhouette": {
+    "fg_ratio": 0.5051089376590331,
+    "top_margin": 0.007633587786259542,
+    "bottom_extent": 1.0,
+    "height_frac": 0.9923664122137404,
+    "top_fill": 0.29333694474539534,
+    "mid_fill": 0.8159082701336221,
+    "bottom_fill": 0.9279523293607799,
+    "bottom_components": 1.0,
+    "bottom_mid_ratio": 1.137324333296448
+  },
+  "detections": [
+    {
+      "label": "lower",
+      "confidence": 0.724,
+      "bbox_xyxy": [
+        48,
+        202,
+        129,
+        262
+      ]
+    }
+  ],
+  "detection_ok": false,
+  "detection_status": "missed_detection",
+  "segments": [],
+  "failures": [
+    "missed_detection"
+  ],
+  "overall_score": 0.0
+}

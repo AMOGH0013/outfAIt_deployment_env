@@ -1,0 +1,2344 @@
+{
+  "generated_at": "2026-03-16T10:01:52.326922+00:00",
+  "python_version": "3.11.8 (tags/v3.11.8:db85d51, Feb  6 2024, 22:03:32) [MSC v.1937 64 bit (AMD64)]",
+  "sections": {
+    "outfit_engine": {
+      "repetition_by_wardrobe_size": [
+        {
+          "config": "2T 2B (tiny)",
+          "plan_days": 7,
+          "unique_tops": 2,
+          "total_tops": 2,
+          "max_streak": 3,
+          "most_used_top_count": 5,
+          "top_color_sequence": [
+            "blue",
+            "red",
+            "blue",
+            "red",
+            "blue",
+            "blue",
+            "blue"
+          ],
+          "has_problem": true
+        },
+        {
+          "config": "3T 2B (small)",
+          "plan_days": 7,
+          "unique_tops": 3,
+          "total_tops": 3,
+          "max_streak": 1,
+          "most_used_top_count": 3,
+          "top_color_sequence": [
+            "blue",
+            "red",
+            "green",
+            "blue",
+            "red",
+            "green",
+            "blue"
+          ],
+          "has_problem": false
+        },
+        {
+          "config": "5T 3B (medium)",
+          "plan_days": 7,
+          "unique_tops": 5,
+          "total_tops": 5,
+          "max_streak": 2,
+          "most_used_top_count": 3,
+          "top_color_sequence": [
+            "blue",
+            "red",
+            "green",
+            "navy",
+            "white",
+            "blue",
+            "blue"
+          ],
+          "has_problem": false
+        },
+        {
+          "config": "8T 4B (realistic)",
+          "plan_days": 7,
+          "unique_tops": 7,
+          "total_tops": 8,
+          "max_streak": 1,
+          "most_used_top_count": 1,
+          "top_color_sequence": [
+            "blue",
+            "red",
+            "green",
+            "orange",
+            "purple",
+            "navy",
+            "white"
+          ],
+          "has_problem": false
+        },
+        {
+          "config": "12T 5B (large)",
+          "plan_days": 7,
+          "unique_tops": 7,
+          "total_tops": 12,
+          "max_streak": 1,
+          "most_used_top_count": 1,
+          "top_color_sequence": [
+            "blue",
+            "red",
+            "green",
+            "orange",
+            "purple",
+            "yellow",
+            "navy"
+          ],
+          "has_problem": false
+        }
+      ],
+      "score_decomposition": [
+        {
+          "day": 1,
+          "top_color": "blue",
+          "bottom_color": "black",
+          "rule_score": 1.0,
+          "novelty_top": 1.0,
+          "novelty_bottom": 1.0,
+          "color_harmony": 1.0,
+          "final_score": 1.0,
+          "explanation": {
+            "top": "shirt",
+            "bottom": "jeans",
+            "top_color": "blue",
+            "bottom_color": "black",
+            "body_shape": null,
+            "final_score": 1.0,
+            "rule_score": 1.0,
+            "feedback_bias": 0.0,
+            "embedding_diversity_score": 0.0,
+            "fit_score": 0.0,
+            "style_affinity_score": 0.0,
+            "confidence_score": 0.731,
+            "challenger": false,
+            "reasoning": {
+              "body_shape": "balanced fit for body shape",
+              "color": "good color harmony",
+              "novelty": "not worn recently"
+            }
+          }
+        },
+        {
+          "day": 2,
+          "top_color": "navy",
+          "bottom_color": "black",
+          "rule_score": 0.94,
+          "novelty_top": 1.0,
+          "novelty_bottom": 1.0,
+          "color_harmony": 0.8,
+          "final_score": 0.94,
+          "explanation": {
+            "top": "shirt",
+            "bottom": "jeans",
+            "top_color": "navy",
+            "bottom_color": "black",
+            "body_shape": null,
+            "final_score": 0.94,
+            "rule_score": 0.94,
+            "feedback_bias": 0.0,
+            "embedding_diversity_score": 0.0,
+            "fit_score": 0.0,
+            "style_affinity_score": 0.0,
+            "confidence_score": 0.719,
+            "challenger": false,
+            "reasoning": {
+              "body_shape": "balanced fit for body shape",
+              "color": "good color harmony",
+              "novelty": "not worn recently"
+            }
+          }
+        },
+        {
+          "day": 3,
+          "top_color": "white",
+          "bottom_color": "black",
+          "rule_score": 0.94,
+          "novelty_top": 1.0,
+          "novelty_bottom": 1.0,
+          "color_harmony": 0.8,
+          "final_score": 0.94,
+          "explanation": {
+            "top": "shirt",
+            "bottom": "jeans",
+            "top_color": "white",
+            "bottom_color": "black",
+            "body_shape": null,
+            "final_score": 0.94,
+            "rule_score": 0.94,
+            "feedback_bias": 0.0,
+            "embedding_diversity_score": 0.0,
+            "fit_score": 0.0,
+            "style_affinity_score": 0.0,
+            "confidence_score": 0.719,
+            "challenger": false,
+            "reasoning": {
+              "body_shape": "balanced fit for body shape",
+              "color": "good color harmony",
+              "novelty": "not worn recently"
+            }
+          }
+        },
+        {
+          "day": 4,
+          "top_color": "green",
+          "bottom_color": "black",
+          "rule_score": 0.9143,
+          "novelty_top": 0.4286,
+          "novelty_bottom": 1.0,
+          "color_harmony": 1.0,
+          "final_score": 0.91,
+          "explanation": {
+            "top": "shirt",
+            "bottom": "jeans",
+            "top_color": "green",
+            "bottom_color": "black",
+            "body_shape": null,
+            "final_score": 0.91,
+            "rule_score": 0.914,
+            "feedback_bias": 0.0,
+            "embedding_diversity_score": 0.0,
+            "fit_score": 0.0,
+            "style_affinity_score": 0.0,
+            "confidence_score": 0.714,
+            "challenger": false,
+            "reasoning": {
+              "body_shape": "balanced fit for body shape",
+              "color": "good color harmony",
+              "novelty": "not worn recently"
+            }
+          }
+        },
+        {
+          "day": 5,
+          "top_color": "red",
+          "bottom_color": "black",
+          "rule_score": 0.8714,
+          "novelty_top": 0.1429,
+          "novelty_bottom": 1.0,
+          "color_harmony": 1.0,
+          "final_score": 0.75,
+          "explanation": {
+            "top": "shirt",
+            "bottom": "jeans",
+            "top_color": "red",
+            "bottom_color": "black",
+            "body_shape": null,
+            "final_score": 0.75,
+            "rule_score": 0.871,
+            "feedback_bias": 0.0,
+            "embedding_diversity_score": 0.0,
+            "fit_score": 0.0,
+            "style_affinity_score": 0.0,
+            "confidence_score": 0.685,
+            "challenger": false,
+            "reasoning": {
+              "body_shape": "balanced fit for body shape",
+              "color": "good color harmony",
+              "novelty": "not worn recently"
+            }
+          }
+        },
+        {
+          "day": 6,
+          "top_color": "blue",
+          "bottom_color": "gray",
+          "rule_score": 1.0,
+          "novelty_top": 1.0,
+          "novelty_bottom": 1.0,
+          "color_harmony": 1.0,
+          "final_score": 0.75,
+          "explanation": {
+            "top": "shirt",
+            "bottom": "jeans",
+            "top_color": "blue",
+            "bottom_color": "gray",
+            "body_shape": null,
+            "final_score": 0.75,
+            "rule_score": 1.0,
+            "feedback_bias": 0.0,
+            "embedding_diversity_score": 0.0,
+            "fit_score": 0.0,
+            "style_affinity_score": 0.0,
+            "confidence_score": 0.69,
+            "challenger": false,
+            "reasoning": {
+              "body_shape": "balanced fit for body shape",
+              "color": "good color harmony",
+              "novelty": "not worn recently"
+            }
+          }
+        },
+        {
+          "day": 7,
+          "top_color": "blue",
+          "bottom_color": "navy",
+          "rule_score": 1.0,
+          "novelty_top": 1.0,
+          "novelty_bottom": 1.0,
+          "color_harmony": 1.0,
+          "final_score": 0.75,
+          "explanation": {
+            "top": "shirt",
+            "bottom": "jeans",
+            "top_color": "blue",
+            "bottom_color": "navy",
+            "body_shape": null,
+            "final_score": 0.75,
+            "rule_score": 1.0,
+            "feedback_bias": 0.0,
+            "embedding_diversity_score": 0.0,
+            "fit_score": 0.0,
+            "style_affinity_score": 0.0,
+            "confidence_score": 0.69,
+            "challenger": false,
+            "reasoning": {
+              "body_shape": "balanced fit for body shape",
+              "color": "good color harmony",
+              "novelty": "not worn recently"
+            }
+          }
+        }
+      ],
+      "never_worn_dominance_pct": 57,
+      "cooldown_tests": [
+        {
+          "label": "worn 0 days ago",
+          "penalty": -0.12,
+          "fires": true,
+          "expected": true,
+          "correct": true
+        },
+        {
+          "label": "worn 1 day ago",
+          "penalty": -0.12,
+          "fires": true,
+          "expected": true,
+          "correct": true
+        },
+        {
+          "label": "worn 2 days ago",
+          "penalty": 0.0,
+          "fires": false,
+          "expected": false,
+          "correct": true
+        },
+        {
+          "label": "worn 3 days ago",
+          "penalty": 0.0,
+          "fires": false,
+          "expected": false,
+          "correct": true
+        },
+        {
+          "label": "never worn",
+          "penalty": 0.0,
+          "fires": false,
+          "expected": false,
+          "correct": true
+        }
+      ],
+      "pair_dedup": {
+        "unique_pairs": 4,
+        "total_days": 7
+      },
+      "is_deterministic": true
+    },
+    "color_extraction": {
+      "known_colors": [
+        {
+          "label": "dark green shirt",
+          "rgb": [
+            30,
+            90,
+            40
+          ],
+          "expected": "green",
+          "got": "green",
+          "gap": 0.838,
+          "correct": true,
+          "confident": false,
+          "runner_up": "forest_green"
+        },
+        {
+          "label": "forest green",
+          "rgb": [
+            20,
+            80,
+            45
+          ],
+          "expected": "green",
+          "got": "green",
+          "gap": 7.805,
+          "correct": true,
+          "confident": false,
+          "runner_up": "dark_green"
+        },
+        {
+          "label": "dark teal green",
+          "rgb": [
+            20,
+            85,
+            75
+          ],
+          "expected": "teal",
+          "got": "teal",
+          "gap": 10.332,
+          "correct": true,
+          "confident": false,
+          "runner_up": "teal_green"
+        },
+        {
+          "label": "olive/khaki",
+          "rgb": [
+            110,
+            120,
+            50
+          ],
+          "expected": "olive",
+          "got": "olive",
+          "gap": 27.171,
+          "correct": true,
+          "confident": true,
+          "runner_up": "dark_green"
+        },
+        {
+          "label": "very dark green",
+          "rgb": [
+            10,
+            50,
+            20
+          ],
+          "expected": "green",
+          "got": "green",
+          "gap": 0.906,
+          "correct": true,
+          "confident": false,
+          "runner_up": "forest_green"
+        },
+        {
+          "label": "teal-blue dark",
+          "rgb": [
+            15,
+            80,
+            90
+          ],
+          "expected": "teal",
+          "got": "teal-gray",
+          "gap": 4.819,
+          "correct": true,
+          "confident": false,
+          "runner_up": "slate"
+        },
+        {
+          "label": "charcoal gray",
+          "rgb": [
+            55,
+            60,
+            65
+          ],
+          "expected": "gray",
+          "got": "gray",
+          "gap": 3.844,
+          "correct": true,
+          "confident": false,
+          "runner_up": "dark_gray"
+        },
+        {
+          "label": "dark navy",
+          "rgb": [
+            8,
+            12,
+            50
+          ],
+          "expected": "navy",
+          "got": "navy",
+          "gap": 16.615,
+          "correct": true,
+          "confident": true,
+          "runner_up": "navy"
+        },
+        {
+          "label": "pure black fabric",
+          "rgb": [
+            15,
+            15,
+            15
+          ],
+          "expected": "black",
+          "got": "black",
+          "gap": 16.877,
+          "correct": true,
+          "confident": true,
+          "runner_up": "charcoal"
+        },
+        {
+          "label": "dark denim",
+          "rgb": [
+            30,
+            50,
+            90
+          ],
+          "expected": "blue",
+          "got": "navy-gray",
+          "gap": 6.58,
+          "correct": false,
+          "confident": false,
+          "runner_up": "charcoal"
+        },
+        {
+          "label": "light wash denim",
+          "rgb": [
+            160,
+            195,
+            220
+          ],
+          "expected": "blue",
+          "got": "blue",
+          "gap": 2.962,
+          "correct": true,
+          "confident": false,
+          "runner_up": "powder_blue"
+        },
+        {
+          "label": "mustard yellow",
+          "rgb": [
+            200,
+            165,
+            30
+          ],
+          "expected": "yellow",
+          "got": "yellow",
+          "gap": 23.872,
+          "correct": true,
+          "confident": true,
+          "runner_up": "orange"
+        },
+        {
+          "label": "burnt orange",
+          "rgb": [
+            200,
+            80,
+            20
+          ],
+          "expected": "orange",
+          "got": "orange-red",
+          "gap": 8.824,
+          "correct": true,
+          "confident": false,
+          "runner_up": "red"
+        },
+        {
+          "label": "dusty pink",
+          "rgb": [
+            210,
+            145,
+            140
+          ],
+          "expected": "pink",
+          "got": "pink",
+          "gap": 4.122,
+          "correct": true,
+          "confident": false,
+          "runner_up": "light_pink"
+        },
+        {
+          "label": "wine/burgundy",
+          "rgb": [
+            100,
+            20,
+            30
+          ],
+          "expected": "red",
+          "got": "red-brown",
+          "gap": 5.928,
+          "correct": true,
+          "confident": false,
+          "runner_up": "brown"
+        },
+        {
+          "label": "bright purple shirt",
+          "rgb": [
+            120,
+            0,
+            130
+          ],
+          "expected": "purple",
+          "got": "purple",
+          "gap": 16.594,
+          "correct": true,
+          "confident": true,
+          "runner_up": "dark_purple"
+        },
+        {
+          "label": "shadow purple",
+          "rgb": [
+            55,
+            10,
+            70
+          ],
+          "expected": "purple",
+          "got": "purple-navy",
+          "gap": 0.892,
+          "correct": true,
+          "confident": false,
+          "runner_up": "navy"
+        },
+        {
+          "label": "beige/cream",
+          "rgb": [
+            220,
+            205,
+            175
+          ],
+          "expected": "beige",
+          "got": "beige-gray",
+          "gap": 9.921,
+          "correct": true,
+          "confident": false,
+          "runner_up": "light_gray"
+        },
+        {
+          "label": "sand/tan",
+          "rgb": [
+            195,
+            170,
+            130
+          ],
+          "expected": "beige",
+          "got": "beige",
+          "gap": 17.667,
+          "correct": true,
+          "confident": true,
+          "runner_up": "light_gray"
+        },
+        {
+          "label": "rust red",
+          "rgb": [
+            180,
+            55,
+            25
+          ],
+          "expected": "red",
+          "got": "red",
+          "gap": 8.369,
+          "correct": true,
+          "confident": false,
+          "runner_up": "dark_red"
+        }
+      ],
+      "misclassification_count": 1,
+      "anchor_coverage_holes": 49,
+      "anchor_holes_detail": [
+        {
+          "hue_deg": 0,
+          "sat": 0.5,
+          "val": 0.3,
+          "rgb": [
+            76,
+            38,
+            38
+          ],
+          "nearest_anchor": "dark_gray",
+          "distance": 21.69
+        },
+        {
+          "hue_deg": 0,
+          "sat": 0.5,
+          "val": 0.7,
+          "rgb": [
+            178,
+            89,
+            89
+          ],
+          "nearest_anchor": "pink",
+          "distance": 20.53
+        },
+        {
+          "hue_deg": 0,
+          "sat": 0.7,
+          "val": 0.3,
+          "rgb": [
+            76,
+            22,
+            22
+          ],
+          "nearest_anchor": "brown",
+          "distance": 23.84
+        },
+        {
+          "hue_deg": 15,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            178,
+            84,
+            53
+          ],
+          "nearest_anchor": "brown",
+          "distance": 23.01
+        },
+        {
+          "hue_deg": 30,
+          "sat": 0.5,
+          "val": 0.7,
+          "rgb": [
+            178,
+            133,
+            89
+          ],
+          "nearest_anchor": "beige",
+          "distance": 22.95
+        },
+        {
+          "hue_deg": 30,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            178,
+            116,
+            53
+          ],
+          "nearest_anchor": "brown",
+          "distance": 25.49
+        },
+        {
+          "hue_deg": 45,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            178,
+            147,
+            53
+          ],
+          "nearest_anchor": "olive",
+          "distance": 28.37
+        },
+        {
+          "hue_deg": 60,
+          "sat": 0.5,
+          "val": 0.3,
+          "rgb": [
+            76,
+            76,
+            38
+          ],
+          "nearest_anchor": "olive",
+          "distance": 20.79
+        },
+        {
+          "hue_deg": 60,
+          "sat": 0.5,
+          "val": 0.7,
+          "rgb": [
+            178,
+            178,
+            89
+          ],
+          "nearest_anchor": "beige",
+          "distance": 26.86
+        },
+        {
+          "hue_deg": 75,
+          "sat": 0.5,
+          "val": 0.7,
+          "rgb": [
+            156,
+            178,
+            89
+          ],
+          "nearest_anchor": "olive",
+          "distance": 26.58
+        },
+        {
+          "hue_deg": 75,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            147,
+            178,
+            53
+          ],
+          "nearest_anchor": "yellow",
+          "distance": 28.42
+        },
+        {
+          "hue_deg": 90,
+          "sat": 0.5,
+          "val": 0.7,
+          "rgb": [
+            133,
+            178,
+            89
+          ],
+          "nearest_anchor": "green",
+          "distance": 23.4
+        },
+        {
+          "hue_deg": 90,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            116,
+            178,
+            53
+          ],
+          "nearest_anchor": "green",
+          "distance": 26.2
+        },
+        {
+          "hue_deg": 105,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            84,
+            178,
+            53
+          ],
+          "nearest_anchor": "green",
+          "distance": 23.58
+        },
+        {
+          "hue_deg": 120,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            53,
+            178,
+            53
+          ],
+          "nearest_anchor": "green",
+          "distance": 24.62
+        },
+        {
+          "hue_deg": 150,
+          "sat": 0.5,
+          "val": 0.7,
+          "rgb": [
+            89,
+            178,
+            133
+          ],
+          "nearest_anchor": "teal",
+          "distance": 23.48
+        },
+        {
+          "hue_deg": 195,
+          "sat": 0.5,
+          "val": 0.7,
+          "rgb": [
+            89,
+            156,
+            178
+          ],
+          "nearest_anchor": "light_blue",
+          "distance": 22.62
+        },
+        {
+          "hue_deg": 195,
+          "sat": 0.7,
+          "val": 0.7,
+          "rgb": [
+            53,
+            147,
+            178
+          ],
+          "nearest_anchor": "light_blue",
+          "distance": 20.53
+        },
+        {
+          "hue_deg": 210,
+          "sat": 0.7,
+          "val": 0.5,
+          "rgb": [
+            38,
+            82,
+            127
+          ],
+          "nearest_anchor": "slate",
+          "distance": 22.76
+        },
+        {
+          "hue_deg": 225,
+          "sat": 0.5,
+          "val": 0.5,
+          "rgb": [
+            63,
+            79,
+            127
+          ],
+          "nearest_anchor": "slate",
+          "distance": 23.92
+        }
+      ],
+      "skin_filter_tests": [
+        {
+          "label": "Dark green + light skin",
+          "total_filtered": 800,
+          "skin_remaining": 0,
+          "pct_skin_removed": 100.0
+        },
+        {
+          "label": "Navy + medium skin",
+          "total_filtered": 700,
+          "skin_remaining": 0,
+          "pct_skin_removed": 100.0
+        },
+        {
+          "label": "Black + dark skin",
+          "total_filtered": 1000,
+          "skin_remaining": 250,
+          "pct_skin_removed": 0.0
+        },
+        {
+          "label": "White shirt + light skin",
+          "total_filtered": 1000,
+          "skin_remaining": 150,
+          "pct_skin_removed": 0.0
+        },
+        {
+          "label": "Red + tanned skin",
+          "total_filtered": 800,
+          "skin_remaining": 0,
+          "pct_skin_removed": 100.0
+        }
+      ],
+      "real_images": [
+        {
+          "file": "08a76660-ad74-477c-9e90-107adb550256_shopping (4).webp",
+          "primary_color": "gray-blue",
+          "palette": [
+            "gray-blue",
+            "gray-beige",
+            "gray-olive"
+          ],
+          "confidence": 0.4592,
+          "palette_confidences": [
+            0.4592,
+            0.4228,
+            0.0834
+          ],
+          "has_mask": true,
+          "elapsed_s": 1.481
+        },
+        {
+          "file": "0cda0300-0412-47f4-ab3b-db43d8f72633_shopping (9).webp",
+          "primary_color": "purple-blue",
+          "palette": [
+            "purple-blue",
+            "purple-navy",
+            "blue-purple"
+          ],
+          "confidence": 0.5448,
+          "palette_confidences": [
+            0.5448,
+            0.2324,
+            0.141
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.052
+        },
+        {
+          "file": "16072103-4ca0-4640-8424-8c9e3ecb41ed_shopping (7).webp",
+          "primary_color": "gray",
+          "palette": [
+            "gray",
+            "gray-black"
+          ],
+          "confidence": 0.8142,
+          "palette_confidences": [
+            0.8142,
+            0.1858
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.053
+        },
+        {
+          "file": "1920fd51-fc41-4a67-80e1-1ddc9434d8c0_shopping (20).webp",
+          "primary_color": "beige-gray",
+          "palette": [
+            "beige-gray",
+            "gray-beige",
+            "gray-brown"
+          ],
+          "confidence": 0.588,
+          "palette_confidences": [
+            0.588,
+            0.2202,
+            0.1518
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.049
+        },
+        {
+          "file": "1fb3e82d-2125-4828-a0ce-9e661f2bde61_shopping.webp",
+          "primary_color": "gray",
+          "palette": [
+            "gray",
+            "navy-gray",
+            "navy-black"
+          ],
+          "confidence": 0.548,
+          "palette_confidences": [
+            0.548,
+            0.2774,
+            0.1656
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.061
+        },
+        {
+          "file": "25323d1c-1965-4e8a-8170-39b7c514fc65_shopping (11).webp",
+          "primary_color": "pink",
+          "palette": [
+            "pink"
+          ],
+          "confidence": 0.986,
+          "palette_confidences": [
+            0.986
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.05
+        },
+        {
+          "file": "2cecb9a1-46e8-49f6-868e-9875bcdb881d_shopping (9).webp",
+          "primary_color": "purple-blue",
+          "palette": [
+            "purple-blue",
+            "navy-purple",
+            "navy"
+          ],
+          "confidence": 0.68,
+          "palette_confidences": [
+            0.68,
+            0.213,
+            0.091
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.051
+        },
+        {
+          "file": "2dc30051-f278-41bc-a111-397daccacb2c_shopping (11).webp",
+          "primary_color": "pink",
+          "palette": [
+            "pink"
+          ],
+          "confidence": 0.988,
+          "palette_confidences": [
+            0.988
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.055
+        },
+        {
+          "file": "35a44ec6-a53b-4a0e-b8ba-1472d9e4ea3a_shopping (18).webp",
+          "primary_color": "white",
+          "palette": [
+            "white"
+          ],
+          "confidence": 0.998,
+          "palette_confidences": [
+            0.998
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.05
+        },
+        {
+          "file": "38be804b-5aa2-4a08-a445-4d7f9920b078_shopping (11).webp",
+          "primary_color": "pink",
+          "palette": [
+            "pink"
+          ],
+          "confidence": 0.986,
+          "palette_confidences": [
+            0.986
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.051
+        },
+        {
+          "file": "3a20dc64-015e-4a7f-a8a7-485c759386b0_shopping (12).webp",
+          "primary_color": "black-gray",
+          "palette": [
+            "black-gray",
+            "gray-black"
+          ],
+          "confidence": 0.6046,
+          "palette_confidences": [
+            0.6046,
+            0.3446
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.047
+        },
+        {
+          "file": "3c0dccfa-4181-44bb-8f53-9d34c7755d06_shopping (9).webp",
+          "primary_color": "purple-blue",
+          "palette": [
+            "purple-blue",
+            "navy-purple",
+            "navy"
+          ],
+          "confidence": 0.68,
+          "palette_confidences": [
+            0.68,
+            0.213,
+            0.091
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.045
+        },
+        {
+          "file": "3d35d86e-03a9-439b-94ea-8cba2c26e55a_shopping (8).webp",
+          "primary_color": "multicolor",
+          "palette": [
+            "blue",
+            "beige",
+            "gray-beige",
+            "yellow"
+          ],
+          "confidence": 1.0,
+          "palette_confidences": [
+            0.3652,
+            0.2486,
+            0.2486,
+            0.0836
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.055
+        },
+        {
+          "file": "44ffab44-ca85-4e1e-ba74-d54e6b4cb4a7_shopping (8).webp",
+          "primary_color": "multicolor",
+          "palette": [
+            "blue",
+            "beige",
+            "gray-beige",
+            "yellow"
+          ],
+          "confidence": 1.0,
+          "palette_confidences": [
+            0.3652,
+            0.2486,
+            0.2486,
+            0.0836
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.054
+        },
+        {
+          "file": "47558549-585e-4f7a-acff-72729af86d25_2.webp",
+          "primary_color": "brown-gray",
+          "palette": [
+            "brown-gray",
+            "gray-brown"
+          ],
+          "confidence": 0.8876,
+          "palette_confidences": [
+            0.8876,
+            0.0871
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.048
+        },
+        {
+          "file": "4fd0ee32-dd3e-4c97-81f4-e787437cd184_shopping (11).webp",
+          "primary_color": "pink",
+          "palette": [
+            "pink"
+          ],
+          "confidence": 0.986,
+          "palette_confidences": [
+            0.986
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.05
+        },
+        {
+          "file": "5d92413d-8b48-4d89-944b-2f2cab5e6324_2.webp",
+          "primary_color": "brown-gray",
+          "palette": [
+            "brown-gray",
+            "gray-brown"
+          ],
+          "confidence": 0.8876,
+          "palette_confidences": [
+            0.8876,
+            0.0871
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.048
+        },
+        {
+          "file": "5ff81162-22a6-439c-aa15-d1d6ac5cb833_shopping (21).webp",
+          "primary_color": "gray",
+          "palette": [
+            "gray",
+            "gray-black",
+            "black-gray"
+          ],
+          "confidence": 0.414,
+          "palette_confidences": [
+            0.414,
+            0.3748,
+            0.1736
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.038
+        },
+        {
+          "file": "6721e93c-9ccd-47a4-bc3f-6b2ad4debc34_shopping (16).webp",
+          "primary_color": "gray",
+          "palette": [
+            "gray",
+            "gray-white"
+          ],
+          "confidence": 0.8366,
+          "palette_confidences": [
+            0.8366,
+            0.1634
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.034
+        },
+        {
+          "file": "6a5706c4-3c03-4bd9-89e3-59d4a698b2da_shopping (1).webp",
+          "primary_color": "pink",
+          "palette": [
+            "pink",
+            "pink-gray"
+          ],
+          "confidence": 0.7028,
+          "palette_confidences": [
+            0.7028,
+            0.254
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.069
+        },
+        {
+          "file": "6b76e3e5-559d-4602-9658-749444ccfbee_2.webp",
+          "primary_color": "brown-gray",
+          "palette": [
+            "brown-gray",
+            "gray-brown"
+          ],
+          "confidence": 0.8876,
+          "palette_confidences": [
+            0.8876,
+            0.0871
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.047
+        },
+        {
+          "file": "71e32075-8150-4d96-8bf7-4619f62224fe_shopping (3).webp",
+          "primary_color": "multicolor",
+          "palette": [
+            "gray",
+            "blue",
+            "teal-gray",
+            "gray-black"
+          ],
+          "confidence": 1.0,
+          "palette_confidences": [
+            0.3594,
+            0.3508,
+            0.1646,
+            0.1252
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.054
+        },
+        {
+          "file": "7453b617-af6a-41a0-8740-55a82d5a3032_shopping (23).webp",
+          "primary_color": "beige",
+          "palette": [
+            "beige",
+            "beige-brown"
+          ],
+          "confidence": 0.7934,
+          "palette_confidences": [
+            0.7934,
+            0.1826
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.034
+        },
+        {
+          "file": "745eb54e-c049-4539-9d00-c4fb201b150d_shopping (20).webp",
+          "primary_color": "beige-gray",
+          "palette": [
+            "beige-gray",
+            "gray-beige",
+            "gray-brown"
+          ],
+          "confidence": 0.588,
+          "palette_confidences": [
+            0.588,
+            0.2202,
+            0.1518
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.054
+        },
+        {
+          "file": "75282e3a-00ef-45ac-a01d-606788fa2dd9_2.webp",
+          "primary_color": "white",
+          "palette": [
+            "white",
+            "brown-gray"
+          ],
+          "confidence": 0.6718,
+          "palette_confidences": [
+            0.6718,
+            0.3118
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.032
+        },
+        {
+          "file": "7f0b0a63-4349-4ff9-b330-d73b600e922b_shopping (20).webp",
+          "primary_color": "beige-gray",
+          "palette": [
+            "beige-gray",
+            "gray-beige",
+            "gray-brown"
+          ],
+          "confidence": 0.588,
+          "palette_confidences": [
+            0.588,
+            0.2202,
+            0.1518
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.053
+        },
+        {
+          "file": "80e1e35d-8d83-4e0b-a87b-e559ef7b49cf_shopping (1).webp",
+          "primary_color": "pink",
+          "palette": [
+            "pink",
+            "pink-gray"
+          ],
+          "confidence": 0.7028,
+          "palette_confidences": [
+            0.7028,
+            0.254
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.069
+        },
+        {
+          "file": "81967f18-ddba-4840-bb01-ade9acb6055f_shopping (17).webp",
+          "primary_color": "white",
+          "palette": [
+            "white",
+            "gray-beige",
+            "gray-brown"
+          ],
+          "confidence": 0.5028,
+          "palette_confidences": [
+            0.5028,
+            0.2954,
+            0.1616
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.048
+        },
+        {
+          "file": "875013c7-f923-4564-a6d3-0bce570c7843_shopping (1).webp",
+          "primary_color": "multicolor",
+          "palette": [
+            "white",
+            "pink",
+            "pink-gray",
+            "beige-gray",
+            "gray"
+          ],
+          "confidence": 1.0,
+          "palette_confidences": [
+            0.381,
+            0.2648,
+            0.1848,
+            0.0874,
+            0.082
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.042
+        },
+        {
+          "file": "97a6f878-d30c-4f4a-936f-d19661995cf3_shopping (12).webp",
+          "primary_color": "black-gray",
+          "palette": [
+            "black-gray",
+            "gray-black"
+          ],
+          "confidence": 0.6046,
+          "palette_confidences": [
+            0.6046,
+            0.3446
+          ],
+          "has_mask": true,
+          "elapsed_s": 0.047
+        }
+      ],
+      "low_confidence_count": 0,
+      "compound_label_count": 12
+    },
+    "mask_quality": {
+      "mask_audit": [
+        {
+          "mask": "03cc4b11-c99d-49ff-a51c-31ae2fd14089_images_mask.png",
+          "size": "183x275",
+          "white_pct": 0.452,
+          "n_components": 23,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "08a76660-ad74-477c-9e90-107adb550256_shopping (4)_mask.png",
+          "size": "622x800",
+          "white_pct": 0.999,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.741
+        },
+        {
+          "mask": "0a9b24da-e44c-4bcf-8b2d-60dd3abd48e9_2_mask.png",
+          "size": "192x262",
+          "white_pct": 0.249,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "0cda0300-0412-47f4-ab3b-db43d8f72633_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.471,
+          "n_components": 182,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "10a8f779-c0bb-4f7a-b0f4-41eb5c162f4c_111_mask.png",
+          "size": "225x225",
+          "white_pct": 0.077,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.935
+        },
+        {
+          "mask": "1400b643-739f-479a-b70b-ea848a4c3c19_4_mask.png",
+          "size": "216x233",
+          "white_pct": 0.047,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.959
+        },
+        {
+          "mask": "14b1bb6b-53e2-450e-a151-5a52d11e5930_2_mask.png",
+          "size": "192x262",
+          "white_pct": 0.249,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "16072103-4ca0-4640-8424-8c9e3ecb41ed_shopping (7)_mask.png",
+          "size": "975x1200",
+          "white_pct": 0.982,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.006
+        },
+        {
+          "mask": "17e6dfd3-f4a1-480a-b148-33848cda5fec_images_mask.png",
+          "size": "201x251",
+          "white_pct": 0.041,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.981
+        },
+        {
+          "mask": "1920fd51-fc41-4a67-80e1-1ddc9434d8c0_shopping (20)_mask.png",
+          "size": "900x1200",
+          "white_pct": 0.105,
+          "n_components": 13,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "1fb3e82d-2125-4828-a0ce-9e661f2bde61_shopping_mask.png",
+          "size": "800x1200",
+          "white_pct": 0.297,
+          "n_components": 12,
+          "center_masked": true,
+          "bg_bleed_score": 0.002
+        },
+        {
+          "mask": "25323d1c-1965-4e8a-8170-39b7c514fc65_shopping (11)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.676,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.037
+        },
+        {
+          "mask": "284e7048-a39d-47bb-b33a-1c870c3d57d6_4_mask.png",
+          "size": "216x233",
+          "white_pct": 0.047,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.959
+        },
+        {
+          "mask": "2cecb9a1-46e8-49f6-868e-9875bcdb881d_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.72,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.013
+        },
+        {
+          "mask": "2d98fea7-4121-456e-a297-2264de309295_1_mask.png",
+          "size": "183x275",
+          "white_pct": 0.379,
+          "n_components": 6,
+          "center_masked": true,
+          "bg_bleed_score": 0.006
+        },
+        {
+          "mask": "2dc30051-f278-41bc-a111-397daccacb2c_shopping (11)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.472,
+          "n_components": 98,
+          "center_masked": true,
+          "bg_bleed_score": 0.007
+        },
+        {
+          "mask": "33052f74-bde0-4ac4-b37f-d3fc069042be_7_mask.png",
+          "size": "225x225",
+          "white_pct": 0.527,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "33be04e7-9cab-465a-af0f-fdb44fd68d6f_-1117Wx1400H-467293008-brown-MODEL_mask.png",
+          "size": "1117x1400",
+          "white_pct": 0.306,
+          "n_components": 17,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "35a44ec6-a53b-4a0e-b8ba-1472d9e4ea3a_shopping (18)_mask.png",
+          "size": "1200x1200",
+          "white_pct": 0.503,
+          "n_components": 65,
+          "center_masked": true,
+          "bg_bleed_score": 1.0
+        },
+        {
+          "mask": "371dd9fd-0345-424a-9c01-5b0b552df2d3_1_mask.png",
+          "size": "183x275",
+          "white_pct": 0.379,
+          "n_components": 6,
+          "center_masked": true,
+          "bg_bleed_score": 0.006
+        },
+        {
+          "mask": "38be804b-5aa2-4a08-a445-4d7f9920b078_shopping (11)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.676,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.037
+        },
+        {
+          "mask": "395e7be9-b66e-4980-a6d3-c98cd6ca7c3c_4_mask.png",
+          "size": "216x233",
+          "white_pct": 0.047,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.959
+        },
+        {
+          "mask": "3a20dc64-015e-4a7f-a8a7-485c759386b0_shopping (12)_mask.png",
+          "size": "905x1200",
+          "white_pct": 0.335,
+          "n_components": 27,
+          "center_masked": true,
+          "bg_bleed_score": 0.093
+        },
+        {
+          "mask": "3ac767fb-b26a-4474-a3ca-5af9e1fecb37_4_mask.png",
+          "size": "216x233",
+          "white_pct": 0.047,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.959
+        },
+        {
+          "mask": "3c0dccfa-4181-44bb-8f53-9d34c7755d06_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.72,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.013
+        },
+        {
+          "mask": "3c6b4a75-7533-4300-83c2-5cac3c369678_images_mask.png",
+          "size": "201x251",
+          "white_pct": 0.041,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.981
+        },
+        {
+          "mask": "3d35d86e-03a9-439b-94ea-8cba2c26e55a_shopping (8)_mask.png",
+          "size": "900x1200",
+          "white_pct": 0.371,
+          "n_components": 39,
+          "center_masked": true,
+          "bg_bleed_score": 0.089
+        },
+        {
+          "mask": "44ffab44-ca85-4e1e-ba74-d54e6b4cb4a7_shopping (8)_mask.png",
+          "size": "900x1200",
+          "white_pct": 0.371,
+          "n_components": 39,
+          "center_masked": true,
+          "bg_bleed_score": 0.089
+        },
+        {
+          "mask": "47558549-585e-4f7a-acff-72729af86d25_2_mask.png",
+          "size": "800x1000",
+          "white_pct": 0.022,
+          "n_components": 8,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "47958e17-2e36-45d4-92e7-dac072effc3d_imag2es_mask.png",
+          "size": "194x259",
+          "white_pct": 0.075,
+          "n_components": 8,
+          "center_masked": true,
+          "bg_bleed_score": 0.078
+        },
+        {
+          "mask": "48ed053c-0d32-4de5-a4fc-62a692bd81b7_do2wnload_mask.png",
+          "size": "194x259",
+          "white_pct": 0.078,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.992
+        },
+        {
+          "mask": "4a48e5c5-0a7e-4dba-ac49-bb7108a5996b_images_embed_mask.png",
+          "size": "183x275",
+          "white_pct": 0.452,
+          "n_components": 23,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "4a48e5c5-0a7e-4dba-ac49-bb7108a5996b_images_mask.png",
+          "size": "183x275",
+          "white_pct": 0.452,
+          "n_components": 23,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "4df2fe5d-4d3d-436d-85d5-0c4ab12e3a52_do2wnload_mask.png",
+          "size": "192x262",
+          "white_pct": 0.08,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.917
+        },
+        {
+          "mask": "4fd0ee32-dd3e-4c97-81f4-e787437cd184_shopping (11)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.676,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.037
+        },
+        {
+          "mask": "5021f39b-0b52-4728-b1a4-16f5c5157e6c_111_mask.png",
+          "size": "225x225",
+          "white_pct": 0.077,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.935
+        },
+        {
+          "mask": "5311eee3-a83c-4c99-94e3-ecc87f4fec00_2_mask.png",
+          "size": "192x262",
+          "white_pct": 0.249,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "5d92413d-8b48-4d89-944b-2f2cab5e6324_2_mask.png",
+          "size": "800x1000",
+          "white_pct": 0.022,
+          "n_components": 8,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "5ff81162-22a6-439c-aa15-d1d6ac5cb833_shopping (21)_mask.png",
+          "size": "600x705",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.399
+        },
+        {
+          "mask": "6721e93c-9ccd-47a4-bc3f-6b2ad4debc34_shopping (16)_mask.png",
+          "size": "690x722",
+          "white_pct": 0.062,
+          "n_components": 47,
+          "center_masked": true,
+          "bg_bleed_score": 0.075
+        },
+        {
+          "mask": "6813bbe0-d3bf-45e9-a185-21dbe6c4958f_images_mask.png",
+          "size": "201x251",
+          "white_pct": 0.041,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.981
+        },
+        {
+          "mask": "6a5706c4-3c03-4bd9-89e3-59d4a698b2da_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 0.436,
+          "n_components": 18,
+          "center_masked": true,
+          "bg_bleed_score": 0.108
+        },
+        {
+          "mask": "6b76e3e5-559d-4602-9658-749444ccfbee_2_mask.png",
+          "size": "800x1000",
+          "white_pct": 0.022,
+          "n_components": 8,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "6e6b9cda-eb93-4221-9f04-213ed85a5ee3_smoketest_purple_mask.png",
+          "size": "64x64",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "71e32075-8150-4d96-8bf7-4619f62224fe_shopping (3)_mask.png",
+          "size": "963x1200",
+          "white_pct": 0.419,
+          "n_components": 30,
+          "center_masked": true,
+          "bg_bleed_score": 0.194
+        },
+        {
+          "mask": "7453b617-af6a-41a0-8740-55a82d5a3032_shopping (23)_mask.png",
+          "size": "405x797",
+          "white_pct": 0.501,
+          "n_components": 1,
+          "center_masked": false,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "745eb54e-c049-4539-9d00-c4fb201b150d_shopping (20)_mask.png",
+          "size": "900x1200",
+          "white_pct": 0.105,
+          "n_components": 13,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "75282e3a-00ef-45ac-a01d-606788fa2dd9_2_mask.png",
+          "size": "225x225",
+          "white_pct": 0.343,
+          "n_components": 2,
+          "center_masked": false,
+          "bg_bleed_score": 0.672
+        },
+        {
+          "mask": "7abf2854-2357-48e9-9448-4a8821273215_368681-3640432_mask.png",
+          "size": "1600x1600",
+          "white_pct": 0.03,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.022
+        },
+        {
+          "mask": "7f0b0a63-4349-4ff9-b330-d73b600e922b_shopping (20)_mask.png",
+          "size": "900x1200",
+          "white_pct": 0.105,
+          "n_components": 13,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "80e1e35d-8d83-4e0b-a87b-e559ef7b49cf_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 0.436,
+          "n_components": 18,
+          "center_masked": true,
+          "bg_bleed_score": 0.108
+        },
+        {
+          "mask": "81642418-3e5c-444c-92c0-ed2ff793df61_4_mask.png",
+          "size": "216x233",
+          "white_pct": 0.047,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.959
+        },
+        {
+          "mask": "81967f18-ddba-4840-bb01-ade9acb6055f_shopping (17)_mask.png",
+          "size": "800x1200",
+          "white_pct": 0.697,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.508
+        },
+        {
+          "mask": "824f2e70-0c10-4789-8858-0fab5fecea08_2_mask.png",
+          "size": "192x262",
+          "white_pct": 0.249,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "875013c7-f923-4564-a6d3-0bce570c7843_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.44
+        },
+        {
+          "mask": "97a6f878-d30c-4f4a-936f-d19661995cf3_shopping (12)_mask.png",
+          "size": "905x1200",
+          "white_pct": 0.335,
+          "n_components": 27,
+          "center_masked": true,
+          "bg_bleed_score": 0.093
+        },
+        {
+          "mask": "99624169-8241-4fa5-bb82-a21f33fb20a3_shopping (10)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.675,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.004
+        },
+        {
+          "mask": "9b8d2f71-834c-446a-b904-849c86c302bd_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 0.436,
+          "n_components": 18,
+          "center_masked": true,
+          "bg_bleed_score": 0.108
+        },
+        {
+          "mask": "9c717c94-d124-431c-99a1-7c07e1f5217c_1_mask.png",
+          "size": "183x275",
+          "white_pct": 0.379,
+          "n_components": 6,
+          "center_masked": true,
+          "bg_bleed_score": 0.006
+        },
+        {
+          "mask": "a1c37175-145d-4098-8891-14f3a388f4eb_shopping (21)_mask.png",
+          "size": "600x705",
+          "white_pct": 0.042,
+          "n_components": 10,
+          "center_masked": true,
+          "bg_bleed_score": 0.038
+        },
+        {
+          "mask": "a21d0060-faa6-4f7e-b7bc-859f502e5541_shopping (13)_mask.png",
+          "size": "564x1200",
+          "white_pct": 0.417,
+          "n_components": 1,
+          "center_masked": false,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "a257c820-ca9a-4958-91ea-0fb6884c9961_shopping (20)_mask.png",
+          "size": "900x1200",
+          "white_pct": 0.105,
+          "n_components": 13,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "a5c6990d-c9ac-48c2-baac-9e17e3e2c808_shopping (2)_mask.png",
+          "size": "622x800",
+          "white_pct": 0.486,
+          "n_components": 61,
+          "center_masked": true,
+          "bg_bleed_score": 0.034
+        },
+        {
+          "mask": "a623d632-611e-4d47-88aa-1c6c90920aeb_4_mask.png",
+          "size": "216x233",
+          "white_pct": 0.047,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.959
+        },
+        {
+          "mask": "a653bdca-2628-48be-9289-ab1c5c9caecc_shopping (12)_mask.png",
+          "size": "905x1200",
+          "white_pct": 0.453,
+          "n_components": 25,
+          "center_masked": true,
+          "bg_bleed_score": 0.133
+        },
+        {
+          "mask": "a87ce000-ab88-492a-8b93-d37904d31b35_7_mask.png",
+          "size": "225x225",
+          "white_pct": 0.527,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "a9543458-cd2a-4b1e-b8ce-7e25649f6a17_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.72,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.013
+        },
+        {
+          "mask": "aa70f292-b417-4bb9-9038-6b478f964a01_shopping (10)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.039,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "b0ad7251-04e5-453f-b209-30cca99c7201_shopping (11)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.472,
+          "n_components": 98,
+          "center_masked": true,
+          "bg_bleed_score": 0.007
+        },
+        {
+          "mask": "b35fbee6-34a3-4dbf-a3d6-d13f87e296dc_shopping (10)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.328
+        },
+        {
+          "mask": "b7515e02-abaf-402f-b83f-d6da61f3f09d_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 0.436,
+          "n_components": 18,
+          "center_masked": true,
+          "bg_bleed_score": 0.108
+        },
+        {
+          "mask": "ba38e8b5-3c71-44d9-afb7-d1736ad193a6_1_mask.png",
+          "size": "183x275",
+          "white_pct": 0.379,
+          "n_components": 6,
+          "center_masked": true,
+          "bg_bleed_score": 0.006
+        },
+        {
+          "mask": "bac9544a-7ac5-4eb5-ad90-1a748a626170_images_mask.png",
+          "size": "183x275",
+          "white_pct": 0.452,
+          "n_components": 23,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "bd4dc054-4529-4535-af7d-030206ff9da9_shopping (18)_mask.png",
+          "size": "1200x1200",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.778
+        },
+        {
+          "mask": "bf1e1d27-68fe-4d8a-854b-1f878be9b2e6_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.72,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.013
+        },
+        {
+          "mask": "c06792af-d73d-4327-b2df-cdf4dd7d1be5_368681-3640432_mask.png",
+          "size": "1600x1600",
+          "white_pct": 0.03,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.022
+        },
+        {
+          "mask": "c081b551-e370-4880-b88d-22be2221b58e_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 0.436,
+          "n_components": 18,
+          "center_masked": true,
+          "bg_bleed_score": 0.108
+        },
+        {
+          "mask": "c093d050-7cf8-4a53-ba22-36a329ee1453_2_mask.png",
+          "size": "183x275",
+          "white_pct": 0.274,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.084
+        },
+        {
+          "mask": "c2e303e1-3688-4c5a-b346-1dca9fecf7e2_7_mask.png",
+          "size": "225x225",
+          "white_pct": 0.527,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "c4aea1d7-7aa0-4544-8039-2c5f1c97c159_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.72,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.013
+        },
+        {
+          "mask": "c85d8ae8-e2f2-47b1-a698-491cbd90ba72_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.471,
+          "n_components": 182,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "c9d8f119-64bb-452e-8371-7343d162abe7_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 0.436,
+          "n_components": 18,
+          "center_masked": true,
+          "bg_bleed_score": 0.108
+        },
+        {
+          "mask": "ca0a45e4-62f3-4515-a5c0-f53e3eef06df_shopping (11)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.676,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.037
+        },
+        {
+          "mask": "ccd96c3a-6614-4559-8ced-9e4643d9f009_shopping (16)_mask.png",
+          "size": "690x722",
+          "white_pct": 0.642,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.52
+        },
+        {
+          "mask": "d3334580-45bb-446c-bd1d-9badd8f605ae_shopping (13)_mask.png",
+          "size": "564x1200",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.424
+        },
+        {
+          "mask": "d55fe469-57c7-48b2-87dc-1b5325cdbdf2_368681-3640432_mask.png",
+          "size": "1600x1600",
+          "white_pct": 0.03,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.022
+        },
+        {
+          "mask": "d5e04786-7951-45f0-8198-1c23709a6b9c_1_mask.png",
+          "size": "183x275",
+          "white_pct": 0.379,
+          "n_components": 6,
+          "center_masked": true,
+          "bg_bleed_score": 0.006
+        },
+        {
+          "mask": "d684b9a3-4ba1-4afd-8181-da3ba7df1089_shopping (2)_mask.png",
+          "size": "622x800",
+          "white_pct": 0.588,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.046
+        },
+        {
+          "mask": "d77ab3ed-155b-457e-8648-053cb0832a38_7_mask.png",
+          "size": "194x259",
+          "white_pct": 0.623,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.251
+        },
+        {
+          "mask": "dc8085d9-33f6-424d-833f-7e2cdd68f8ee_shopping (12)_mask.png",
+          "size": "905x1200",
+          "white_pct": 0.335,
+          "n_components": 27,
+          "center_masked": true,
+          "bg_bleed_score": 0.093
+        },
+        {
+          "mask": "dcb3974b-b5fe-4a79-b440-5e2161168218_shopping (1)_mask.png",
+          "size": "801x1200",
+          "white_pct": 0.436,
+          "n_components": 18,
+          "center_masked": true,
+          "bg_bleed_score": 0.108
+        },
+        {
+          "mask": "e0a47ce7-f65b-428f-a07b-2c9e529838ef_imag2es_mask.png",
+          "size": "194x259",
+          "white_pct": 0.075,
+          "n_components": 8,
+          "center_masked": true,
+          "bg_bleed_score": 0.078
+        },
+        {
+          "mask": "e7628207-33c5-40f6-aaab-47851406d9d2_4_mask.png",
+          "size": "216x233",
+          "white_pct": 0.047,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.959
+        },
+        {
+          "mask": "ea800b04-8270-4eb8-96ca-87a8dba978ba_2_mask.png",
+          "size": "800x1000",
+          "white_pct": 0.022,
+          "n_components": 8,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "ed4dbefd-106d-4b27-af8c-8c3f3e911b6b_shopping (10)_mask.png",
+          "size": "1001x1001",
+          "white_pct": 0.039,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "f175e011-b5a0-4b31-9b34-57ac54f8b559_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.72,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.013
+        },
+        {
+          "mask": "f1f46f04-e1af-400a-b66b-43a12620da0d_shopping_mask.png",
+          "size": "800x1200",
+          "white_pct": 0.36,
+          "n_components": 12,
+          "center_masked": true,
+          "bg_bleed_score": 0.002
+        },
+        {
+          "mask": "f21fefa2-4b0d-4e23-8bfc-d2cbae647243_do2wnload_mask.png",
+          "size": "194x259",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.638
+        },
+        {
+          "mask": "f3e4eb23-77b7-48ce-9be4-59eb33112490_shopping (9)_mask.png",
+          "size": "945x1200",
+          "white_pct": 0.044,
+          "n_components": 4,
+          "center_masked": true,
+          "bg_bleed_score": 0.001
+        },
+        {
+          "mask": "f44f80d0-8cf5-475d-9490-0d2545332fb2_imag2es_mask.png",
+          "size": "194x259",
+          "white_pct": 0.075,
+          "n_components": 8,
+          "center_masked": true,
+          "bg_bleed_score": 0.078
+        },
+        {
+          "mask": "f7d69228-4ee8-49b3-a615-316add18bbdb_368681-3640432_mask.png",
+          "size": "1600x1600",
+          "white_pct": 0.03,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.022
+        },
+        {
+          "mask": "f95440ab-c508-492a-90a9-b33db85e0fdd_shopping (2)_mask.png",
+          "size": "622x800",
+          "white_pct": 1.0,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.44
+        },
+        {
+          "mask": "fc040193-c066-4789-9164-ab5d4434aec3_do2wnload_mask.png",
+          "size": "194x259",
+          "white_pct": 0.078,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.992
+        },
+        {
+          "mask": "fd896d06-c0d0-41e4-bf37-14b8d79d51d4_222_mask.png",
+          "size": "201x251",
+          "white_pct": 0.039,
+          "n_components": 1,
+          "center_masked": true,
+          "bg_bleed_score": 0.967
+        },
+        {
+          "mask": "feafe357-3921-4114-beb3-d3a313806c36_1_mask.png",
+          "size": "183x275",
+          "white_pct": 0.696,
+          "n_components": 2,
+          "center_masked": true,
+          "bg_bleed_score": 0.078
+        },
+        {
+          "mask": "tmp_single_item_mask.png",
+          "size": "183x275",
+          "white_pct": 0.452,
+          "n_components": 23,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        },
+        {
+          "mask": "tmp_suggest_mask.png",
+          "size": "183x275",
+          "white_pct": 0.452,
+          "n_components": 23,
+          "center_masked": true,
+          "bg_bleed_score": 0.0
+        }
+      ],
+      "inversion_suspects": 10,
+      "fragmentation_suspects": 47,
+      "background_bleed_suspects": 29
+    },
+    "integration": {
+      "extractor_color_set": [
+        "beige",
+        "black",
+        "blue",
+        "brown",
+        "gray",
+        "green",
+        "navy",
+        "olive",
+        "orange",
+        "pink",
+        "purple",
+        "red",
+        "teal",
+        "violet",
+        "white",
+        "yellow"
+      ],
+      "neutral_colors": [
+        "beige",
+        "black",
+        "brown",
+        "gray",
+        "navy",
+        "olive",
+        "teal",
+        "white"
+      ],
+      "missing_from_neutral": [
+        "blue",
+        "green",
+        "orange",
+        "pink",
+        "purple",
+        "red",
+        "violet",
+        "yellow"
+      ],
+      "dead_neutral_entries": [],
+      "compound_handling": [
+        {
+          "compound": "purple-navy",
+          "primary": "purple",
+          "in_neutral": false
+        },
+        {
+          "compound": "blue-purple",
+          "primary": "blue",
+          "in_neutral": false
+        },
+        {
+          "compound": "gray-black",
+          "primary": "gray",
+          "in_neutral": true
+        },
+        {
+          "compound": "beige-gray",
+          "primary": "beige",
+          "in_neutral": true
+        },
+        {
+          "compound": "yellow-orange",
+          "primary": "yellow",
+          "in_neutral": false
+        },
+        {
+          "compound": "teal-green",
+          "primary": "teal",
+          "in_neutral": true
+        },
+        {
+          "compound": "red-orange",
+          "primary": "red",
+          "in_neutral": false
+        }
+      ],
+      "score_sensitivity": {
+        "base_rule": 1.0,
+        "rule_worn_today": 0.85,
+        "novelty_impact": 0.15,
+        "novelty_weight": 0.3
+      }
+    }
+  }
+}
