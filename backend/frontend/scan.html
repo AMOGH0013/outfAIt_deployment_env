@@ -3,175 +3,411 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scan + Vision Debug</title>
+    <title>Scan Garment</title>
     <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      .scan-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.92fr);
+        gap: 16px;
+      }
+      .dropzone {
+        border: 2px dashed color-mix(in srgb, var(--primary) 52%, var(--border));
+        border-radius: 16px;
+        background: color-mix(in srgb, var(--primary) 7%, var(--surface));
+        min-height: 220px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 16px;
+        cursor: pointer;
+      }
+      .dropzone.dragover {
+        border-color: var(--primary);
+        box-shadow: var(--ring);
+      }
+      .dropzone-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+      .upload-preview {
+        width: 100%;
+        max-height: 230px;
+        object-fit: contain;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--surface-3) 70%, black);
+      }
+      .progress-shell {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        background: color-mix(in srgb, var(--surface-2) 72%, transparent);
+      }
+      .result-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .overlay-wrap {
+        position: relative;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: color-mix(in srgb, var(--surface-3) 70%, black);
+      }
+      .overlay-base,
+      .overlay-mask {
+        display: block;
+        width: 100%;
+        height: 320px;
+        object-fit: contain;
+      }
+      .overlay-mask {
+        position: absolute;
+        inset: 0;
+        mix-blend-mode: screen;
+        opacity: 0;
+        animation: fadeMask 850ms ease forwards;
+      }
+      .scan-detail {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px;
+        background: color-mix(in srgb, var(--surface-2) 72%, transparent);
+      }
+      .color-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        padding: 6px 12px;
+        background: var(--surface);
+        font-weight: 700;
+      }
+      .animated-swatch {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transform: scale(0.6);
+        opacity: 0.25;
+        animation: popSwatch 500ms ease forwards;
+      }
+      .saved-banner {
+        margin-top: 10px;
+      }
+      @keyframes fadeMask {
+        from { opacity: 0; }
+        to { opacity: 0.7; }
+      }
+      @keyframes popSwatch {
+        to { transform: scale(1); opacity: 1; }
+      }
+      @media (max-width: 980px) {
+        .scan-grid,
+        .result-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <main class="container">
-      <header class="row">
-        <h1>Scan + Vision Debug</h1>
-        <a class="link" href="/">Home</a>
+  <body class="app-shell">
+    <main class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Scan Garment</h1>
+          <p class="page-subtitle">Upload one garment photo and save a clean segmented item in wardrobe.</p>
+        </div>
       </header>
 
-      <section class="panel">
-        <div class="row">
-          <button id="startScanBtn" class="btn">Start Scan</button>
-          <div class="status">
-            <div>Scan ID: <span id="scanId" class="mono">—</span></div>
-            <div>Status: <span id="scanStatus">—</span></div>
+      <section class="scan-grid">
+        <article class="panel">
+          <div class="row space-between">
+            <h2 style="margin:0;">Upload</h2>
+            <span id="scanBadge" class="badge">No session</span>
           </div>
-        </div>
 
-        <div class="row">
-          <input id="fileInput" type="file" accept="image/*" disabled />
-          <button id="uploadBtn" class="btn" disabled>Upload Image</button>
-        </div>
+          <input id="fileInput" type="file" accept="image/*" class="hidden" />
+          <button id="dropzone" class="dropzone" type="button">
+            <div>
+              <div class="dropzone-icon">^</div>
+              <strong>Drag photo here or click to browse</strong>
+              <div class="muted small" style="margin-top:6px;">Supports JPG, PNG, WEBP, AVIF</div>
+            </div>
+          </button>
 
-        <div id="errorBox" class="error hidden"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Results</h2>
-        <div class="grid-2">
-          <div>
-            <h3>Original</h3>
-            <img id="origImg" class="preview" alt="Original preview" />
+          <div id="previewWrap" class="hidden" style="margin-top:12px;">
+            <img id="previewImg" class="upload-preview" alt="Upload preview" />
+            <div class="muted small" id="previewMeta" style="margin-top:6px;"></div>
           </div>
-          <div>
-            <h3>Mask</h3>
-            <img id="maskImg" class="preview" alt="Mask preview" />
-            <div class="muted small">
-              Mask URL: <a id="maskUrl" class="mono" target="_blank" rel="noreferrer">—</a>
+
+          <div class="row" style="margin-top:12px;">
+            <button id="startBtn" class="btn secondary" type="button">Start Scan Session</button>
+            <button id="processBtn" class="btn" type="button" disabled>Process Upload</button>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2 style="margin:0 0 10px 0;">Pipeline Progress</h2>
+          <div id="progressShell" class="progress-shell hidden">
+            <div class="row">
+              <div class="spinner"></div>
+              <div>
+                <div style="font-weight:700;">Processing image</div>
+                <div class="muted small" id="progressText">Starting...</div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="grid-2">
-          <div class="kv">
-            <div><span class="k">Extracted color</span> <span id="colorVal">—</span></div>
-            <div><span class="k">Color confidence</span> <span id="colorConf">—</span></div>
-          </div>
-          <div>
-            <div class="k">Color palette</div>
-            <ul id="paletteList" class="list"></ul>
-          </div>
-        </div>
+          <div id="errorBox" class="error hidden" style="margin-top:10px;"></div>
+          <div id="warnBox" class="summary muted hidden" style="margin-top:10px;"></div>
+        </article>
       </section>
 
-      <section class="panel">
-        <details>
-          <summary class="muted small">Debug (created item IDs)</summary>
-          <ul id="createdIds" class="list"></ul>
-        </details>
+      <section class="panel" style="margin-top:16px;">
+        <div class="row space-between">
+          <h2 style="margin:0;">Scan Result</h2>
+          <span id="saveStatus" class="hidden success">Saved to wardrobe (ok)</span>
+        </div>
+        <div id="resultEmpty" class="empty-state" style="margin-top:10px;">
+          <div class="empty-art">[]</div>
+          <strong>No scan result yet</strong>
+          <div class="muted">Start a session and upload one clothing image.</div>
+        </div>
+        <div id="resultShell" class="result-grid hidden" style="margin-top:10px;"></div>
       </section>
     </main>
 
-    <script src="/frontend/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="/frontend/app.js?v=10"></script>
     <script>
-      const startScanBtn = document.getElementById("startScanBtn");
-      const uploadBtn = document.getElementById("uploadBtn");
       const fileInput = document.getElementById("fileInput");
-      const scanIdEl = document.getElementById("scanId");
-      const scanStatusEl = document.getElementById("scanStatus");
+      const dropzone = document.getElementById("dropzone");
+      const previewWrap = document.getElementById("previewWrap");
+      const previewImg = document.getElementById("previewImg");
+      const previewMeta = document.getElementById("previewMeta");
+      const startBtn = document.getElementById("startBtn");
+      const processBtn = document.getElementById("processBtn");
+      const scanBadge = document.getElementById("scanBadge");
+      const progressShell = document.getElementById("progressShell");
+      const progressText = document.getElementById("progressText");
       const errorBox = document.getElementById("errorBox");
+      const warnBox = document.getElementById("warnBox");
+      const resultShell = document.getElementById("resultShell");
+      const resultEmpty = document.getElementById("resultEmpty");
+      const saveStatus = document.getElementById("saveStatus");
 
-      const origImg = document.getElementById("origImg");
-      const maskImg = document.getElementById("maskImg");
-      const maskUrlA = document.getElementById("maskUrl");
-
-      const colorVal = document.getElementById("colorVal");
-      const colorConf = document.getElementById("colorConf");
-      const paletteList = document.getElementById("paletteList");
-      const createdIds = document.getElementById("createdIds");
+      const progressSteps = [
+        "Detecting garment with YOLO...",
+        "Segmenting region with SAM2...",
+        "Extracting dominant color...",
+        "Generating embedding and saving...",
+      ];
 
       let scanId = null;
+      let selectedFile = null;
+      let progressTimer = null;
 
-      function resetResults() {
-        origImg.removeAttribute("src");
-        maskImg.removeAttribute("src");
-        maskUrlA.textContent = "—";
-        maskUrlA.removeAttribute("href");
-        colorVal.textContent = "—";
-        colorConf.textContent = "—";
-        paletteList.innerHTML = "";
-        createdIds.innerHTML = "";
+      function setError(message) {
+        errorBox.textContent = message || "";
+        errorBox.classList.toggle("hidden", !message);
       }
 
-      function showError(msg) {
-        errorBox.textContent = msg;
-        errorBox.classList.remove("hidden");
+      function setWarnings(warnings) {
+        if (!Array.isArray(warnings) || !warnings.length) {
+          warnBox.classList.add("hidden");
+          warnBox.textContent = "";
+          return;
+        }
+        warnBox.classList.remove("hidden");
+        warnBox.textContent = `Warnings: ${warnings.join(", ")}`;
       }
 
-      function clearError() {
-        errorBox.textContent = "";
-        errorBox.classList.add("hidden");
+      function updateSessionBadge(status) {
+        const sid = scanId ? `#${String(scanId).slice(0, 8)}` : "No session";
+        scanBadge.textContent = `${sid} - ${status || "idle"}`;
       }
 
-      startScanBtn.addEventListener("click", async () => {
-        clearError();
-        resetResults();
-        scanStatusEl.textContent = "starting…";
+      function beginProgress() {
+        progressShell.classList.remove("hidden");
+        let index = 0;
+        progressText.textContent = progressSteps[index];
+        if (progressTimer) clearInterval(progressTimer);
+        progressTimer = setInterval(() => {
+          index = (index + 1) % progressSteps.length;
+          progressText.textContent = progressSteps[index];
+        }, 1100);
+      }
+
+      function endProgress() {
+        if (progressTimer) {
+          clearInterval(progressTimer);
+          progressTimer = null;
+        }
+      }
+
+      function setFile(file) {
+        selectedFile = file || null;
+        processBtn.disabled = !selectedFile || !scanId;
+        if (!selectedFile) {
+          previewWrap.classList.add("hidden");
+          previewImg.removeAttribute("src");
+          previewMeta.textContent = "";
+          return;
+        }
+        previewWrap.classList.remove("hidden");
+        previewImg.src = URL.createObjectURL(selectedFile);
+        const kb = Math.max(1, Math.round(selectedFile.size / 1024));
+        previewMeta.textContent = `${selectedFile.name} - ${kb} KB`;
+      }
+
+      function renderResult(payload) {
+        resultShell.innerHTML = "";
+        resultShell.classList.remove("hidden");
+        resultEmpty.classList.add("hidden");
+        saveStatus.classList.remove("hidden");
+
+        const item = Array.isArray(payload.items) && payload.items.length ? payload.items[0] : null;
+        if (!item) {
+          resultShell.innerHTML = `<div class="summary muted">No item detected in this upload.</div>`;
+          return;
+        }
+
+        const color = item.extracted_color || payload.extracted_color || "unknown";
+        const confidence = typeof item.color_confidence === "number" ? item.color_confidence.toFixed(3) : "-";
+        const title = item.category === "bottom" ? "BOTTOM" : "TOP";
+        const itemType = item.item_type && item.item_type !== "unknown" ? item.item_type : "unclassified";
+        const family = getColorFamily(color);
+        const palette = Array.isArray(item.color_palette) ? item.color_palette.slice(0, 3) : [];
+        const baseImage = renderImage(payload.image_url || previewImg.src);
+        const maskImage = renderImage(item.mask_url || payload.mask_url);
+
+        const left = document.createElement("div");
+        left.className = "overlay-wrap";
+        left.innerHTML = `
+          <img class="overlay-base" src="${baseImage}" alt="Original upload" />
+          <img class="overlay-mask" src="${maskImage}" alt="Segmentation mask overlay" />
+        `;
+
+        const right = document.createElement("div");
+        right.className = "scan-detail";
+        right.innerHTML = `
+          <div class="row space-between">
+            <span class="badge ${item.category === "bottom" ? "bottom" : "top"}">${title}</span>
+            <span class="muted small">YOLO ${item.yolo_confidence ? (item.yolo_confidence * 100).toFixed(1) + "%" : "-"} - ${String(item.segmentation || "sam2").toUpperCase()}</span>
+          </div>
+          <div style="margin-top:10px;">
+            <span class="color-pill">
+              <span class="animated-swatch" style="background:${getColorHex(color)}"></span>
+              ${color}
+            </span>
+          </div>
+          <div class="summary" style="margin-top:10px;">
+            <div><strong>Confidence:</strong> ${confidence}</div>
+            <div><strong>Detected type:</strong> ${itemType}</div>
+            <div><strong>Color family:</strong> ${family}</div>
+            <div><strong>Palette:</strong> ${palette.length ? palette.join(", ") : "single-color item"}</div>
+          </div>
+          <div class="row" style="margin-top:10px;">
+            <a class="btn small secondary" href="/frontend/wardrobe.html">View Wardrobe</a>
+            <a class="btn small" href="/frontend/outfits.html">Generate Outfits</a>
+          </div>
+          <div class="saved-banner muted small">The item was saved to wardrobe and can now be used for recommendations.</div>
+        `;
+
+        resultShell.appendChild(left);
+        resultShell.appendChild(right);
+      }
+
+      async function startSession() {
+        setError("");
+        setWarnings([]);
+        saveStatus.classList.add("hidden");
         try {
           const res = await apiFetch("/scan/start", { method: "POST" });
           scanId = res.scan_id;
-          scanIdEl.textContent = scanId;
-          scanStatusEl.textContent = res.status || "pending";
-          fileInput.disabled = false;
-          uploadBtn.disabled = false;
+          updateSessionBadge(res.status || "pending");
+          processBtn.disabled = !selectedFile;
+          showToast("Scan session started.", "info");
         } catch (e) {
-          scanStatusEl.textContent = "error";
-          showError(e.message);
+          setError(e.message || "Could not start scan session.");
         }
-      });
+      }
 
-      uploadBtn.addEventListener("click", async () => {
-        clearError();
-        if (!scanId) return showError("Start a scan first.");
-        const file = fileInput.files?.[0];
-        if (!file) return showError("Choose an image file.");
+      async function processUpload() {
+        if (!scanId) {
+          setError("Start a scan session first.");
+          return;
+        }
+        if (!selectedFile) {
+          setError("Choose a file first.");
+          return;
+        }
 
-        origImg.src = URL.createObjectURL(file);
-        scanStatusEl.textContent = "uploading…";
+        setError("");
+        setWarnings([]);
+        beginProgress();
+        processBtn.disabled = true;
+        startBtn.disabled = true;
+        updateSessionBadge("processing");
 
         const form = new FormData();
-        form.append("file", file);
+        form.append("file", selectedFile);
 
         try {
           const res = await apiFetch(`/scan/upload/${scanId}`, {
             method: "POST",
             body: form,
           });
+          endProgress();
+          progressShell.classList.add("hidden");
+          updateSessionBadge(res.status || "completed");
+          res.image_url = previewImg.src;
+          setWarnings(res.warnings);
+          renderResult(res);
+          showToast("Scan complete and item saved.", "success");
 
-          scanStatusEl.textContent = res.status || "completed";
-
-          if (res.mask_url) {
-            maskImg.src = renderImage(res.mask_url);
-            maskUrlA.textContent = res.mask_url;
-            maskUrlA.href = res.mask_url;
+          if (typeof confetti === "function") {
+            confetti({ particleCount: 80, spread: 70, origin: { y: 0.62 } });
           }
-
-          colorVal.textContent = res.extracted_color ?? "—";
-          colorConf.textContent = res.color_confidence ?? "—";
-
-          paletteList.innerHTML = "";
-          (res.color_palette || []).forEach((c) => {
-            const li = document.createElement("li");
-            li.textContent = c;
-            paletteList.appendChild(li);
-          });
-
-          createdIds.innerHTML = "";
-          (res.wardrobe_item_ids || []).forEach((id) => {
-            const li = document.createElement("li");
-            li.className = "mono";
-            li.textContent = id;
-            createdIds.appendChild(li);
-          });
         } catch (e) {
-          scanStatusEl.textContent = "error";
-          showError(e.message);
+          endProgress();
+          updateSessionBadge("failed");
+          setError(e.message || "Scan upload failed.");
+          progressShell.classList.add("hidden");
+          showToast("Scan failed. Please retry.", "error");
+        } finally {
+          processBtn.disabled = !selectedFile;
+          startBtn.disabled = false;
         }
+      }
+
+      dropzone.addEventListener("click", () => fileInput.click());
+      fileInput.addEventListener("change", () => setFile(fileInput.files && fileInput.files[0]));
+
+      ["dragenter", "dragover"].forEach((evt) =>
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.add("dragover");
+        })
+      );
+      ["dragleave", "drop"].forEach((evt) =>
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove("dragover");
+        })
+      );
+      dropzone.addEventListener("drop", (e) => {
+        const file = e.dataTransfer && e.dataTransfer.files ? e.dataTransfer.files[0] : null;
+        setFile(file);
       });
+
+      startBtn.addEventListener("click", startSession);
+      processBtn.addEventListener("click", processUpload);
+
+      mountAppShell({ activePage: "scan" });
+      updateSessionBadge("idle");
     </script>
   </body>
 </html>

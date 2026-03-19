@@ -5,376 +5,410 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wardrobe</title>
     <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      .wardrobe-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 16px;
+        align-items: start;
+      }
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .masonry {
+        column-count: 3;
+        column-gap: 14px;
+      }
+      .wardrobe-card {
+        break-inside: avoid;
+        margin-bottom: 14px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 76%, transparent), var(--surface));
+      }
+      .card-media {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        background: color-mix(in srgb, var(--surface-3) 70%, black);
+      }
+      .card-body {
+        padding: 10px;
+        display: grid;
+        gap: 8px;
+      }
+      .wear-chip {
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 5px 8px;
+      }
+      .delete-float {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        border-radius: 999px;
+        border: 1px solid color-mix(in srgb, var(--danger) 64%, var(--border));
+        background: color-mix(in srgb, var(--danger) 76%, var(--surface));
+        color: #fff;
+        width: 34px;
+        height: 34px;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      .wardrobe-card:hover .delete-float {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .swipe-shell {
+        position: relative;
+      }
+      .swipe-content {
+        transition: transform 0.18s ease;
+      }
+      .swipe-delete {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 88px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: color-mix(in srgb, var(--danger) 74%, var(--surface));
+      }
+      .swiped .swipe-content {
+        transform: translateX(-88px);
+      }
+      .swiped .swipe-delete {
+        display: flex;
+      }
+      .stats-sidebar {
+        position: sticky;
+        top: 78px;
+      }
+      .sidebar-toggle {
+        display: none;
+      }
+      .family-palette {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .family-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 12px;
+      }
+      @media (max-width: 1080px) {
+        .wardrobe-layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar-toggle {
+          display: inline-flex;
+        }
+        .stats-sidebar {
+          position: static;
+        }
+      }
+      @media (max-width: 880px) {
+        .masonry {
+          column-count: 2;
+        }
+        .filters {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 620px) {
+        .masonry {
+          column-count: 1;
+        }
+        .delete-float {
+          display: none;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <main class="container">
-      <header class="row">
-        <h1>Wardrobe</h1>
-        <a class="link" href="/">Home</a>
+  <body class="app-shell">
+    <main class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Wardrobe</h1>
+          <p class="page-subtitle">Your scanned inventory with live filters and usage analytics.</p>
+        </div>
+        <button id="toggleStatsBtn" class="btn secondary sidebar-toggle" type="button">Toggle Stats</button>
       </header>
 
-      <section class="panel">
-        <div class="row">
-          <button id="refreshBtn" class="btn">Refresh</button>
-          <label class="row muted small">
-            <input id="showInactive" type="checkbox" checked />
-            include inactive
+      <div class="panel" style="margin-bottom:16px;">
+        <div class="filters">
+          <label>
+            Category
+            <select id="categoryFilter">
+              <option value="all">All</option>
+              <option value="top">Tops</option>
+              <option value="bottom">Bottoms</option>
+            </select>
+          </label>
+          <label>
+            Color Family
+            <select id="familyFilter">
+              <option value="all">All</option>
+              <option value="warm">Warm</option>
+              <option value="cool">Cool</option>
+              <option value="neutral">Neutral</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+          <label>
+            Sort
+            <select id="sortFilter">
+              <option value="recent">Recently Added</option>
+              <option value="most_worn">Most Worn</option>
+              <option value="least_worn">Least Worn</option>
+            </select>
           </label>
         </div>
-        <div id="errorBox" class="error hidden"></div>
-      </section>
+      </div>
 
-      <section class="panel">
-        <div class="tableWrap">
-          <table class="table" id="table">
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>Item type</th>
-                <th>Category</th>
-                <th>Color</th>
-                <th>Palette</th>
-                <th>Embedding</th>
-                <th>Active</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="tbody"></tbody>
-          </table>
+      <section class="wardrobe-layout">
+        <div>
+          <div id="wardrobeEmpty" class="empty-state hidden">
+            <div class="empty-art">[]</div>
+            <strong>Your wardrobe is empty - scan your first garment to get started</strong>
+            <a class="btn" href="/frontend/scan.html">Scan First Garment</a>
+          </div>
+          <div id="masonry" class="masonry"></div>
         </div>
+
+        <aside id="statsSidebar" class="panel stats-sidebar">
+          <div class="row space-between">
+            <h3 style="margin:0;">Wardrobe Stats</h3>
+            <button id="collapseBtn" class="btn ghost small" type="button">Collapse</button>
+          </div>
+          <div id="statsContent" style="margin-top:12px;">
+            <div class="summary">
+              <div class="row space-between"><span>Total Items</span><strong id="statTotal">-</strong></div>
+              <div class="row space-between"><span>Tops</span><strong id="statTops">-</strong></div>
+              <div class="row space-between"><span>Bottoms</span><strong id="statBottoms">-</strong></div>
+            </div>
+            <div style="margin-top:12px;">
+              <canvas id="categoryChart" height="180"></canvas>
+            </div>
+            <div class="summary" style="margin-top:12px;">
+              <div><strong>Most worn:</strong> <span id="statMostWorn">-</span></div>
+              <div style="margin-top:6px;"><strong>Least worn:</strong> <span id="statLeastWorn">-</span></div>
+            </div>
+            <div class="summary" style="margin-top:12px;">
+              <div><strong>Dominant color family</strong></div>
+              <div id="dominantFamily" class="family-palette" style="margin-top:8px;"></div>
+            </div>
+          </div>
+        </aside>
       </section>
     </main>
 
-    <script src="/frontend/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="/frontend/app.js?v=10"></script>
     <script>
-      const tbody = document.getElementById("tbody");
-      const errorBox = document.getElementById("errorBox");
-      const refreshBtn = document.getElementById("refreshBtn");
-      const showInactive = document.getElementById("showInactive");
+      const masonry = document.getElementById("masonry");
+      const wardrobeEmpty = document.getElementById("wardrobeEmpty");
+      const categoryFilter = document.getElementById("categoryFilter");
+      const familyFilter = document.getElementById("familyFilter");
+      const sortFilter = document.getElementById("sortFilter");
+      const toggleStatsBtn = document.getElementById("toggleStatsBtn");
+      const collapseBtn = document.getElementById("collapseBtn");
+      const statsContent = document.getElementById("statsContent");
 
-      const TOP_TYPES = ["unknown", "shirt", "tshirt", "kurta", "hoodie"];
-      const BOTTOM_TYPES = ["unknown", "jeans", "trousers", "chinos", "shorts"];
-      const editingIds = window.__wardrobeEditingIds || (window.__wardrobeEditingIds = new Set());
+      let allItems = [];
+      let chart = null;
 
-      function showError(msg) {
-        errorBox.textContent = msg;
-        errorBox.classList.remove("hidden");
-      }
-      function clearError() {
-        errorBox.textContent = "";
-        errorBox.classList.add("hidden");
+      function prettyName(item) {
+        return (item.item_type && item.item_type !== "unknown" ? item.item_type : item.category || "item").replace("_", " ");
       }
 
-      async function setActive(id, isActive) {
-        await apiFetch(`/wardrobe/${id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ is_active: isActive }),
-        });
-      }
-
-      async function setCategory(id, category) {
-        await apiFetch(`/wardrobe/${id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ category }),
-        });
-      }
-
-      async function setItemType(id, itemType) {
-        await apiFetch(`/wardrobe/${id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ item_type: itemType }),
-        });
-      }
-
-      async function deleteItem(id) {
-        await apiFetch(`/wardrobe/${id}`, { method: "DELETE" });
-      }
-
-      function renderRow(item) {
-        const tr = document.createElement("tr");
-
-        const imgTd = document.createElement("td");
-        const img = document.createElement("img");
-        img.className = "thumb";
-        img.alt = "item";
-        img.src = renderImage(item.image_preview_url || item.image_url);
-        imgTd.appendChild(img);
-        tr.appendChild(imgTd);
-
-        const typeTd = document.createElement("td");
-        const typeWrap = document.createElement("div");
-        typeWrap.className = "cellCol";
-
-        const lockRow = document.createElement("div");
-        lockRow.style.display = "flex";
-        lockRow.style.gap = "8px";
-        lockRow.style.alignItems = "center";
-        lockRow.style.flexWrap = "wrap";
-
-        const lockBadge = document.createElement("span");
-        lockBadge.className = "badge basic";
-        lockBadge.style.padding = "4px 8px";
-
-        const changeBtn = document.createElement("button");
-        changeBtn.className = "btn small secondary hidden";
-        changeBtn.type = "button";
-        changeBtn.addEventListener("click", () => {
-          if (editingIds.has(item.id)) editingIds.delete(item.id);
-          else editingIds.add(item.id);
-          updateLockUI();
-        });
-
-        lockRow.appendChild(lockBadge);
-        lockRow.appendChild(changeBtn);
-
-        const typeSelect = document.createElement("select");
-        typeSelect.className = "select";
-
-        const typeSaved = document.createElement("span");
-        typeSaved.className = "muted small hidden";
-        typeSaved.textContent = "Saved";
-
-        const typeHint = document.createElement("div");
-        typeHint.className = "muted small";
-        typeHint.style.display = "flex";
-        typeHint.style.gap = "8px";
-        typeHint.style.alignItems = "center";
-        typeHint.style.flexWrap = "wrap";
-
-        function allowedTypesForCategory(category) {
-          return category === "bottom" ? BOTTOM_TYPES : TOP_TYPES;
+      function sortItems(items) {
+        const mode = sortFilter.value;
+        const list = [...items];
+        if (mode === "most_worn") {
+          list.sort((a, b) => Number(b.wear_count || 0) - Number(a.wear_count || 0));
+        } else if (mode === "least_worn") {
+          list.sort((a, b) => Number(a.wear_count || 0) - Number(b.wear_count || 0));
+        } else {
+          list.sort((a, b) => Date.parse(b.created_at || 0) - Date.parse(a.created_at || 0));
         }
-
-        function isLocked() {
-          const catOk = item.category === "top" || item.category === "bottom";
-          const typeOk = item.item_type && item.item_type !== "unknown";
-          return catOk && typeOk;
-        }
-
-        function fillTypeOptions() {
-          const allowed = allowedTypesForCategory(item.category);
-          typeSelect.innerHTML = "";
-          allowed.forEach((opt) => {
-            const o = document.createElement("option");
-            o.value = opt;
-            o.textContent = opt;
-            typeSelect.appendChild(o);
-          });
-
-          const current = allowed.includes(item.item_type) ? item.item_type : "unknown";
-          typeSelect.value = current;
-        }
-
-        async function updateItemType(next) {
-          const prev = item.item_type || "unknown";
-          typeSelect.disabled = true;
-          try {
-            await setItemType(item.id, next);
-            item.item_type = next;
-            typeSaved.classList.remove("hidden");
-            setTimeout(() => typeSaved.classList.add("hidden"), 1200);
-            refreshTypeHint();
-            return true;
-          } catch (e) {
-            item.item_type = prev;
-            fillTypeOptions();
-            refreshTypeHint();
-            showError(e.message);
-            return false;
-          } finally {
-            typeSelect.disabled = false;
-          }
-        }
-
-        let categorySelectRef = null;
-        function updateLockUI() {
-          const locked = isLocked();
-          const editing = editingIds.has(item.id);
-          const disabled = locked && !editing;
-
-          if (locked) {
-            lockBadge.className = "badge basic";
-            lockBadge.textContent = "Ready";
-          } else {
-            lockBadge.className = "badge medium";
-            lockBadge.textContent = "Needs review ⚠";
-          }
-
-          changeBtn.classList.toggle("hidden", !locked);
-          changeBtn.textContent = editing ? "Done" : "Change";
-
-          typeSelect.disabled = disabled;
-          if (categorySelectRef) categorySelectRef.disabled = disabled;
-        }
-
-        function refreshTypeHint() {
-          const suggested = item.suggested_item_type;
-          const conf = item.suggested_item_type_confidence;
-          const allowed = allowedTypesForCategory(item.category);
-
-          if (!suggested || !allowed.includes(suggested)) {
-            typeHint.textContent = "";
-            return;
-          }
-
-          const pct = typeof conf === "number" ? ` (${Math.round(conf * 100)}%)` : "";
-          const same = (item.item_type || "unknown") === suggested;
-
-          typeHint.innerHTML = "";
-          const label = document.createElement("span");
-          label.textContent = `Suggested: ${suggested}${pct}`;
-          typeHint.appendChild(label);
-
-          if (!same) {
-            const btn = document.createElement("button");
-            btn.className = "btn small secondary";
-            btn.type = "button";
-            btn.textContent = "Apply";
-            btn.addEventListener("click", async () => {
-              clearError();
-              btn.disabled = true;
-              typeSelect.value = suggested;
-              await updateItemType(suggested);
-              btn.disabled = false;
-            });
-            typeHint.appendChild(btn);
-          }
-        }
-
-        fillTypeOptions();
-        refreshTypeHint();
-
-        typeSelect.addEventListener("change", async () => {
-          clearError();
-          await updateItemType(typeSelect.value);
-          updateLockUI();
-        });
-
-        typeWrap.appendChild(lockRow);
-        typeWrap.appendChild(typeSelect);
-        typeWrap.appendChild(typeSaved);
-        typeWrap.appendChild(typeHint);
-        typeTd.appendChild(typeWrap);
-        tr.appendChild(typeTd);
-
-        const catTd = document.createElement("td");
-        const categoryWrap = document.createElement("div");
-        categoryWrap.className = "cellCol";
-
-        const categorySelect = document.createElement("select");
-        categorySelect.className = "select";
-        ["top", "bottom"].forEach((opt) => {
-          const o = document.createElement("option");
-          o.value = opt;
-          o.textContent = opt;
-          categorySelect.appendChild(o);
-        });
-        categorySelect.value = item.category === "bottom" ? "bottom" : "top";
-        categorySelectRef = categorySelect;
-
-        const saved = document.createElement("span");
-        saved.className = "muted small hidden";
-        saved.textContent = "Saved";
-
-        categorySelect.addEventListener("change", async () => {
-          clearError();
-          const prev = item.category;
-          const next = categorySelect.value;
-          categorySelect.disabled = true;
-          try {
-            await setCategory(item.id, next);
-            item.category = next;
-            fillTypeOptions();
-            refreshTypeHint();
-            updateLockUI();
-            saved.classList.remove("hidden");
-            setTimeout(() => saved.classList.add("hidden"), 1200);
-          } catch (e) {
-            item.category = prev;
-            categorySelect.value = prev === "bottom" ? "bottom" : "top";
-            showError(e.message);
-          } finally {
-            categorySelect.disabled = false;
-          }
-        });
-
-        categoryWrap.appendChild(categorySelect);
-        categoryWrap.appendChild(saved);
-        catTd.appendChild(categoryWrap);
-        tr.appendChild(catTd);
-
-        updateLockUI();
-
-        const colorTd = document.createElement("td");
-        colorTd.textContent = item.color ?? "—";
-        tr.appendChild(colorTd);
-
-        const palTd = document.createElement("td");
-        palTd.textContent = Array.isArray(item.color_palette) ? item.color_palette.join(", ") : "—";
-        tr.appendChild(palTd);
-
-        const embTd = document.createElement("td");
-        embTd.textContent = item.has_embedding ? `yes (${item.embedding_dim ?? "?"})` : "no";
-        tr.appendChild(embTd);
-
-        const activeTd = document.createElement("td");
-        activeTd.textContent = item.is_active ? "true" : "false";
-        tr.appendChild(activeTd);
-
-        const actionsTd = document.createElement("td");
-        actionsTd.className = "actions";
-
-        const toggleBtn = document.createElement("button");
-        toggleBtn.className = "btn small";
-        toggleBtn.textContent = item.is_active ? "Deactivate" : "Activate";
-        toggleBtn.addEventListener("click", async () => {
-          clearError();
-          try {
-            await setActive(item.id, !item.is_active);
-            await load();
-          } catch (e) {
-            showError(e.message);
-          }
-        });
-        actionsTd.appendChild(toggleBtn);
-
-        const delBtn = document.createElement("button");
-        delBtn.className = "btn small danger";
-        delBtn.textContent = "Delete";
-        delBtn.addEventListener("click", async () => {
-          clearError();
-          if (!confirm("Soft-delete this item (set inactive)?")) return;
-          try {
-            await deleteItem(item.id);
-            await load();
-          } catch (e) {
-            showError(e.message);
-          }
-        });
-        actionsTd.appendChild(delBtn);
-
-        tr.appendChild(actionsTd);
-        return tr;
+        return list;
       }
 
-      async function load() {
-        clearError();
-        tbody.innerHTML = "";
-        const include = showInactive.checked ? "true" : "false";
+      function applyFilters() {
+        const category = categoryFilter.value;
+        const family = familyFilter.value;
+        let filtered = [...allItems];
+        if (category !== "all") filtered = filtered.filter((it) => it.category === category);
+        if (family !== "all") filtered = filtered.filter((it) => getColorFamily(it.color) === family);
+        filtered = sortItems(filtered);
+        renderCards(filtered);
+      }
+
+      async function deleteItem(itemId) {
+        await apiFetch(`/wardrobe/${itemId}`, { method: "DELETE" });
+      }
+
+      function installSwipe(card, onDelete) {
+        let startX = 0;
+        let moved = false;
+        const shell = card.querySelector(".swipe-shell");
+        if (!shell) return;
+        shell.addEventListener("touchstart", (e) => {
+          moved = false;
+          startX = e.changedTouches[0].clientX;
+        }, { passive: true });
+        shell.addEventListener("touchmove", (e) => {
+          const dx = e.changedTouches[0].clientX - startX;
+          if (dx < -35) {
+            moved = true;
+            shell.classList.add("swiped");
+          }
+          if (dx > 35) shell.classList.remove("swiped");
+        }, { passive: true });
+        shell.addEventListener("touchend", () => {
+          if (!moved) shell.classList.remove("swiped");
+        });
+        const btn = shell.querySelector(".swipe-delete button");
+        if (btn) btn.addEventListener("click", onDelete);
+      }
+
+      function renderCards(items) {
+        masonry.innerHTML = "";
+        wardrobeEmpty.classList.toggle("hidden", items.length > 0);
+        if (!items.length) return;
+
+        items.forEach((item) => {
+          const family = getColorFamily(item.color);
+          const card = document.createElement("article");
+          card.className = "wardrobe-card";
+          card.innerHTML = `
+            <div class="swipe-shell">
+              <div class="swipe-content">
+                <img class="card-media" src="${renderImage(item.image_preview_url || item.image_url)}" alt="${prettyName(item)}" />
+                <button class="delete-float" type="button" title="Delete item">x</button>
+                <div class="card-body">
+                  <div class="row space-between">
+                    <strong>${prettyName(item)}</strong>
+                    <span class="wear-chip">Worn ${Number(item.wear_count || 0)}x</span>
+                  </div>
+                  <div class="row space-between">
+                    <span class="badge ${item.category === "bottom" ? "bottom" : "top"}">${item.category === "bottom" ? "BOTTOM" : "TOP"}</span>
+                    <span class="color-chip"><span class="swatch-dot" style="background:${getColorHex(item.color)}"></span>${item.color || "unknown"}</span>
+                  </div>
+                  <div class="muted tiny">Family: ${family}</div>
+                </div>
+              </div>
+              <div class="swipe-delete"><button class="btn danger small" type="button">Delete</button></div>
+            </div>
+          `;
+          const onDelete = async () => {
+            try {
+              await deleteItem(item.id);
+              showToast("Item deleted from wardrobe.", "success");
+              await loadWardrobe();
+            } catch (e) {
+              showToast(e.message || "Delete failed", "error");
+            }
+          };
+          const floatBtn = card.querySelector(".delete-float");
+          if (floatBtn) floatBtn.addEventListener("click", onDelete);
+          installSwipe(card, onDelete);
+          masonry.appendChild(card);
+        });
+      }
+
+      function updateStats(items) {
+        const tops = items.filter((it) => it.category === "top");
+        const bottoms = items.filter((it) => it.category === "bottom");
+        document.getElementById("statTotal").textContent = String(items.length);
+        document.getElementById("statTops").textContent = String(tops.length);
+        document.getElementById("statBottoms").textContent = String(bottoms.length);
+
+        const byWear = [...items].sort((a, b) => Number(b.wear_count || 0) - Number(a.wear_count || 0));
+        const most = byWear[0];
+        const least = byWear[byWear.length - 1];
+        document.getElementById("statMostWorn").textContent = most ? `${prettyName(most)} (${Number(most.wear_count || 0)}x)` : "-";
+        document.getElementById("statLeastWorn").textContent = least ? `${prettyName(least)} (${Number(least.wear_count || 0)}x)` : "-";
+
+        const familyCount = items.reduce((acc, item) => {
+          const key = getColorFamily(item.color);
+          acc[key] = (acc[key] || 0) + 1;
+          return acc;
+        }, {});
+        const dominantWrap = document.getElementById("dominantFamily");
+        dominantWrap.innerHTML = "";
+        Object.entries(familyCount).sort((a, b) => b[1] - a[1]).forEach(([family, count]) => {
+          const chip = document.createElement("span");
+          chip.className = "family-chip";
+          chip.innerHTML = `<span class="swatch-dot" style="background:${getColorHex(family)}"></span>${family}: ${count}`;
+          dominantWrap.appendChild(chip);
+        });
+
+        const chartCanvas = document.getElementById("categoryChart");
+        if (chart) chart.destroy();
+        chart = new Chart(chartCanvas, {
+          type: "doughnut",
+          data: {
+            labels: ["Tops", "Bottoms"],
+            datasets: [{
+              data: [tops.length, bottoms.length],
+              backgroundColor: ["#58b4ff", "#ef8db7"],
+              borderColor: "transparent",
+            }],
+          },
+          options: {
+            plugins: { legend: { labels: { color: getComputedStyle(document.documentElement).getPropertyValue("--text") } } },
+          },
+        });
+      }
+
+      async function loadWardrobe() {
+        const res = await apiFetch("/wardrobe?include_inactive=false");
+        allItems = Array.isArray(res.items) ? res.items : [];
+        updateStats(allItems);
+        applyFilters();
+      }
+
+      categoryFilter.addEventListener("change", applyFilters);
+      familyFilter.addEventListener("change", applyFilters);
+      sortFilter.addEventListener("change", applyFilters);
+
+      let sidebarCollapsed = false;
+      function toggleSidebar() {
+        sidebarCollapsed = !sidebarCollapsed;
+        statsContent.classList.toggle("hidden", sidebarCollapsed);
+        collapseBtn.textContent = sidebarCollapsed ? "Expand" : "Collapse";
+      }
+      collapseBtn.addEventListener("click", toggleSidebar);
+      toggleStatsBtn.addEventListener("click", toggleSidebar);
+
+      async function initPage() {
+        if (!mountAppShell({ activePage: "wardrobe" })) return;
         try {
-          const res = await apiFetch(`/wardrobe?include_inactive=${include}`);
-          (res.items || []).forEach((item) => tbody.appendChild(renderRow(item)));
+          await loadWardrobe();
         } catch (e) {
-          showError(e.message);
+          showToast(e.message || "Failed to load wardrobe.", "error");
         }
       }
 
-      refreshBtn.addEventListener("click", load);
-      showInactive.addEventListener("change", load);
-      load();
+      initPage();
     </script>
   </body>
 </html>

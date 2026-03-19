@@ -1,0 +1,43 @@
+{
+  "dataset_size": 34,
+  "weak_label_distribution": {
+    "upper_only": 19,
+    "lower_only": 14,
+    "full_outfit": 1
+  },
+  "detection_accuracy_proxy": 0.7647,
+  "segmentation_success_rate": 1.0,
+  "color_success_rate": 0.5161,
+  "pipeline_success_rate": 0.4118,
+  "failure_counts": {
+    "missed_detection": 4,
+    "color_misclassification": 14,
+    "wrong_class": 4
+  },
+  "mean_mask_quality_score": 0.9871,
+  "mean_color_stability_score": 63.2,
+  "mean_lab_drift": 4.0433,
+  "mean_hsv_improvement_pct": -7.83,
+  "top_20_worst_images": [
+    "C:\\Users\\amogh\\Desktop\\clothes\\1.jpg",
+    "C:\\Users\\amogh\\Desktop\\clothes\\2.jpg",
+    "C:\\Users\\amogh\\Desktop\\clothes\\368681-3640432.avif",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (10).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (20).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (11).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (16).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (15).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (21).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (19).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\do2wnload.jpg",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (14).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (12).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (17).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (23).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\111.jpg",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (4).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (8).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (1).webp",
+    "C:\\Users\\amogh\\Desktop\\clothes\\shopping (18).webp"
+  ]
+}

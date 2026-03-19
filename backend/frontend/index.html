@@ -3,22 +3,245 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wardrobe Recommendation System (Dev UI)</title>
+    <title>Outfit AI Dashboard</title>
     <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 16px;
+      }
+      .hero-card {
+        min-height: 210px;
+        display: grid;
+        align-content: space-between;
+      }
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .stat {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px;
+        background: color-mix(in srgb, var(--surface-3) 68%, transparent);
+      }
+      .ootd-shell {
+        display: grid;
+        gap: 12px;
+      }
+      .ootd-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .ootd-img-wrap {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--surface-3) 72%, black);
+        padding: 8px;
+      }
+      .ootd-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .reason-box {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px;
+        background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+      }
+      .quick-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .stat-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <main class="container">
-      <h1>Wardrobe Recommendation System (Dev UI)</h1>
-      <p class="muted">
-        Minimal test UI for: scan → SAM mask → color → embedding → wardrobe → outfit scoring.
-      </p>
+  <body class="app-shell">
+    <main class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Your daily wardrobe intelligence with recommendation feedback.</p>
+        </div>
+      </header>
 
-      <div class="nav">
-        <a class="btn" href="/frontend/scan.html">Scan Item</a>
-        <a class="btn" href="/frontend/wardrobe.html">View Wardrobe</a>
-        <a class="btn" href="/frontend/outfits.html">Generate Outfits</a>
-        <a class="btn secondary" href="/frontend/profile.html">Body Profile</a>
-      </div>
+      <section class="hero">
+        <article class="panel hero-card">
+          <div>
+            <h2 style="margin:0 0 8px 0;">Outfit AI Control Center</h2>
+            <p class="muted" style="margin:0;">
+              Scan one garment at a time, build your wardrobe memory, and generate balanced top-bottom looks.
+            </p>
+          </div>
+          <div class="quick-actions">
+            <a class="btn" href="/frontend/scan.html">Scan Garment</a>
+            <a class="btn secondary" href="/frontend/outfits.html">Generate Outfits</a>
+            <a class="btn secondary" href="/frontend/wardrobe.html">Open Wardrobe</a>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="stat-grid" id="quickStats">
+            <div class="stat"><div class="muted tiny">Total Items</div><div id="statTotal" style="font-weight:800;font-size:24px;">-</div></div>
+            <div class="stat"><div class="muted tiny">Tops</div><div id="statTop" style="font-weight:800;font-size:24px;">-</div></div>
+            <div class="stat"><div class="muted tiny">Bottoms</div><div id="statBottom" style="font-weight:800;font-size:24px;">-</div></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel ootd-shell">
+        <div class="row space-between">
+          <h2 style="margin:0;">Outfit of the Day</h2>
+          <span id="ootdScoreBadge" class="badge compat-mid">Score -</span>
+        </div>
+        <div id="ootdContent" class="summary muted">Loading today's outfit...</div>
+      </section>
     </main>
+
+    <script src="/frontend/app.js?v=10"></script>
+    <script>
+      function scoreBadgeClass(score) {
+        if (score > 0.8) return "compat-good";
+        if (score >= 0.6) return "compat-mid";
+        return "compat-low";
+      }
+
+      async function loadQuickStats() {
+        try {
+          const res = await apiFetch("/wardrobe?include_inactive=false");
+          const items = Array.isArray(res.items) ? res.items : [];
+          const tops = items.filter((it) => it.category === "top").length;
+          const bottoms = items.filter((it) => it.category === "bottom").length;
+          document.getElementById("statTotal").textContent = String(items.length);
+          document.getElementById("statTop").textContent = String(tops);
+          document.getElementById("statBottom").textContent = String(bottoms);
+        } catch (_e) {
+          document.getElementById("statTotal").textContent = "-";
+          document.getElementById("statTop").textContent = "-";
+          document.getElementById("statBottom").textContent = "-";
+        }
+      }
+
+      async function ensureTodayOutfit() {
+        const today = fmtDateISO(new Date());
+        const month = fmtMonthISO(new Date());
+        let res = await apiFetch(`/outfits/history?month=${month}`);
+        let items = Array.isArray(res.items) ? res.items : [];
+        let todayOutfit = items.find((it) => String(it.date) === today);
+        if (todayOutfit) return todayOutfit;
+
+        await apiFetch(`/outfits/generate?start_date=${today}&days=1`, { method: "POST" });
+        res = await apiFetch(`/outfits/history?month=${month}`);
+        items = Array.isArray(res.items) ? res.items : [];
+        todayOutfit = items.find((it) => String(it.date) === today);
+        return todayOutfit || null;
+      }
+
+      async function markWorn(outfit) {
+        if (!outfit || !outfit.outfit_id) return;
+        await apiFetch("/outfits/mark-worn", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            outfit_id: outfit.outfit_id,
+            worn_date: fmtDateISO(new Date()),
+          }),
+        });
+      }
+
+      function renderOOTD(outfit) {
+        const content = document.getElementById("ootdContent");
+        const scoreBadge = document.getElementById("ootdScoreBadge");
+
+        if (!outfit || !outfit.top_item || !outfit.bottom_item) {
+          scoreBadge.textContent = "Score -";
+          scoreBadge.className = "badge compat-mid";
+          content.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-art">[]</div>
+              <strong>No outfit ready yet</strong>
+              <div class="muted">Scan at least one top and one bottom to generate your daily look.</div>
+              <a class="btn" href="/frontend/scan.html">Scan First Garment</a>
+            </div>
+          `;
+          return;
+        }
+
+        const scoreNum = Number(outfit.score ?? 0.7);
+        const normalizedScore = Math.max(0, Math.min(1, scoreNum));
+        scoreBadge.className = `badge ${scoreBadgeClass(normalizedScore)}`;
+        scoreBadge.textContent = `Compatibility ${normalizedScore.toFixed(2)}`;
+
+        const reasons = simpleReasonText(outfit.explanation_data);
+        content.className = "";
+        content.innerHTML = `
+          <div class="ootd-images">
+            <div class="ootd-img-wrap">
+              <img class="ootd-img" src="${renderImage(outfit.top_item.image_preview_url || outfit.top_item.image_url)}" alt="Top garment" />
+              <div class="row space-between" style="margin-top:8px;">
+                <span class="badge top">TOP</span>
+                <span class="color-chip"><span class="swatch-dot" style="background:${getColorHex(outfit.top_item.color)}"></span>${outfit.top_item.color || "unknown"}</span>
+              </div>
+            </div>
+            <div class="ootd-img-wrap">
+              <img class="ootd-img" src="${renderImage(outfit.bottom_item.image_preview_url || outfit.bottom_item.image_url)}" alt="Bottom garment" />
+              <div class="row space-between" style="margin-top:8px;">
+                <span class="badge bottom">BOTTOM</span>
+                <span class="color-chip"><span class="swatch-dot" style="background:${getColorHex(outfit.bottom_item.color)}"></span>${outfit.bottom_item.color || "unknown"}</span>
+              </div>
+            </div>
+          </div>
+          <div class="reason-box"><strong>Why this works:</strong> ${summarizeExplanation(outfit.explanation_data)}</div>
+          <div class="reason-box"><strong>Color harmony:</strong> ${reasons.colorReason}</div>
+          <div class="reason-box"><strong>Style match:</strong> ${reasons.styleReason}</div>
+          <div class="row">
+            <button id="markWornBtn" class="btn">Mark as Worn</button>
+            <a class="btn secondary" href="/frontend/outfits.html">Open Outfit Planner</a>
+          </div>
+        `;
+
+        const btn = document.getElementById("markWornBtn");
+        if (btn) {
+          btn.addEventListener("click", async () => {
+            try {
+              btn.disabled = true;
+              await markWorn(outfit);
+              showToast("Marked as worn for today.", "success");
+            } catch (e) {
+              showToast(e.message || "Could not mark outfit as worn.", "error");
+            } finally {
+              btn.disabled = false;
+            }
+          });
+        }
+      }
+
+      async function initPage() {
+        if (!mountAppShell({ activePage: "home" })) return;
+        await loadQuickStats();
+        try {
+          const outfit = await ensureTodayOutfit();
+          renderOOTD(outfit);
+        } catch (e) {
+          const content = document.getElementById("ootdContent");
+          content.className = "error";
+          content.textContent = e.message || "Failed to load outfit of the day.";
+        }
+      }
+
+      initPage();
+    </script>
   </body>
 </html>

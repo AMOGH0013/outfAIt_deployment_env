@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scan History</title>
+    <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      .timeline {
+        display: grid;
+        gap: 12px;
+      }
+      .timeline-item {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 76%, transparent), var(--surface));
+        padding: 12px;
+      }
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: 10px;
+        align-items: start;
+      }
+      .timeline-grid img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+      }
+      @media (max-width: 760px) {
+        .timeline-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="app-shell">
+    <main class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Scan History</h1>
+          <p class="page-subtitle">Timeline of detected garments with quick delete controls.</p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="row space-between">
+          <h2 style="margin:0;">Recent Scans</h2>
+          <button id="refreshBtn" class="btn secondary small" type="button">Refresh</button>
+        </div>
+        <div id="emptyState" class="empty-state hidden" style="margin-top:12px;">
+          <div class="empty-art">[]</div>
+          <strong>No scans yet</strong>
+          <a class="btn" href="/frontend/scan.html">Go to Scan</a>
+        </div>
+        <div id="timeline" class="timeline" style="margin-top:12px;"></div>
+      </section>
+    </main>
+
+    <script src="/frontend/app.js?v=10"></script>
+    <script>
+      const refreshBtn = document.getElementById("refreshBtn");
+      const emptyState = document.getElementById("emptyState");
+      const timeline = document.getElementById("timeline");
+
+      function renderHistory(items) {
+        timeline.innerHTML = "";
+        emptyState.classList.toggle("hidden", items.length > 0);
+        if (!items.length) return;
+
+        items.forEach((item) => {
+          const createdAt = item.created_at ? new Date(item.created_at).toLocaleString() : "-";
+          const card = document.createElement("article");
+          card.className = "timeline-item";
+          card.innerHTML = `
+            <div class="timeline-grid">
+              <img src="${renderImage(item.uploaded_image_preview_url || item.uploaded_image_url)}" alt="Uploaded garment" />
+              <div>
+                <div class="row space-between">
+                  <div class="row">
+                    <span class="badge ${item.category === "bottom" ? "bottom" : "top"}">${item.detected_label === "lower" ? "BOTTOM" : "TOP"}</span>
+                    <span class="color-chip"><span class="swatch-dot" style="background:${getColorHex(item.color)}"></span>${item.color || "unknown"}</span>
+                  </div>
+                  <span class="muted small">${createdAt}</span>
+                </div>
+                <div class="summary" style="margin-top:8px;">
+                  <div><strong>Item type:</strong> ${item.item_type || "unknown"}</div>
+                  <div><strong>Wear count:</strong> ${Number(item.wear_count || 0)}</div>
+                  <div><strong>ID:</strong> <span class="mono">${item.wardrobe_item_id}</span></div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                  <button class="btn danger small delete-btn" type="button">Delete from wardrobe</button>
+                </div>
+              </div>
+            </div>
+          `;
+          const delBtn = card.querySelector(".delete-btn");
+          delBtn.addEventListener("click", async () => {
+            try {
+              delBtn.disabled = true;
+              await apiFetch(`/wardrobe/${item.wardrobe_item_id}`, { method: "DELETE" });
+              showToast("Item deleted.", "success");
+              await loadHistory();
+            } catch (e) {
+              showToast(e.message || "Delete failed.", "error");
+              delBtn.disabled = false;
+            }
+          });
+          timeline.appendChild(card);
+        });
+      }
+
+      async function loadHistory() {
+        try {
+          const res = await apiFetch("/scan/history?limit=300");
+          const items = Array.isArray(res.items) ? res.items : [];
+          renderHistory(items);
+        } catch (e) {
+          showToast(e.message || "Could not load scan history.", "error");
+        }
+      }
+
+      refreshBtn.addEventListener("click", loadHistory);
+
+      async function initPage() {
+        if (!mountAppShell({ activePage: "history" })) return;
+        await loadHistory();
+      }
+
+      initPage();
+    </script>
+  </body>
+</html>

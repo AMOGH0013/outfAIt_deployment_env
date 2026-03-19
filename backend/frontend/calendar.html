@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Outfit Calendar</title>
+    <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      .calendar-controls {
+        display: grid;
+        grid-template-columns: minmax(220px, 280px) auto;
+        gap: 10px;
+        align-items: end;
+      }
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .weekday {
+        text-align: center;
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .day-cell {
+        min-height: 106px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--surface-2) 68%, transparent);
+        padding: 8px;
+        cursor: pointer;
+      }
+      .day-cell.empty {
+        opacity: 0.4;
+        cursor: default;
+      }
+      .day-cell.has-outfit {
+        border-color: color-mix(in srgb, var(--primary) 52%, var(--border));
+      }
+      .day-thumbs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        margin-top: 6px;
+      }
+      .day-thumbs img {
+        width: 100%;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+      .detail-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .detail-images img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+      }
+      @media (max-width: 980px) {
+        .calendar-controls {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 780px) {
+        .calendar-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .detail-images {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="app-shell">
+    <main class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Outfit Calendar</h1>
+          <p class="page-subtitle">Monthly view of recommended or worn outfits.</p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="calendar-controls">
+          <label>
+            Month
+            <input id="monthInput" type="month" />
+          </label>
+          <button id="loadBtn" class="btn" type="button">Load Calendar</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </section>
+
+      <section class="panel">
+        <h2 style="margin-top:0;">Day Detail</h2>
+        <div id="detailBox" class="summary muted">Click a day to inspect outfit details.</div>
+      </section>
+    </main>
+
+    <script src="/frontend/app.js?v=10"></script>
+    <script>
+      const monthInput = document.getElementById("monthInput");
+      const loadBtn = document.getElementById("loadBtn");
+      const calendarGrid = document.getElementById("calendarGrid");
+      const detailBox = document.getElementById("detailBox");
+      let monthItems = [];
+
+      function getMonthMeta(monthIso) {
+        const [year, month] = monthIso.split("-").map(Number);
+        const first = new Date(year, month - 1, 1);
+        const days = new Date(year, month, 0).getDate();
+        return { year, month, firstWeekday: first.getDay(), days };
+      }
+
+      function renderDetail(item) {
+        if (!item || !item.top_item || !item.bottom_item) {
+          detailBox.className = "summary muted";
+          detailBox.textContent = "No outfit data for this day.";
+          return;
+        }
+        const reasons = simpleReasonText(item.explanation_data);
+        detailBox.className = "";
+        detailBox.innerHTML = `
+          <div class="row space-between">
+            <strong>${item.date}</strong>
+            <span class="badge ${item.is_worn ? "good" : "warn"}">${item.is_worn ? "Worn" : "Recommended"}</span>
+          </div>
+          <div class="detail-images" style="margin-top:10px;">
+            <img src="${renderImage(item.top_item.image_preview_url || item.top_item.image_url)}" alt="Top" />
+            <img src="${renderImage(item.bottom_item.image_preview_url || item.bottom_item.image_url)}" alt="Bottom" />
+          </div>
+          <div class="summary" style="margin-top:10px;"><strong>Color harmony:</strong> ${reasons.colorReason}</div>
+          <div class="summary" style="margin-top:8px;"><strong>Style match:</strong> ${reasons.styleReason}</div>
+        `;
+      }
+
+      function renderCalendar(monthIso) {
+        const meta = getMonthMeta(monthIso);
+        const mapByDate = new Map(monthItems.map((it) => [String(it.date), it]));
+        calendarGrid.innerHTML = "";
+
+        ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach((d) => {
+          const h = document.createElement("div");
+          h.className = "weekday";
+          h.textContent = d;
+          calendarGrid.appendChild(h);
+        });
+
+        for (let i = 0; i < meta.firstWeekday; i += 1) {
+          const empty = document.createElement("div");
+          empty.className = "day-cell empty";
+          calendarGrid.appendChild(empty);
+        }
+
+        for (let day = 1; day <= meta.days; day += 1) {
+          const dateIso = `${meta.year}-${String(meta.month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+          const item = mapByDate.get(dateIso);
+          const cell = document.createElement("button");
+          cell.type = "button";
+          cell.className = `day-cell ${item ? "has-outfit" : ""}`;
+          cell.innerHTML = `<div class="row space-between"><strong>${day}</strong>${item ? `<span class="tiny muted">${item.is_worn ? "worn" : "plan"}</span>` : ""}</div>`;
+          if (item && item.top_item && item.bottom_item) {
+            const thumbs = document.createElement("div");
+            thumbs.className = "day-thumbs";
+            thumbs.innerHTML = `
+              <img src="${renderImage(item.top_item.image_preview_url || item.top_item.image_url)}" alt="Top thumbnail" />
+              <img src="${renderImage(item.bottom_item.image_preview_url || item.bottom_item.image_url)}" alt="Bottom thumbnail" />
+            `;
+            cell.appendChild(thumbs);
+          }
+          cell.addEventListener("click", () => renderDetail(item));
+          calendarGrid.appendChild(cell);
+        }
+      }
+
+      async function loadCalendar() {
+        const month = monthInput.value;
+        try {
+          const res = await apiFetch(`/outfits/history?month=${month}`);
+          monthItems = Array.isArray(res.items) ? res.items : [];
+          renderCalendar(month);
+          if (monthItems.length) renderDetail(monthItems[0]);
+          else renderDetail(null);
+        } catch (e) {
+          showToast(e.message || "Could not load calendar.", "error");
+        }
+      }
+
+      async function initPage() {
+        if (!mountAppShell({ activePage: "calendar" })) return;
+        monthInput.value = fmtMonthISO(new Date());
+        await loadCalendar();
+      }
+
+      loadBtn.addEventListener("click", loadCalendar);
+      initPage();
+    </script>
+  </body>
+</html>

@@ -3,421 +3,392 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Body Profile (Wizard)</title>
+    <title>Profile Setup</title>
     <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      .wizard-steps {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .step-chip {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+      .step-chip.active {
+        background: var(--primary-soft);
+        color: var(--text);
+        border-color: color-mix(in srgb, var(--primary) 48%, var(--border));
+      }
+      .choice-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+      .choice-btn {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px;
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+        text-align: left;
+        font-weight: 700;
+      }
+      .choice-btn.active {
+        border-color: var(--primary);
+        box-shadow: var(--ring);
+      }
+      .body-shape-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+      .body-shape-btn {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+        padding: 10px;
+        display: grid;
+        justify-items: center;
+        gap: 8px;
+      }
+      .body-shape-btn svg {
+        width: 56px;
+        height: 86px;
+      }
+      .body-shape-btn.active {
+        border-color: var(--primary);
+        box-shadow: var(--ring);
+      }
+      .skin-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      .skin-btn {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+        padding: 10px;
+        text-align: left;
+      }
+      .skin-chip {
+        height: 28px;
+        border-radius: 8px;
+        border: 1px solid color-mix(in srgb, var(--border) 70%, #fff);
+        margin-bottom: 8px;
+      }
+      .skin-btn.active {
+        border-color: var(--primary);
+        box-shadow: var(--ring);
+      }
+      .wizard-footer {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+    </style>
   </head>
-  <body>
-    <main class="container">
-      <header class="row">
-        <h1>Body Profile (Wizard)</h1>
-        <a class="link" href="/">Home</a>
+  <body class="app-shell">
+    <main class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Profile Setup</h1>
+          <p class="page-subtitle">Optional inputs. Skip any step you do not want to fill.</p>
+        </div>
       </header>
 
       <section class="panel">
-        <div class="stepper" id="stepper">
-          <button class="step active" data-step="0" type="button">1. Identity</button>
-          <button class="step" data-step="1" type="button">2. Body shape</button>
-          <button class="step" data-step="2" type="button">3. Fit preference</button>
-          <button class="step" data-step="3" type="button">4. Skin tone</button>
-          <button class="step" data-step="4" type="button">5. Review</button>
-        </div>
-        <div class="muted small">
-          All fields are optional. Values are self-declared and only used for explainable personalization (no ML inference).
+        <div class="wizard-steps">
+          <span class="step-chip active" data-step-chip="0">1. Basics</span>
+          <span class="step-chip" data-step-chip="1">2. Fit</span>
+          <span class="step-chip" data-step-chip="2">3. Skin Tone</span>
+          <span class="step-chip" data-step-chip="3">4. Review</span>
         </div>
       </section>
 
       <section class="panel">
         <div id="errorBox" class="error hidden"></div>
-        <div id="statusBox" class="statusLine muted small"></div>
-
-        <!-- STEP 1 -->
-        <div class="wizardStep" data-step="0">
-          <h2>Basic Identity</h2>
-          <div class="formGrid">
-            <label>
-              <div class="muted small">User name</div>
-              <input id="userName" type="text" placeholder="e.g., Alex" maxlength="80" />
-            </label>
-
-            <label>
-              <div class="muted small">Age (optional)</div>
-              <input id="age" type="number" min="10" max="100" placeholder="10–100" />
-            </label>
+        <div id="step0">
+          <h2 style="margin-top:0;">Basic Details</h2>
+          <div class="field-grid">
+            <label>User Name <input id="userName" type="text" maxlength="80" /></label>
+            <label>Age <input id="age" type="number" min="10" max="100" /></label>
+            <label>Height (cm) <input id="height" type="number" min="50" max="250" /></label>
+            <label>Weight (kg) <input id="weight" type="number" min="20" max="400" /></label>
           </div>
+          <label style="margin-top:10px;">Sex
+            <select id="sex">
+              <option value="">Prefer not to say</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="prefer_not_to_say">Prefer not to say</option>
+            </select>
+          </label>
+        </div>
 
-          <div class="muted small" style="margin-top: 10px">Sex</div>
-          <div class="radioRow" id="sexRadios">
-            <label class="radio"><input type="radio" name="sex" value="male" /> male</label>
-            <label class="radio"><input type="radio" name="sex" value="female" /> female</label>
-            <label class="radio"><input type="radio" name="sex" value="other" /> other</label>
-            <label class="radio"><input type="radio" name="sex" value="prefer_not_to_say" /> prefer not to say</label>
+        <div id="step1" class="hidden">
+          <h2 style="margin-top:0;">Body Shape & Fit</h2>
+          <div class="muted small">Pick the closest option or skip.</div>
+          <div style="margin-top:10px;">
+            <div class="muted small">Body Shape</div>
+            <div id="bodyShapeGrid" class="body-shape-grid"></div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="muted small">Fit Preference</div>
+            <div id="fitGrid" class="choice-grid"></div>
           </div>
         </div>
 
-        <!-- STEP 2 -->
-        <div class="wizardStep hidden" data-step="1">
-          <h2>Body Shape (select one)</h2>
-          <div class="muted small">
-            Pick the silhouette that looks closest to you. This is self-declared and used only for future fit rules (not scoring yet).
-          </div>
-
-          <div class="cardGrid" id="bodyShapeGrid"></div>
+        <div id="step2" class="hidden">
+          <h2 style="margin-top:0;">Skin Tone</h2>
+          <div id="skinGrid" class="skin-grid"></div>
         </div>
 
-        <!-- STEP 3 -->
-        <div class="wizardStep hidden" data-step="2">
-          <h2>Fit Preference (used in scoring)</h2>
-          <div class="muted small">How do you prefer clothes to fit on you?</div>
-          <div class="cardGrid" id="fitPrefGrid"></div>
+        <div id="step3" class="hidden">
+          <h2 style="margin-top:0;">Review</h2>
+          <div id="reviewBox" class="summary"></div>
         </div>
 
-        <!-- STEP 4 -->
-        <div class="wizardStep hidden" data-step="3">
-          <h2>Skin Tone (optional)</h2>
-          <div class="muted small">
-            Optional. Used only for future color recommendations. Not used in scoring yet.
-          </div>
-          <div class="swatchGrid" id="skinToneGrid"></div>
-        </div>
-
-        <!-- STEP 5 -->
-        <div class="wizardStep hidden" data-step="4">
-          <h2>Review</h2>
-          <div class="kv" id="reviewKv"></div>
-          <details style="margin-top: 10px">
-            <summary class="muted small">Debug (raw profile JSON)</summary>
-            <pre class="pre" id="rawJson"></pre>
-          </details>
-        </div>
-
-        <div class="row wrap" style="margin-top: 14px">
+        <div class="wizard-footer">
           <button id="backBtn" class="btn secondary" type="button">Back</button>
-          <button id="nextBtn" class="btn" type="button">Next</button>
-          <div style="flex: 1"></div>
-          <button id="saveBtn" class="btn" type="button">Save profile</button>
+          <button id="nextBtn" class="btn secondary" type="button">Next</button>
+          <button id="skipBtn" class="btn ghost" type="button">Skip This Step</button>
+          <button id="saveBtn" class="btn" type="button">Save Profile</button>
         </div>
       </section>
     </main>
 
-    <script src="/frontend/app.js"></script>
+    <script src="/frontend/app.js?v=10"></script>
     <script>
+      const bodyShapes = [
+        { value: "slim", label: "Slim" },
+        { value: "average", label: "Average" },
+        { value: "athletic", label: "Athletic" },
+        { value: "broad", label: "Broad" },
+        { value: "rectangle", label: "Rectangle" },
+        { value: "triangle", label: "Triangle" },
+        { value: "inverted_triangle", label: "Inverted Triangle" },
+        { value: "oval", label: "Rounded/Oval" },
+      ];
+      const fitPrefs = ["slim", "regular", "loose"];
+      const skinTones = [
+        { value: "very_fair", label: "Very Fair", hex: "#f7e6d4" },
+        { value: "fair", label: "Fair", hex: "#efcfb0" },
+        { value: "medium", label: "Medium", hex: "#d6a47c" },
+        { value: "olive", label: "Olive", hex: "#b28f66" },
+        { value: "brown", label: "Brown", hex: "#8b5d3b" },
+        { value: "dark", label: "Dark", hex: "#5a3a2a" },
+      ];
+
       const errorBox = document.getElementById("errorBox");
-      const statusBox = document.getElementById("statusBox");
-
-      const stepper = document.getElementById("stepper");
-      const steps = Array.from(document.querySelectorAll(".wizardStep"));
-      const stepButtons = Array.from(document.querySelectorAll(".stepper .step"));
-      const backBtn = document.getElementById("backBtn");
-      const nextBtn = document.getElementById("nextBtn");
-      const saveBtn = document.getElementById("saveBtn");
-
       const userName = document.getElementById("userName");
       const age = document.getElementById("age");
-      const sexRadios = document.getElementById("sexRadios");
+      const height = document.getElementById("height");
+      const weight = document.getElementById("weight");
+      const sex = document.getElementById("sex");
+      const backBtn = document.getElementById("backBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const skipBtn = document.getElementById("skipBtn");
+      const saveBtn = document.getElementById("saveBtn");
+      const reviewBox = document.getElementById("reviewBox");
 
-      const bodyShapeGrid = document.getElementById("bodyShapeGrid");
-      const fitPrefGrid = document.getElementById("fitPrefGrid");
-      const skinToneGrid = document.getElementById("skinToneGrid");
+      const selected = {
+        body_shape: null,
+        fit_preference: null,
+        skin_tone: null,
+      };
 
-      const reviewKv = document.getElementById("reviewKv");
-      const rawJson = document.getElementById("rawJson");
+      let step = 0;
+      let currentProfile = null;
 
-      let currentStep = 0;
-      let profile = null;
-      let lastSavedAt = null;
-
-      const BODY_SHAPES = [
-        { value: "slim", label: "Slim", icon: "slim" },
-        { value: "average", label: "Average", icon: "average" },
-        { value: "athletic", label: "Athletic", icon: "athletic" },
-        { value: "broad", label: "Broad", icon: "broad" },
-        { value: "rectangle", label: "Rectangle", icon: "rectangle" },
-        { value: "triangle", label: "Triangle", icon: "triangle" },
-        { value: "inverted_triangle", label: "Inverted triangle", icon: "inverted_triangle" },
-        { value: "oval", label: "Oval", icon: "oval" },
-      ];
-
-      const FIT_PREFS = [
-        { value: "slim", label: "Slim fit" },
-        { value: "regular", label: "Regular" },
-        { value: "loose", label: "Loose" },
-      ];
-
-      const SKIN_TONES = [
-        { value: "very_fair", label: "Very fair", color: "#f7e7d8" },
-        { value: "fair", label: "Fair", color: "#f0d1b2" },
-        { value: "medium", label: "Medium", color: "#d7a57c" },
-        { value: "olive", label: "Olive", color: "#b38a5d" },
-        { value: "brown", label: "Brown", color: "#8a5a3b" },
-        { value: "dark", label: "Dark", color: "#4c2f22" },
-      ];
-
-      function showError(msg) {
-        errorBox.textContent = msg;
-        errorBox.classList.remove("hidden");
-      }
-      function clearError() {
-        errorBox.textContent = "";
-        errorBox.classList.add("hidden");
+      function setError(msg) {
+        errorBox.textContent = msg || "";
+        errorBox.classList.toggle("hidden", !msg);
       }
 
-      function setStatus(text) {
-        statusBox.textContent = text || "";
+      function bodyShapeSvg(shape) {
+        const fill = "currentColor";
+        if (shape === "triangle") return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-9 0-15 6-15 16 0 7 4 13 15 13s15-6 15-13c0-10-6-16-15-16Zm-18 35h36l16 58H6l16-58Z"/></svg>`;
+        if (shape === "inverted_triangle") return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-9 0-15 6-15 16 0 7 4 13 15 13s15-6 15-13c0-10-6-16-15-16Zm-28 35h56L56 78H24L12 46Zm14 32h28l-4 29H30l-4-29Z"/></svg>`;
+        if (shape === "rectangle") return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-9 0-15 6-15 16 0 7 4 13 15 13s15-6 15-13c0-10-6-16-15-16Zm-20 35h40v62H20V46Z"/></svg>`;
+        if (shape === "oval") return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-9 0-15 6-15 16 0 7 4 13 15 13s15-6 15-13c0-10-6-16-15-16Zm0 34c16 0 26 13 26 31s-10 31-26 31S14 94 14 76s10-31 26-31Z"/></svg>`;
+        if (shape === "slim") return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-8 0-13 6-13 15 0 8 4 14 13 14s13-6 13-14c0-9-5-15-13-15Zm-13 35h26v62H27V46Z"/></svg>`;
+        if (shape === "broad") return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-10 0-16 6-16 15 0 9 6 14 16 14s16-5 16-14c0-9-6-15-16-15Zm-23 35h46v62H17V46Z"/></svg>`;
+        if (shape === "athletic") return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-9 0-14 6-14 15 0 8 5 14 14 14s14-6 14-14c0-9-5-15-14-15Zm-21 35h42l-8 28H27l-8-28Zm8 29h26l-4 33H31l-4-33Z"/></svg>`;
+        return `<svg viewBox="0 0 80 120" aria-hidden="true"><path fill="${fill}" d="M40 11c-9 0-14 6-14 15 0 8 5 14 14 14s14-6 14-14c0-9-5-15-14-15Zm-18 35h36v62H22V46Z"/></svg>`;
       }
 
-      function fmtTime(d) {
-        const dt = new Date(d);
-        return dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-      }
-
-      function updateStepperUI() {
-        steps.forEach((el) => el.classList.add("hidden"));
-        const current = steps.find((s) => Number(s.dataset.step) === currentStep);
-        if (current) current.classList.remove("hidden");
-
-        stepButtons.forEach((b) => b.classList.toggle("active", Number(b.dataset.step) === currentStep));
-
-        backBtn.disabled = currentStep === 0;
-        nextBtn.disabled = currentStep === steps.length - 1;
-      }
-
-      function silhouetteSvg(kind) {
-        // Very simple inline SVGs as visual selectors (dev UI, not medically accurate).
-        const common = `viewBox="0 0 80 120" width="72" height="90"`;
-        if (kind === "triangle") {
-          return `<svg ${common}><path d="M40 10 C28 10 24 18 24 28 C24 40 30 44 40 44 C50 44 56 40 56 28 C56 18 52 10 40 10 Z" fill="#2a3242"/><path d="M18 48 L62 48 L74 110 L6 110 Z" fill="#2a3242"/></svg>`;
-        }
-        if (kind === "inverted_triangle") {
-          return `<svg ${common}><path d="M10 48 L70 48 L58 78 L22 78 Z" fill="#2a3242"/><path d="M40 10 C28 10 24 18 24 28 C24 40 30 44 40 44 C50 44 56 40 56 28 C56 18 52 10 40 10 Z" fill="#2a3242"/><path d="M22 78 L58 78 L52 110 L28 110 Z" fill="#2a3242"/></svg>`;
-        }
-        if (kind === "oval") {
-          return `<svg ${common}><path d="M40 10 C28 10 24 18 24 28 C24 40 30 44 40 44 C50 44 56 40 56 28 C56 18 52 10 40 10 Z" fill="#2a3242"/><ellipse cx="40" cy="78" rx="28" ry="34" fill="#2a3242"/></svg>`;
-        }
-        if (kind === "rectangle") {
-          return `<svg ${common}><path d="M40 10 C28 10 24 18 24 28 C24 40 30 44 40 44 C50 44 56 40 56 28 C56 18 52 10 40 10 Z" fill="#2a3242"/><rect x="18" y="48" width="44" height="62" rx="10" fill="#2a3242"/></svg>`;
-        }
-        if (kind === "slim") {
-          return `<svg ${common}><path d="M40 10 C30 10 26 18 26 28 C26 40 32 44 40 44 C48 44 54 40 54 28 C54 18 50 10 40 10 Z" fill="#2a3242"/><rect x="28" y="48" width="24" height="62" rx="10" fill="#2a3242"/></svg>`;
-        }
-        if (kind === "broad") {
-          return `<svg ${common}><path d="M40 10 C28 10 24 18 24 28 C24 40 30 44 40 44 C50 44 56 40 56 28 C56 18 52 10 40 10 Z" fill="#2a3242"/><rect x="14" y="48" width="52" height="62" rx="12" fill="#2a3242"/></svg>`;
-        }
-        if (kind === "athletic") {
-          return `<svg ${common}><path d="M40 10 C28 10 24 18 24 28 C24 40 30 44 40 44 C50 44 56 40 56 28 C56 18 52 10 40 10 Z" fill="#2a3242"/><path d="M16 48 L64 48 L56 78 L24 78 Z" fill="#2a3242"/><rect x="24" y="78" width="32" height="32" rx="10" fill="#2a3242"/></svg>`;
-        }
-        // average fallback
-        return `<svg ${common}><path d="M40 10 C28 10 24 18 24 28 C24 40 30 44 40 44 C50 44 56 40 56 28 C56 18 52 10 40 10 Z" fill="#2a3242"/><rect x="22" y="48" width="36" height="62" rx="12" fill="#2a3242"/></svg>`;
-      }
-
-      function renderBodyShapeCards() {
-        bodyShapeGrid.innerHTML = "";
-        BODY_SHAPES.forEach((s) => {
+      function renderBodyShapeGrid() {
+        const container = document.getElementById("bodyShapeGrid");
+        container.innerHTML = "";
+        bodyShapes.forEach((shape) => {
           const btn = document.createElement("button");
           btn.type = "button";
-          btn.className = "optionCard";
-          btn.dataset.value = s.value;
-          btn.innerHTML = `
-            <div class="optionIcon">${silhouetteSvg(s.icon)}</div>
-            <div class="optionLabel">${s.label}</div>
-          `;
-          btn.addEventListener("click", async () => {
-            clearError();
-            try {
-              await putProfile({ body_shape: s.value });
-              selectCard(bodyShapeGrid, s.value);
-            } catch (e) {
-              showError(e.message);
-            }
+          btn.className = "body-shape-btn";
+          btn.classList.toggle("active", selected.body_shape === shape.value);
+          btn.innerHTML = `${bodyShapeSvg(shape.value)}<span>${shape.label}</span>`;
+          btn.addEventListener("click", () => {
+            selected.body_shape = shape.value;
+            renderBodyShapeGrid();
           });
-          bodyShapeGrid.appendChild(btn);
+          container.appendChild(btn);
         });
       }
 
-      function renderFitPrefCards() {
-        fitPrefGrid.innerHTML = "";
-        FIT_PREFS.forEach((p) => {
+      function renderFitGrid() {
+        const container = document.getElementById("fitGrid");
+        container.innerHTML = "";
+        fitPrefs.forEach((value) => {
           const btn = document.createElement("button");
           btn.type = "button";
-          btn.className = "optionCard compact";
-          btn.dataset.value = p.value;
-          btn.innerHTML = `<div class="optionLabel">${p.label}</div>`;
-          btn.addEventListener("click", async () => {
-            clearError();
-            try {
-              await putProfile({ fit_preference: p.value });
-              selectCard(fitPrefGrid, p.value);
-            } catch (e) {
-              showError(e.message);
-            }
+          btn.className = "choice-btn";
+          btn.textContent = value.replace(/_/g, " ");
+          btn.classList.toggle("active", selected.fit_preference === value);
+          btn.addEventListener("click", () => {
+            selected.fit_preference = value;
+            renderFitGrid();
           });
-          fitPrefGrid.appendChild(btn);
+          container.appendChild(btn);
         });
       }
 
-      function renderSkinToneSwatches() {
-        skinToneGrid.innerHTML = "";
-        SKIN_TONES.forEach((t) => {
+      function renderSkinGrid() {
+        const container = document.getElementById("skinGrid");
+        container.innerHTML = "";
+        skinTones.forEach((tone) => {
           const btn = document.createElement("button");
           btn.type = "button";
-          btn.className = "swatchCard";
-          btn.dataset.value = t.value;
-          btn.innerHTML = `
-            <div class="swatch" style="background:${t.color}"></div>
-            <div class="swatchLabel">${t.label}</div>
-          `;
-          btn.addEventListener("click", async () => {
-            clearError();
-            try {
-              await putProfile({ skin_tone: t.value });
-              selectCard(skinToneGrid, t.value);
-            } catch (e) {
-              showError(e.message);
-            }
+          btn.className = "skin-btn";
+          btn.classList.toggle("active", selected.skin_tone === tone.value);
+          btn.innerHTML = `<div class="skin-chip" style="background:${tone.hex};"></div><div>${tone.label}</div>`;
+          btn.addEventListener("click", () => {
+            selected.skin_tone = tone.value;
+            renderSkinGrid();
           });
-          skinToneGrid.appendChild(btn);
+          container.appendChild(btn);
         });
       }
 
-      function selectCard(container, value) {
-        Array.from(container.querySelectorAll("button")).forEach((b) => {
-          b.classList.toggle("selected", b.dataset.value === value);
+      function updateStepUi() {
+        [0, 1, 2, 3].forEach((idx) => {
+          document.getElementById(`step${idx}`).classList.toggle("hidden", idx !== step);
+          const chip = document.querySelector(`[data-step-chip="${idx}"]`);
+          if (chip) chip.classList.toggle("active", idx === step);
         });
+        backBtn.disabled = step === 0;
+        nextBtn.disabled = step === 3;
+        if (step === 3) renderReview();
       }
 
-      function setRadio(name, value) {
-        Array.from(document.querySelectorAll(`input[name="${name}"]`)).forEach((r) => {
-          r.checked = r.value === value;
-        });
+      function renderReview() {
+        const draft = buildDraftPayload(false);
+        reviewBox.innerHTML = `
+          <div><strong>Name:</strong> ${draft.user_name || "-"}</div>
+          <div><strong>Age:</strong> ${draft.age ?? "-"}</div>
+          <div><strong>Sex:</strong> ${draft.sex || "-"}</div>
+          <div><strong>Body shape:</strong> ${draft.body_shape || "-"}</div>
+          <div><strong>Fit preference:</strong> ${draft.fit_preference || "-"}</div>
+          <div><strong>Height:</strong> ${draft.height_cm ?? "-"}</div>
+          <div><strong>Weight:</strong> ${draft.weight_kg ?? "-"}</div>
+          <div><strong>Skin tone:</strong> ${draft.skin_tone || "-"}</div>
+        `;
       }
 
-      function buildReview() {
-        const rows = [
-          ["User name", profile?.user_name ?? "—"],
-          ["Sex", profile?.sex ?? "—"],
-          ["Age", profile?.age ?? "—"],
-          ["Body shape", profile?.body_shape ?? "—"],
-          ["Fit preference", profile?.fit_preference ?? "—"],
-          ["Height (cm)", profile?.height_cm ?? "—"],
-          ["Weight (kg)", profile?.weight_kg ?? "—"],
-          ["Skin tone", profile?.skin_tone ?? "—"],
-        ];
-        reviewKv.innerHTML = "";
-        rows.forEach(([k, v]) => {
-          const div = document.createElement("div");
-          div.innerHTML = `<span class="k">${k}</span> <span class="mono">${v}</span>`;
-          reviewKv.appendChild(div);
-        });
-        rawJson.textContent = JSON.stringify(profile, null, 2);
+      function buildDraftPayload(includeNulls) {
+        const payload = {};
+        const name = userName.value.trim();
+        if (name || includeNulls) payload.user_name = name || null;
+        if (age.value.trim() || includeNulls) payload.age = age.value.trim() ? Number(age.value) : null;
+        if (height.value.trim() || includeNulls) payload.height_cm = height.value.trim() ? Number(height.value) : null;
+        if (weight.value.trim() || includeNulls) payload.weight_kg = weight.value.trim() ? Number(weight.value) : null;
+        if (sex.value || includeNulls) payload.sex = sex.value || null;
+        if (selected.body_shape || includeNulls) payload.body_shape = selected.body_shape || null;
+        if (selected.fit_preference || includeNulls) payload.fit_preference = selected.fit_preference || null;
+        if (selected.skin_tone || includeNulls) payload.skin_tone = selected.skin_tone || null;
+        return payload;
       }
 
-      async function fetchProfile() {
-        profile = await apiFetch("/body-profile", { method: "GET" });
-        hydrateUI();
-        setStatus("Loaded profile.");
+      async function loadProfile() {
+        const profile = await apiFetch("/body-profile", { method: "GET" });
+        currentProfile = profile;
+        userName.value = profile.user_name || "";
+        age.value = profile.age ?? "";
+        height.value = profile.height_cm ?? "";
+        weight.value = profile.weight_kg ?? "";
+        sex.value = profile.sex || "";
+        selected.body_shape = profile.body_shape || null;
+        selected.fit_preference = profile.fit_preference || null;
+        selected.skin_tone = profile.skin_tone || null;
       }
 
-      async function putProfile(patch) {
-        const res = await apiFetch("/body-profile", {
+      async function saveProfile() {
+        const payload = buildDraftPayload(true);
+        await apiFetch("/body-profile", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(patch),
+          body: JSON.stringify(payload),
         });
-        profile = res;
-        lastSavedAt = new Date();
-        buildReview();
-        setStatus(`Profile saved at ${fmtTime(lastSavedAt)}.`);
-        return res;
       }
 
-      function hydrateUI() {
-        userName.value = profile?.user_name ?? "";
-        age.value = profile?.age ?? "";
-        setRadio("sex", profile?.sex ?? "");
-        selectCard(bodyShapeGrid, profile?.body_shape ?? "");
-        selectCard(fitPrefGrid, profile?.fit_preference ?? "");
-        selectCard(skinToneGrid, profile?.skin_tone ?? "");
-        buildReview();
+      function skipCurrentStep() {
+        if (step === 1) {
+          selected.body_shape = null;
+          selected.fit_preference = null;
+        } else if (step === 2) {
+          selected.skin_tone = null;
+        }
+        if (step < 3) step += 1;
+        updateStepUi();
       }
 
-      function goTo(step) {
-        currentStep = Math.max(0, Math.min(step, steps.length - 1));
-        updateStepperUI();
-        if (currentStep === 4) buildReview();
-      }
-
-      // Events: stepper nav
-      stepper.addEventListener("click", (e) => {
-        const btn = e.target.closest("button.step");
-        if (!btn) return;
-        goTo(Number(btn.dataset.step));
+      backBtn.addEventListener("click", () => {
+        if (step > 0) step -= 1;
+        updateStepUi();
       });
-      backBtn.addEventListener("click", () => goTo(currentStep - 1));
-      nextBtn.addEventListener("click", () => goTo(currentStep + 1));
-
-      // Events: identity autosave
-      userName.addEventListener("blur", async () => {
-        clearError();
-        const val = userName.value.trim();
-        if (profile && val === (profile.user_name || "")) return;
-        try {
-          await putProfile({ user_name: val || null });
-        } catch (e) {
-          showError(e.message);
-        }
+      nextBtn.addEventListener("click", () => {
+        if (step < 3) step += 1;
+        updateStepUi();
       });
-
-      age.addEventListener("blur", async () => {
-        clearError();
-        const raw = age.value.trim();
-        if (!raw) return; // optional: do not clear server value
-        const v = Number(raw);
-        if (Number.isNaN(v)) return;
-        if (profile && String(profile.age || "") === String(v)) return;
-        try {
-          await putProfile({ age: v });
-        } catch (e) {
-          showError(e.message);
-        }
-      });
-
-      sexRadios.addEventListener("change", async (e) => {
-        clearError();
-        const input = e.target;
-        if (!input || input.name !== "sex") return;
-        try {
-          await putProfile({ sex: input.value });
-        } catch (err) {
-          showError(err.message);
-        }
-      });
-
+      skipBtn.addEventListener("click", skipCurrentStep);
       saveBtn.addEventListener("click", async () => {
-        clearError();
         try {
-          // Save what's currently typed/selected (best effort, all optional)
-          const sex = document.querySelector('input[name="sex"]:checked')?.value;
-          const patch = {};
-          const nameVal = userName.value.trim();
-          if (nameVal) patch.user_name = nameVal;
-          const ageVal = age.value.trim();
-          if (ageVal) patch.age = Number(ageVal);
-          if (sex) patch.sex = sex;
-          if (profile?.body_shape) patch.body_shape = profile.body_shape;
-          if (profile?.fit_preference) patch.fit_preference = profile.fit_preference;
-          if (profile?.skin_tone) patch.skin_tone = profile.skin_tone;
-          await putProfile(patch);
+          setError("");
+          await saveProfile();
+          showToast("Profile saved.", "success");
+          window.location.href = "/";
         } catch (e) {
-          showError(e.message);
+          setError(e.message || "Could not save profile.");
         }
       });
 
-      // Init
-      renderBodyShapeCards();
-      renderFitPrefCards();
-      renderSkinToneSwatches();
-      updateStepperUI();
-      fetchProfile().catch((e) => showError(e.message));
+      async function initPage() {
+        if (!mountAppShell({ activePage: "profile" })) return;
+        renderBodyShapeGrid();
+        renderFitGrid();
+        renderSkinGrid();
+        try {
+          await loadProfile();
+        } catch (_e) {}
+        renderBodyShapeGrid();
+        renderFitGrid();
+        renderSkinGrid();
+        updateStepUi();
+      }
+
+      initPage();
     </script>
   </body>
 </html>
-

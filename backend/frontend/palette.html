@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Color Palette</title>
+    <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      .family-group {
+        margin-top: 14px;
+      }
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 10px;
+      }
+      .palette-swatch {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        background: var(--surface);
+      }
+      .palette-color {
+        height: 86px;
+      }
+      .palette-meta {
+        padding: 10px;
+      }
+      .palette-swatch.active {
+        border-color: var(--primary);
+        box-shadow: var(--ring);
+      }
+      .items-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 10px;
+      }
+      .item-card {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 8px;
+        background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+      }
+      .item-card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body class="app-shell">
+    <main class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Color Palette</h1>
+          <p class="page-subtitle">Unique wardrobe colors grouped by family.</p>
+        </div>
+      </header>
+
+      <section id="paletteRoot" class="panel"></section>
+
+      <section class="panel" style="margin-top:16px;">
+        <div class="row space-between">
+          <h2 style="margin:0;">Filtered Items</h2>
+          <button id="clearFilterBtn" class="btn secondary small" type="button">Clear</button>
+        </div>
+        <div id="itemsRoot" class="items-grid" style="margin-top:12px;"></div>
+      </section>
+    </main>
+
+    <script src="/frontend/app.js?v=10"></script>
+    <script>
+      const paletteRoot = document.getElementById("paletteRoot");
+      const itemsRoot = document.getElementById("itemsRoot");
+      const clearFilterBtn = document.getElementById("clearFilterBtn");
+      let allItems = [];
+      let selectedColor = null;
+
+      function renderItems(items) {
+        itemsRoot.innerHTML = "";
+        if (!items.length) {
+          itemsRoot.innerHTML = `<div class="summary muted">No items for this color filter.</div>`;
+          return;
+        }
+        items.forEach((item) => {
+          const card = document.createElement("div");
+          card.className = "item-card";
+          card.innerHTML = `
+            <img src="${renderImage(item.image_preview_url || item.image_url)}" alt="${item.item_type || item.category}" />
+            <div class="row space-between" style="margin-top:8px;">
+              <span class="badge ${item.category === "bottom" ? "bottom" : "top"}">${item.category === "bottom" ? "BOTTOM" : "TOP"}</span>
+              <span class="tiny muted">${item.color || "unknown"}</span>
+            </div>
+          `;
+          itemsRoot.appendChild(card);
+        });
+      }
+
+      function applyColorFilter(colorName) {
+        selectedColor = colorName || null;
+        const filtered = selectedColor
+          ? allItems.filter((it) => String(it.color || "").toLowerCase() === String(selectedColor).toLowerCase())
+          : allItems;
+        renderItems(filtered);
+        document.querySelectorAll(".palette-swatch").forEach((el) => {
+          el.classList.toggle("active", selectedColor && el.dataset.color === selectedColor);
+        });
+      }
+
+      function renderPalette(items) {
+        const map = new Map();
+        items.forEach((item) => {
+          const color = (item.color || "unknown").toLowerCase();
+          const family = getColorFamily(color);
+          const bucket = map.get(color) || { color, family, count: 0 };
+          bucket.count += 1;
+          map.set(color, bucket);
+        });
+
+        const grouped = { warm: [], cool: [], neutral: [], dark: [] };
+        Array.from(map.values()).forEach((entry) => grouped[entry.family].push(entry));
+
+        paletteRoot.innerHTML = "";
+        ["warm", "cool", "neutral", "dark"].forEach((family) => {
+          const values = grouped[family];
+          if (!values.length) return;
+          const section = document.createElement("div");
+          section.className = "family-group";
+          section.innerHTML = `<h3 style="margin:0 0 8px 0;text-transform:capitalize;">${family}</h3>`;
+          const grid = document.createElement("div");
+          grid.className = "swatch-grid";
+          values.sort((a, b) => b.count - a.count).forEach((entry) => {
+            const swatch = document.createElement("button");
+            swatch.type = "button";
+            swatch.className = "palette-swatch";
+            swatch.dataset.color = entry.color;
+            swatch.innerHTML = `
+              <div class="palette-color" style="background:${getColorHex(entry.color)};"></div>
+              <div class="palette-meta">
+                <strong>${entry.color}</strong>
+                <div class="muted small">${entry.count} item(s)</div>
+              </div>
+            `;
+            swatch.addEventListener("click", () => applyColorFilter(entry.color));
+            grid.appendChild(swatch);
+          });
+          section.appendChild(grid);
+          paletteRoot.appendChild(section);
+        });
+      }
+
+      async function loadData() {
+        const res = await apiFetch("/wardrobe?include_inactive=false");
+        allItems = Array.isArray(res.items) ? res.items : [];
+        renderPalette(allItems);
+        renderItems(allItems);
+      }
+
+      clearFilterBtn.addEventListener("click", () => applyColorFilter(null));
+
+      async function initPage() {
+        if (!mountAppShell({ activePage: "palette" })) return;
+        try {
+          await loadData();
+        } catch (e) {
+          showToast(e.message || "Failed to load palette.", "error");
+        }
+      }
+
+      initPage();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign In | Outfit AI</title>
+    <link rel="stylesheet" href="/frontend/style.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+      }
+      .login-card {
+        width: min(420px, 100%);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+      .login-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="login-card">
+      <div class="login-header">
+        <h1 style="margin:0;">Outfit AI</h1>
+        <button id="themeToggleBtn" class="btn secondary small" type="button">Theme</button>
+      </div>
+      <p class="muted small" style="margin-top:0;">Sign in to continue.</p>
+
+      <div id="errorBox" class="error hidden" style="margin-bottom:10px;"></div>
+
+      <label>Email <input id="email" type="email" autocomplete="username" /></label>
+      <label style="margin-top:10px;">Password <input id="password" type="password" autocomplete="current-password" /></label>
+
+      <button id="loginBtn" class="btn" type="button" style="margin-top:14px;width:100%;">Sign In</button>
+      <div class="summary muted small" style="margin-top:12px;">
+        Dev credentials: <strong>dev@example.com</strong> / <strong>dev</strong>
+      </div>
+    </section>
+
+    <script src="/frontend/app.js?v=10"></script>
+    <script>
+      const emailEl = document.getElementById("email");
+      const passwordEl = document.getElementById("password");
+      const loginBtn = document.getElementById("loginBtn");
+      const errorBox = document.getElementById("errorBox");
+      const themeToggleBtn = document.getElementById("themeToggleBtn");
+
+      function setError(msg) {
+        errorBox.textContent = msg || "";
+        errorBox.classList.toggle("hidden", !msg);
+      }
+
+      async function login() {
+        setError("");
+        loginBtn.disabled = true;
+        loginBtn.textContent = "Signing in...";
+        const body = new URLSearchParams({
+          username: emailEl.value.trim(),
+          password: passwordEl.value,
+        });
+
+        try {
+          const res = await fetch("/auth/token", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: body.toString(),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || !data.access_token) {
+            throw new Error(data.detail || "Invalid credentials");
+          }
+          setToken(data.access_token);
+          const next = new URLSearchParams(location.search).get("next") || "/";
+          location.href = next;
+        } catch (e) {
+          setError(e.message || "Login failed.");
+          loginBtn.disabled = false;
+          loginBtn.textContent = "Sign In";
+        }
+      }
+
+      themeToggleBtn.addEventListener("click", toggleTheme);
+      loginBtn.addEventListener("click", login);
+      [emailEl, passwordEl].forEach((el) => {
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") login();
+        });
+      });
+
+      applyTheme(loadTheme());
+      emailEl.value = "dev@example.com";
+      passwordEl.value = "dev";
+    </script>
+  </body>
+</html>

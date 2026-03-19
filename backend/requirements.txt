@@ -1,0 +1,22 @@
+﻿fastapi
+uvicorn
+sqlalchemy
+pydantic
+python-multipart
+numpy
+scikit-learn
+opencv-python
+pillow
+pillow-avif-plugin
+torch
+torchvision
+clip
+transformers
+passlib[bcrypt]
+python-jose[cryptography]
+
+# Vision pipeline (YOLO -> SAM2 -> color extraction)
+segment-anything
+ultralytics
+# Segment Anything 2 (installs `sam2` Python module; may require Linux/WSL)
+git+https://github.com/facebookresearch/sam2.git
